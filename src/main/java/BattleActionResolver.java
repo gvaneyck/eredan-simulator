@@ -8,6 +8,8 @@ public class BattleActionResolver {
         actions.put("applyDamage", BattleActionResolver::applyDamage);
         actions.put("decreaseStr", BattleActionResolver::decreaseStr);
         actions.put("increaseStr", BattleActionResolver::increaseStr);
+        actions.put("rage", BattleActionResolver::rage);
+        actions.put("berserk", BattleActionResolver::berserk);
         actions.put("thorns", BattleActionResolver::thorns);
         actions.put("critical", BattleActionResolver::critical);
         actions.put("riposte", BattleActionResolver::riposte);
@@ -23,8 +25,8 @@ public class BattleActionResolver {
         actions.put("diceChange", BattleActionResolver::diceChange);
     }
 
-    public static void execute(BattleAction battleAction, CharacterStatus source, CharacterStatus target) {
-        actions.get(battleAction.action).accept(source, target, new BattleArgs(battleAction.amount));
+    public static void execute(String action, int amount, CharacterStatus source, CharacterStatus target) {
+        actions.get(action).accept(source, target, new BattleArgs(amount));
     }
 
     public static void adjustDamage(CharacterStatus source, CharacterStatus target, BattleArgs args) {
@@ -77,6 +79,14 @@ public class BattleActionResolver {
 
     public static void increaseStr(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.str += args.amount;
+    }
+
+    public static void rage(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        source.rage += args.amount;
+    }
+
+    public static void berserk(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        source.berserk += args.amount;
     }
 
     public static void thorns(CharacterStatus source, CharacterStatus target, BattleArgs args) {

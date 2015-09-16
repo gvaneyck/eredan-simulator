@@ -1,6 +1,7 @@
 [
     {
         "name": "Aleshane",
+        "guild": "Sap Hearts",
         "race": "elfine",
         "clazz": "marauder",
         "str": 140,
@@ -27,6 +28,7 @@
     },
     {
         "name": "Baligu'Diga Ex",
+        "guild": "Sap Hearts",
         "race": "undead",
         "clazz": "marauder",
         "str": 150,

@@ -1,10 +1,10 @@
+import dto.Hero;
+
 public class CharacterStatus {
     public int str;
     public String guild;
     public String race;
     public String clazz;
-
-    public int[] dice;
 
     public int damage = 0;
     public int shield = 0;
@@ -19,10 +19,10 @@ public class CharacterStatus {
     public int thorns = 0;
     public int riposte = 0;
 
-    public CharacterStatus(int str, String guild, String race, String clazz) {
-        this.str = str;
-        this.guild = guild;
-        this.race = race;
-        this.clazz = clazz;
+    public CharacterStatus(Hero hero) {
+        this.str = hero.str;
+        this.guild = hero.guild;
+        this.race = hero.race;
+        this.clazz = hero.clazz;
     }
 }
