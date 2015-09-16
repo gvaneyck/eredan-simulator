@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Aleshane",
+        "race": "elfine",
+        "clazz": "marauder",
+        "str": 140,
+        "abilities": [
+            {
+                "cost": [ 0, 1, 0, 1 ],
+                "effects": [
+                    { "effect": "rage", "amount": 30, "boost_type": "attacker", "boost_amount": 15 }
+                ]
+            },
+            {
+                "cost": [ 0, 2, 0, 0 ],
+                "effects": [
+                    { "effect": "backstab", "amount": 150 }
+                ]
+            },
+            {
+                "cost": [ 0, 1, 1, 0 ],
+                "effects": [
+                    { "effect": "hit", "amount": 3 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Baligu'Diga Ex",
+        "race": "undead",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": [ 0, 2, 1, 0 ],
+                "effects": [
+                    { "effect": "shock", "amount": 600 }
+                ]
+            },
+            {
+                "cost": [ 0, 1, 0, 0 ],
+                "effects": [
+                    { "effect": "decreaseStr", "amount": 60 },
+                    { "effect": "increaseStr", "amount": 60 }
+                ]
+            },
+            {
+                "cost": [ 0, 1, 0, 1 ],
+                "effects": [
+                    { "effect": "lifedrain", "amount": 200 },
+                    { "effect": "diceChange", "amount": 1, "dice_lost": 3, "dice_gained": 0 }
+                ]
+            }
+        ]
+    }
+]
