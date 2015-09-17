@@ -6,6 +6,9 @@ public class CharacterStatus {
     public String race;
     public String clazz;
 
+    public int[] dice;
+    public int[] diceCounts;
+
     public int damage = 0;
     public int shield = 0;
     public int damageBuff = 0;
@@ -19,10 +22,16 @@ public class CharacterStatus {
     public int thorns = 0;
     public int riposte = 0;
 
-    public CharacterStatus(Hero hero) {
+    public CharacterStatus(Hero hero, int[] dice) {
         this.str = hero.str;
         this.guild = hero.guild;
         this.race = hero.race;
         this.clazz = hero.clazz;
+
+        this.dice = dice;
+        this.diceCounts = new int[4];
+        for (int i = 0; i < dice.length; i++) {
+            this.diceCounts[dice[i]]++;
+        }
     }
 }

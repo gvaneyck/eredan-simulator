@@ -7,21 +7,21 @@
         "str": 140,
         "abilities": [
             {
-                "cost": [ 0, 1, 0, 1 ],
+                "cost": "RY",
                 "effects": [
-                    { "effect": "rage", "amount": 30, "boost_type": "attacker", "boost_amount": 15 }
+                    { "effect": "rage", "amount": 30, "boost_type": "sourceIsAttacker", "boost_amount": 15 }
                 ]
             },
             {
-                "cost": [ 0, 2, 0, 0 ],
+                "cost": "RR",
                 "effects": [
                     { "effect": "backstab", "amount": 150 }
                 ]
             },
             {
-                "cost": [ 0, 1, 1, 0 ],
+                "cost": "RB",
                 "effects": [
-                    { "effect": "hit", "amount": 3 }
+                    { "effect": "attack", "amount": 3 }
                 ]
             }
         ]
@@ -34,23 +34,586 @@
         "str": 150,
         "abilities": [
             {
-                "cost": [ 0, 2, 1, 0 ],
+                "cost": "RRB",
                 "effects": [
                     { "effect": "shock", "amount": 600 }
                 ]
             },
             {
-                "cost": [ 0, 1, 0, 0 ],
+                "cost": "R",
                 "effects": [
                     { "effect": "decreaseStr", "amount": 60 },
                     { "effect": "increaseStr", "amount": 60 }
                 ]
             },
             {
-                "cost": [ 0, 1, 0, 1 ],
+                "cost": "RY",
                 "effects": [
                     { "effect": "lifedrain", "amount": 200 },
-                    { "effect": "diceChange", "amount": 1, "dice_lost": 3, "dice_gained": 0 }
+                    { "effect": "diceChangeYS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Bulu'Baga Ex",
+        "guild": "Sap Hearts",
+        "race": "undead",
+        "clazz": "mage",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "fireball", "amount": 450 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "decreaseStr", "amount": 30 },
+                    { "effect": "increaseStr", "amount": 30 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "lifedrain", "amount": 250 },
+                    { "effect": "diceChangeBS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Belladone",
+        "guild": "Sap Hearts",
+        "race": "elfine",
+        "clazz": "warrior",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "thorns", "amount": 55 },
+                    { "effect": "critical", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "riposte", "amount": 2 },
+                    { "effect": "increaseStr", "amount": 0, "boost_type": "affectedGuild", "boost_check": "Sap Hearts", "boost_amount": 45 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "attack", "amount": 4 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Chestnut",
+        "guild": "Sap Hearts",
+        "race": "elfine",
+        "clazz": "marauder",
+        "str": 145,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "dodge", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "shock", "amount": 240 },
+                    { "effect": "increaseStr", "amount": 80 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "attack", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dionaea",
+        "guild": "Sap Hearts",
+        "race": "dais",
+        "clazz": "mage",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "hit", "amount": 200 },
+                    { "effect": "increaseStr", "amount": 0, "boost_type": "alliesGuild", "boost_check": "Sap Hearts", "boost_amount": 30 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "hit", "amount": 400 },
+                    { "effect": "diceChangeYS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "heal", "amount": 200 },
+                    { "effect": "diceChangeBS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ebony Ex",
+        "guild": "Sap Hearts",
+        "race": "dais",
+        "clazz": "mage",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "fireball", "amount": 500 },
+                    { "effect": "increaseStr", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "fireball", "amount": 200 },
+                    { "effect": "hit", "amount": 0, "boost_type": "sourceStr", "boost_amount": 2 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "heal", "amount": 250 },
+                    { "effect": "diceChangeBS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Fe'y Ex",
+        "guild": "Sap Hearts",
+        "race": "dais",
+        "clazz": "mage",
+        "str": 90,
+        "abilities": [
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "fireball", "amount": 520 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "hit", "amount": 0, "boost_type": "diceR", "boost_amount": 160 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "heal", "amount": 180 },
+                    { "effect": "decreaseStr", "amount": 45 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Grandao Ex",
+        "guild": "Sap Hearts",
+        "race": "hom'chai",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "critical", "amount": 1 },
+                    { "effect": "dodge", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "hit", "amount": 450 },
+                    { "effect": "rage", "amount": 75 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "shock", "amount": 200 },
+                    { "effect": "diceChangeRS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Hundawa Ex",
+        "guild": "Sap Hearts",
+        "race": "beast",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "thorns", "amount": 50 },
+                    { "effect": "diceChangeYS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "hit", "amount": 400 },
+                    { "effect": "diceChangeBS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "heal", "amount": 0, "boost_type": "diceR", "boost_amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kachu'Taoa",
+        "guild": "Sap Hearts",
+        "race": "beast",
+        "clazz": "colossus",
+        "str": 200,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "hit", "amount": 450 },
+                    { "effect": "thorns", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "hit", "amount": 300 },
+                    { "effect": "diceChangeBS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "heal", "amount": 350 },
+                    { "effect": "increaseStr", "amount": 50 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Keep-the-Totems Ex",
+        "guild": "Sap Hearts",
+        "race": "hom'chai",
+        "clazz": "mage",
+        "str": 90,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "increaseStr", "amount": 75 },
+                    { "effect": "damageBuff", "amount": 20 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "hit", "amount": 200 },
+                    { "effect": "smite", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "heal", "amount": 450 },
+                    { "effect": "diceChangeBS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "",
+        "guild": "Sap Hearts",
+        "race": "",
+        "clazz": "",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "",
+        "guild": "Sap Hearts",
+        "race": "",
+        "clazz": "",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "",
+        "guild": "Sap Hearts",
+        "race": "",
+        "clazz": "",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "",
+        "guild": "Sap Hearts",
+        "race": "",
+        "clazz": "",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "",
+        "guild": "Sap Hearts",
+        "race": "",
+        "clazz": "",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "",
+        "guild": "Sap Hearts",
+        "race": "",
+        "clazz": "",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "",
+        "guild": "Sap Hearts",
+        "race": "",
+        "clazz": "",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "",
+        "guild": "Sap Hearts",
+        "race": "",
+        "clazz": "",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "",
+        "guild": "Sap Hearts",
+        "race": "",
+        "clazz": "",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "",
+        "guild": "Sap Hearts",
+        "race": "",
+        "clazz": "",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
+                ]
+            },
+            {
+                "cost": "",
+                "effects": [
+                    { "effect": "", "amount": 0 }
                 ]
             }
         ]

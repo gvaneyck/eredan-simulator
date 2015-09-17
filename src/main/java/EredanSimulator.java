@@ -29,7 +29,29 @@ public class EredanSimulator {
     public static void main(String[] args) {
         initDice();
         loadHeroes();
-        int[][] results = simulate(heroes.get(0), heroes.get(1));
+        for (int i = 0; i < 12; i += 2) {
+            sumResults(simulate(heroes.get(i), heroes.get(i + 1)));
+            sumResults(simulate(heroes.get(i + 1), heroes.get(i)));
+        }
+    }
+
+    public static void sumResults(int[][] results) {
+        int p1 = 0;
+        int p2 = 0;
+        int tie = 0;
+        for (int i = 0; i < results.length; i++) {
+            for (int j = 0; j < results[i].length; j++) {
+                if (results[i][j] == P1_WIN) {
+                    p1++;
+                } else if (results[i][j] == P2_WIN) {
+                    p2++;
+                } else {
+                    tie++;
+                }
+            }
+        }
+
+        System.out.println(p1 + " " + p2 + " " + tie);
     }
 
     public static void initDice() {
@@ -56,7 +78,7 @@ public class EredanSimulator {
 
             dicePossibilities[x] = dice.clone();
 
-            List<Boolean[]> keepOptions = new ArrayList<Boolean[]>();
+            List<Boolean[]> keepOptions = new ArrayList<>();
             for (int i = 0; i < 64; i++) {
                 keepOptions.add(new Boolean[] {
                         ((i & 1) != 0),
@@ -107,33 +129,25 @@ public class EredanSimulator {
         int[][] results = new int[84][84];
         for (int i = 0; i < dicePossibilities.length; i++) {
             for (int j = 0; j < dicePossibilities.length; j++) {
-                int[] p1dice = dicePossibilities[i];
-                int[] p2dice = dicePossibilities[j];
-                CharacterStatus p1status = new CharacterStatus(p1);
-                CharacterStatus p2status = new CharacterStatus(p2);
+                CharacterStatus p1status = new CharacterStatus(p1, dicePossibilities[i]);
+                CharacterStatus p2status = new CharacterStatus(p2, dicePossibilities[j]);
 
                 // Abilities
                 for (int round = 0; round < 3; round++) {
                     Ability p1a = p1.abilities.get(round);
-                    int triggers1 = triggers(p1dice, p1a.cost);
-                    for (int x = 0; x < triggers1; x++) {
-                        for (Effect e : p1a.effects) {
-                            BattleActionResolver.execute(e.effect, e.amount, p1status, p2status);
-                        }
+                    for (Effect e : p1a.effects) {
+                        BattleActionResolver.execute(p1a.cost, e, p1status, p2status);
                     }
 
                     Ability p2a = p2.abilities.get(round);
-                    int triggers2 = triggers(p2dice, p2a.cost);
-                    for (int x = 0; x < triggers2; x++) {
-                        for (Effect e : p2a.effects) {
-                            BattleActionResolver.execute(e.effect, e.amount, p2status, p1status);
-                        }
+                    for (Effect e : p2a.effects) {
+                        BattleActionResolver.execute(p2a.cost, e, p2status, p1status);
                     }
                 }
 
                 // Swords
-                BattleActionResolver.execute("hit", triggers(p1dice, SWORD_COST), p1status, p2status);
-                BattleActionResolver.execute("hit", triggers(p2dice, SWORD_COST), p2status, p1status);
+                BattleActionResolver.execute(SWORD_COST, "hit", 1, p1status, p2status);
+                BattleActionResolver.execute(SWORD_COST, "hit", 1, p2status, p1status);
 
                 if (p1status.damage < p2status.damage) {
                     results[i][j] = P1_WIN;
@@ -146,21 +160,5 @@ public class EredanSimulator {
         }
 
         return results;
-    }
-
-    public static int triggers(int[] dice, int[] cost) {
-        int triggers = 6;
-        int[] diceCounts = new int[4];
-        for (int i = 0; i < dice.length; i++) {
-            diceCounts[dice[i]]++;
-        }
-
-        for (int i = 0; i < diceCounts.length; i++) {
-            if (cost[i] != 0) {
-                triggers = Math.min(triggers, diceCounts[i] / cost[i]);
-            }
-        }
-
-        return triggers;
     }
 }
