@@ -149,7 +149,6 @@ public class BattleActionResolver {
                 if (target.thorns > 0) {
                     BattleArgs thornsArgs = new BattleArgs(target.thorns);
                     thornsArgs.isThorns = true;
-                    adjustDamage(target, source, thornsArgs);
                     log.trace(String.format("%s spiked %d", target.name, thornsArgs.amount));
                     applyDamage(target, source, thornsArgs);
                 }
