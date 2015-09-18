@@ -7,7 +7,6 @@ public class CharacterStatus {
     public String clazz;
     public int str;
 
-    public int[] dice;
     public int[] diceCounts;
     public boolean isAttacker;
 
@@ -24,17 +23,13 @@ public class CharacterStatus {
     public int thorns = 0;
     public int riposte = 0;
 
-    public CharacterStatus(Hero hero, int[] dice) {
+    public CharacterStatus(Hero hero, int[] diceCounts) {
         this.name = hero.name;
         this.guild = hero.guild;
         this.race = hero.race;
         this.clazz = hero.clazz;
         this.str = hero.str;
 
-        this.dice = dice;
-        this.diceCounts = new int[4];
-        for (int i = 0; i < dice.length; i++) {
-            this.diceCounts[dice[i]]++;
-        }
+        this.diceCounts = diceCounts;
     }
 }
