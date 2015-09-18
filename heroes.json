@@ -56,6 +56,35 @@
         ]
     },
     {
+        "name": "Belladone",
+        "guild": "Sap Hearts",
+        "race": "elfine",
+        "clazz": "warrior",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "thorns", "amount": 55 },
+                    { "effect": "critical", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "riposte", "amount": 2 },
+                    { "effect": "increaseStr", "amount": 0, "boost_type": "sourceGuild", "boost_check": "Sap Hearts", "boost_amount": 45, "all": true }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "attack", "amount": 4 }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Bulu'Baga Ex",
         "guild": "Sap Hearts",
         "race": "undead",
@@ -85,35 +114,6 @@
         ]
     },
     {
-        "name": "Belladone",
-        "guild": "Sap Hearts",
-        "race": "elfine",
-        "clazz": "warrior",
-        "str": 135,
-        "abilities": [
-            {
-                "cost": "RB",
-                "effects": [
-                    { "effect": "thorns", "amount": 55 },
-                    { "effect": "critical", "amount": 2 }
-                ]
-            },
-            {
-                "cost": "RY",
-                "effects": [
-                    { "effect": "riposte", "amount": 2 },
-                    { "effect": "increaseStr", "amount": 0, "boost_type": "affectedGuild", "boost_check": "Sap Hearts", "boost_amount": 45 }
-                ]
-            },
-            {
-                "cost": "RR",
-                "effects": [
-                    { "effect": "attack", "amount": 4 }
-                ]
-            }
-        ]
-    },
-    {
         "name": "Chestnut",
         "guild": "Sap Hearts",
         "race": "elfine",
@@ -136,7 +136,7 @@
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "attack", "amount": 2 }
+                    { "effect": "attack", "amount": 3 }
                 ]
             }
         ]
@@ -195,8 +195,7 @@
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "heal", "amount": 250 },
-                    { "effect": "diceChangeBS", "amount": 1 }
+                    { "effect": "heal", "amount": 250, "boost_type": "diceB", "boost_amount": 50 }
                 ]
             }
         ]
@@ -329,7 +328,7 @@
                 "cost": "R",
                 "effects": [
                     { "effect": "increaseStr", "amount": 75 },
-                    { "effect": "damageBuff", "amount": 20 }
+                    { "effect": "damageBuff", "amount": 20, "all": true }
                 ]
             },
             {
@@ -349,271 +348,316 @@
         ]
     },
     {
-        "name": "",
+        "name": "Kei'Zan",
         "guild": "Sap Hearts",
-        "race": "",
-        "clazz": "",
-        "str": 0,
+        "race": "dais",
+        "clazz": "mage",
+        "str": 150,
         "abilities": [
             {
-                "cost": "",
+                "cost": "Y",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "fireball", "amount": 250, "boost_type": "targetClass", "boost_check": "warrior", "boost_amount": 125 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RB",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "hit", "amount": 250 },
+                    { "effect": "increaseStr", "amount": 0, "boost_type": "sourceGuild", "boost_check": "Sap Hearts", "boost_amount": 50, "all": true }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RR",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "heal", "amount": 400 },
+                    { "effect": "diceChangeRS", "amount": 6 }
                 ]
             }
         ]
     },
     {
-        "name": "",
+        "name": "Koria Ex",
         "guild": "Sap Hearts",
-        "race": "",
-        "clazz": "",
-        "str": 0,
+        "race": "beast",
+        "clazz": "mage",
+        "str": 90,
         "abilities": [
             {
-                "cost": "",
+                "cost": "RRB",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "shield", "amount": 400, "all": true }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RY",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "fireball", "amount": 400 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RR",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "heal", "amount": 250 },
+                    { "effect": "thorns", "amount": 125 }
                 ]
             }
         ]
     },
     {
-        "name": "",
+        "name": "Melissandre",
         "guild": "Sap Hearts",
-        "race": "",
-        "clazz": "",
-        "str": 0,
+        "race": "elfine",
+        "clazz": "marauder",
+        "str": 140,
         "abilities": [
             {
-                "cost": "",
+                "cost": "RB",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "attack", "amount": 2 },
+                    { "effect": "riposte", "amount": 1 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RR",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "rage", "amount": 30, "all": true }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RY",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "attack", "amount": 3 }
                 ]
             }
         ]
     },
     {
-        "name": "",
+        "name": "Pilferess",
         "guild": "Sap Hearts",
-        "race": "",
-        "clazz": "",
-        "str": 0,
+        "race": "beast",
+        "clazz": "marauder",
+        "str": 150,
         "abilities": [
             {
-                "cost": "",
+                "cost": "RRY",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "critical", "amount": 2, "boost_type": "targetRace", "boost_check": "golem", "boost_amount": 1 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RR",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "hit", "amount": 320 },
+                    { "effect": "hit", "amount": 320 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RB",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "hit", "amount": 300 },
+                    { "effect": "shock", "amount": 150 }
                 ]
             }
         ]
     },
     {
-        "name": "",
+        "name": "Quercus Ex",
         "guild": "Sap Hearts",
-        "race": "",
-        "clazz": "",
-        "str": 0,
+        "race": "dais",
+        "clazz": "warrior",
+        "str": 120,
         "abilities": [
             {
-                "cost": "",
+                "cost": "RB",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "hit", "amount": 300 },
+                    { "effect": "diceChangeBS", "amount": 1 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RR",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "hit", "amount": 600 },
+                    { "effect": "increaseStr", "amount": 120 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RY",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "heal", "amount": 400 },
+                    { "effect": "riposte", "amount": 1 }
                 ]
             }
         ]
     },
     {
-        "name": "",
+        "name": "Rargnor",
         "guild": "Sap Hearts",
-        "race": "",
-        "clazz": "",
-        "str": 0,
+        "race": "hom'chai",
+        "clazz": "warrior",
+        "str": 130,
         "abilities": [
             {
-                "cost": "",
+                "cost": "B",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "critical", "amount": 1, "boost_type": "alliesClass", "boost_check": "marauder", "boost_amount": 1 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RY",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "hit", "amount": 450, "boost_type": "alliesClass", "boost_check": "mage", "boost_amount": 100 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "R",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "increaseStr", "amount": 130, "boost_type": "alliesClass", "boost_check": "warrior", "boost_amount": 65 }
                 ]
             }
         ]
     },
     {
-        "name": "",
+        "name": "Rockspeaker",
         "guild": "Sap Hearts",
-        "race": "",
-        "clazz": "",
-        "str": 0,
+        "race": "hom'chai",
+        "clazz": "mage",
+        "str": 130,
         "abilities": [
             {
-                "cost": "",
+                "cost": "RB",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "shield", "amount": 420 },
+                    { "effect": "diceChangeBS", "amount": 1 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RRY",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "fireball", "amount": 400 },
+                    { "effect": "increaseStr", "amount": 100 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RR",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "hit", "amount": 350 },
+                    { "effect": "diceChangeRS", "amount": 1 }
                 ]
             }
         ]
     },
     {
-        "name": "",
+        "name": "Spiritspeaker",
         "guild": "Sap Hearts",
-        "race": "",
-        "clazz": "",
-        "str": 0,
+        "race": "dais",
+        "clazz": "mage",
+        "str": 100,
         "abilities": [
             {
-                "cost": "",
+                "cost": "RRB",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "fireball", "amount": 380, "boost_type": "sourceIsAttacker", "boost_amount": 190 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "R",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "fireball", "amount": 150, "boost_type": "targetRace", "boost_check": "guemilite", "boost_amount": 75 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RY",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "heal", "amount": 350, "boost_type": "sourceIsDefender", "boost_amount": 175 }
                 ]
             }
         ]
     },
     {
-        "name": "",
+        "name": "The Claw Ex",
         "guild": "Sap Hearts",
-        "race": "",
-        "clazz": "",
-        "str": 0,
+        "race": "beast",
+        "clazz": "marauder",
+        "str": 150,
         "abilities": [
             {
-                "cost": "",
+                "cost": "R",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "shield", "amount": 200 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RY",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "shock", "amount": 400 },
+                    { "effect": "increaseStr", "amount": 80 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RRB",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "shock", "amount": 400 },
+                    { "effect": "shock", "amount": 400 }
                 ]
             }
         ]
     },
     {
-        "name": "",
+        "name": "The Hailwalker",
         "guild": "Sap Hearts",
-        "race": "",
-        "clazz": "",
-        "str": 0,
+        "race": "dais",
+        "clazz": "warrior",
+        "str": 130,
         "abilities": [
             {
-                "cost": "",
+                "cost": "RR",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "rage", "amount": 100 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RY",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "damageBuff", "amount": 30, "all": true },
+                    { "effect": "diceChangeYS", "amount": 1 }
                 ]
             },
             {
-                "cost": "",
+                "cost": "RB",
                 "effects": [
-                    { "effect": "", "amount": 0 }
+                    { "effect": "hit", "amount": 300 },
+                    { "effect": "diceChangeBS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "The Sachem",
+        "guild": "Sap Hearts",
+        "race": "elfine",
+        "clazz": "mage",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "shield", "amount": 150, "all": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "hit", "amount": 480 },
+                    { "effect": "increaseStr", "amount": 120 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "heal", "amount": 350 },
+                    { "effect": "diceChangeBS", "amount": 1 }
                 ]
             }
         ]
