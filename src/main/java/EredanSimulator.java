@@ -64,10 +64,10 @@ public class EredanSimulator {
             // +4 mutations of each
             for (int k = 0; k < 4; k++) {
                 List<Integer> sourceTeam = wlist.get(k).list;
-                mutateUnique(teams, new ArrayList<>(sourceTeam), 1);
                 mutateUnique(teams, new ArrayList<>(sourceTeam), 2);
                 mutateUnique(teams, new ArrayList<>(sourceTeam), 3);
                 mutateUnique(teams, new ArrayList<>(sourceTeam), 4);
+                mutateUnique(teams, new ArrayList<>(sourceTeam), 5);
             }
         }
     }
