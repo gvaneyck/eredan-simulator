@@ -7,11 +7,9 @@ import simulator.Heroes;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 
 public class EredanSimulator {
 
@@ -26,7 +24,7 @@ public class EredanSimulator {
         List<Integer> team2 = new ArrayList<>();
         team2.add(5); team2.add(6); team2.add(7); team2.add(8); team2.add(12);
 
-        int runs = 10000000;
+        int runs = 1000000;
         for (int i = 0; i < runs; i++) {
             if (i % 10000 == 0) {
                 log.debug(String.format("%.1f", (double) i / runs * 100));
@@ -35,22 +33,10 @@ public class EredanSimulator {
         }
 
         Map<String, String> results = new HashMap<>();
+        Map<String, String> oppresults = new HashMap<>();
         for (TeamState ts : teamStats.keySet()) {
+            NodeStats stats = teamStats.get(ts);
             if (ts.round == 0 && ts.me == null && ts.them == null) {
-                NodeStats stats = teamStats.get(ts);
-                int bestWins = 0;
-                int bestVisits = 0;
-                double bestScore = -1;
-                for (int i = 0; i < stats.childStats.length; i++) {
-                    double tempScore = (double)stats.childStats[i].wins / stats.visits;
-                    if (tempScore > bestScore) {
-                        bestScore = tempScore;
-                        bestWins = stats.childStats[i].wins;
-                        bestVisits = stats.visits;
-                    }
-                }
-
-                String value = String.format("%5d / %5d = %.1f ", bestWins, bestVisits, bestScore * 100);
                 String key = String.format("%s %s %s VS %s %s %s",
                         ts.allies.get(0).name.substring(0, 5),
                         ts.allies.get(1).name.substring(0, 5),
@@ -59,33 +45,45 @@ public class EredanSimulator {
                         ts.enemies.get(1).name.substring(0, 5),
                         ts.enemies.get(2).name.substring(0, 5));
 
+                String value = buildStatsString(stats);
+                value += String.format(" | %5s %5s %5s",
+                        String.format("%.1f", (double)stats.childStats[0].wins / stats.visits * 100),
+                        String.format("%.1f", (double)stats.childStats[1].wins / stats.visits * 100),
+                        String.format("%.1f", (double)stats.childStats[2].wins / stats.visits * 100));
+
                 results.put(key, value);
+            } else if (ts.round == 0 && ts.me == null && ts.them != null && stats.visits > runs / 10000) {
+//                String key = String.format("%s %s %s VS (%s) %s %s",
+//                        ts.allies.get(0).name.substring(0, 5),
+//                        ts.allies.get(1).name.substring(0, 5),
+//                        ts.allies.get(2).name.substring(0, 5),
+//                        ts.them.name.substring(0, 5),
+//                        ts.enemies.get(0).name.substring(0, 5),
+//                        ts.enemies.get(1).name.substring(0, 5));
+//
+//                oppresults.put(key, buildStatsString(stats));
             }
         }
 
         results.entrySet().stream().sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey())).forEach(e -> log.debug(e.getValue() + " " + e.getKey()));
+        log.debug("----------");
+        oppresults.entrySet().stream().sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey())).forEach(e -> log.debug(e.getValue() + " " + e.getKey()));
     }
 
-    public static void mcts(int h1, int h2) {
-//        for (int i = 0; i < 1000000; i++) {
-//            runSimTeam(h1, h2);
-//        }
-//
-//        double p1win = 0, p2win = 0;
-//        int p1sets = 0, p2sets = 0;
-//        for (int key : infoSets1v1.keySet()) {
-//            InfoSet1v1 set = infoSets1v1.get(key);
-//            if (set.me == h1 && set.them == h2 && set.attacker && set.phase == 0) {
-//                p1win += (double)set.childStats[set.bestChild()].wins / set.childStats[set.bestChild()].visits;
-//                p1sets++;
-//            } else if (set.me == h2 && set.them == h1 && !set.attacker && set.phase == 0) {
-//                p2win += (double)set.childStats[set.bestChild()].wins / set.childStats[set.bestChild()].visits;
-//                p2sets++;
-//            }
-//        }
-//
-//        log.debug(Heroes.heroes.get(h1).name + " VS " + Heroes.heroes.get(h2).name);
-//        log.debug((p1win / p1sets * 100) + " VS " + (p2win / p2sets * 100));
+    public static String buildStatsString(NodeStats stats) {
+        int bestWins = 0;
+        int bestVisits = 0;
+        double bestScore = -1;
+        for (int i = 0; i < stats.childStats.length; i++) {
+            double tempScore = (double)stats.childStats[i].wins / stats.visits;
+            if (tempScore > bestScore) {
+                bestScore = tempScore;
+                bestWins = stats.childStats[i].wins;
+                bestVisits = stats.visits;
+            }
+        }
+
+        return String.format("%5d / %5d = %5s", bestWins, bestVisits, String.format("%.1f", bestScore * 100));
     }
 
     public static void runSimTeam(List<Integer> team1, List<Integer> team2) {
