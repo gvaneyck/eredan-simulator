@@ -18,20 +18,135 @@ public class EredanSimulator {
 
     public static Map<TeamState, NodeStats> teamStats = new HashMap<>();
 
-    public static void main(String[] args) {
-        List<Integer> team1 = new ArrayList<>();
-        team1.add(0); team1.add(1); team1.add(2); team1.add(3); team1.add(4);
-        List<Integer> team2 = new ArrayList<>();
-        team2.add(5); team2.add(6); team2.add(7); team2.add(8); team2.add(12);
+    protected static class WeightedList {
+        int weight;
+        List<Integer> list;
+        public WeightedList(int weight, List<Integer> list) {
+            this.weight = weight;
+            this.list = list;
+        }
+    }
 
-        int runs = 1000000;
-        for (int i = 0; i < runs; i++) {
-            if (i % 10000 == 0) {
-                log.debug(String.format("%.1f", (double) i / runs * 100));
+    public static void main(String[] args) {
+        List<List<Integer>> teams = new ArrayList<>();
+        for (int i = 0; i < Heroes.heroes.size() - 5; i += 5) {
+            for (int j = 0; j < 5; j++) {
+                List<Integer> team = new ArrayList<>();
+                team.add(i);
+                team.add(i + 1);
+                team.add(i + 2);
+                team.add(i + 3);
+                team.add(i + 4);
+                mutateUnique(teams, team, 2);
             }
-            runSimTeam(team1, team2);
         }
 
+        for (int i = 0; i < 100; i++) {
+            for (int k = 0; k < teams.size(); k++) {
+                System.out.println(k + " | " + teams.get(k));
+            }
+
+            int[] teamWins = runRoundRobin(teams);
+
+            List<WeightedList> wlist = new ArrayList<>();
+            for (int k = 0; k < teams.size(); k++) {
+                wlist.add(new WeightedList(teamWins[k], teams.get(k)));
+            }
+            Collections.sort(wlist, (e1, e2) -> Integer.compare(e2.weight, e1.weight));
+
+            teams.clear();
+
+            // Keep top 5
+            for (int k = 0; k < 5; k++) {
+                teams.add(wlist.get(k).list);
+            }
+
+            // +4 mutations of each
+            for (int k = 0; k < 4; k++) {
+                List<Integer> sourceTeam = wlist.get(k).list;
+                mutateUnique(teams, new ArrayList<>(sourceTeam), 1);
+                mutateUnique(teams, new ArrayList<>(sourceTeam), 2);
+                mutateUnique(teams, new ArrayList<>(sourceTeam), 3);
+                mutateUnique(teams, new ArrayList<>(sourceTeam), 4);
+            }
+        }
+    }
+
+    public static int[] runRoundRobin(List<List<Integer>> teams) {
+        int runs = 10000;
+        int[] teamWins = new int[teams.size()];
+        for (int t1 = 0; t1 < teams.size(); t1++) {
+            for (int t2 = 0; t2 < teams.size(); t2++) {
+                if (t1 == t2) {
+                    continue;
+                }
+
+                System.out.print(t1 + " VS " + t2);
+                for (int i = 0; i < runs; i++) {
+                    runSimTeam(teams.get(t1), teams.get(t2));
+                }
+
+                int wins = 0;
+                int visits = 0;
+                for (TeamState ts : teamStats.keySet()) {
+                    if (ts.round == 0 && ts.me == null && ts.them == null) {
+                        int bestWins = 0;
+                        int bestVisits = 0;
+                        double bestScore = -1;
+
+                        NodeStats stats = teamStats.get(ts);
+                        for (int q = 0; q < stats.childStats.length; q++) {
+                            double tempScore = (double)stats.childStats[q].wins / stats.visits;
+                            if (tempScore > bestScore) {
+                                bestScore = tempScore;
+                                bestWins = stats.childStats[q].wins;
+                                bestVisits = stats.visits;
+                            }
+                        }
+
+                        wins += bestWins;
+                        visits += bestVisits;
+                    }
+                }
+
+                double winRate = (double)wins / visits;
+                if (winRate > 0.5) {
+                    System.out.println(String.format(" | %d %.1f", t1, winRate * 100));
+                    teamWins[t1]++;
+                } else {
+                    System.out.println(String.format(" | %d %.1f", t2, (1 - winRate) * 100));
+                    teamWins[t2]++;
+                }
+
+                teamStats.clear();
+            }
+        }
+
+        return teamWins;
+    }
+
+    public static void mutateUnique(List<List<Integer>> teams, List<Integer> team, int n) {
+        mutate(team, n);
+        while (teams.contains(team)) {
+            mutate(team, 1);
+        }
+        teams.add(team);
+    }
+
+    public static void mutate(List<Integer> team, int n) {
+        Collections.shuffle(team);
+        for (int i = 0; i < n; i++) {
+            team.remove(rand.nextInt(5));
+            int newTeammate;
+            do {
+                newTeammate = rand.nextInt(Heroes.heroes.size());
+            } while (team.contains(newTeammate));
+            team.add(newTeammate);
+        }
+        Collections.sort(team);
+    }
+
+    public static void summarizeStats() {
         Map<String, String> results = new HashMap<>();
         Map<String, String> oppresults = new HashMap<>();
         for (TeamState ts : teamStats.keySet()) {
@@ -52,16 +167,16 @@ public class EredanSimulator {
                         String.format("%.1f", (double)stats.childStats[2].wins / stats.visits * 100));
 
                 results.put(key, value);
-            } else if (ts.round == 0 && ts.me == null && ts.them != null && stats.visits > runs / 10000) {
-//                String key = String.format("%s %s %s VS (%s) %s %s",
-//                        ts.allies.get(0).name.substring(0, 5),
-//                        ts.allies.get(1).name.substring(0, 5),
-//                        ts.allies.get(2).name.substring(0, 5),
-//                        ts.them.name.substring(0, 5),
-//                        ts.enemies.get(0).name.substring(0, 5),
-//                        ts.enemies.get(1).name.substring(0, 5));
-//
-//                oppresults.put(key, buildStatsString(stats));
+            } else if (ts.round == 0 && ts.me == null && ts.them != null) {
+                String key = String.format("%s %s %s VS (%s) %s %s",
+                        ts.allies.get(0).name.substring(0, 5),
+                        ts.allies.get(1).name.substring(0, 5),
+                        ts.allies.get(2).name.substring(0, 5),
+                        ts.them.name.substring(0, 5),
+                        ts.enemies.get(0).name.substring(0, 5),
+                        ts.enemies.get(1).name.substring(0, 5));
+
+                oppresults.put(key, buildStatsString(stats));
             }
         }
 
