@@ -1,9 +1,10 @@
 package dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import simulator.BattleAction;
 
 public class Effect {
-    public String effect;
+    public BattleAction effect;
     public int amount;
     public boolean all;
     @JsonProperty("boost_type") public String boostType;
@@ -12,7 +13,7 @@ public class Effect {
 
     public Effect() { }
 
-    public Effect(String effect, int amount) {
+    public Effect(BattleAction effect, int amount) {
         this.effect = effect;
         this.amount = amount;
     }

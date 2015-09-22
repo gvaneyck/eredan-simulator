@@ -18,7 +18,7 @@ public class BattleData {
 
     public static Ability basicAttack = new Ability();
     static {
-        Effect e = new Effect("swordAttack", 1);
+        Effect e = new Effect(BattleAction.SWORD_ATTACK, 1);
         List<Effect> effects = new ArrayList<>(1);
         effects.add(e);
 

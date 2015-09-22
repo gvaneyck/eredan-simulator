@@ -9,19 +9,19 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "rage", "amount": 30, "boost_type": "sourceIsAttacker", "boost_amount": 15 }
+                    { "effect": "RAGE", "amount": 30, "boost_type": "sourceIsAttacker", "boost_amount": 15 }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "backstab", "amount": 150 }
+                    { "effect": "BACKSTAB", "amount": 150 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "attack", "amount": 3 }
+                    { "effect": "ATTACK", "amount": 3 }
                 ]
             }
         ]
@@ -36,21 +36,21 @@
             {
                 "cost": "RRB",
                 "effects": [
-                    { "effect": "shock", "amount": 600 }
+                    { "effect": "SHOCK", "amount": 600 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "decreaseStr", "amount": 60 },
-                    { "effect": "increaseStr", "amount": 60 }
+                    { "effect": "DECREASE_STR", "amount": 60 },
+                    { "effect": "INCREASE_STR", "amount": 60 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "lifedrain", "amount": 200 },
-                    { "effect": "diceChangeYS", "amount": 1 }
+                    { "effect": "LIFEDRAIN", "amount": 200 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
                 ]
             }
         ]
@@ -65,21 +65,21 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "thorns", "amount": 55 },
-                    { "effect": "critical", "amount": 2 }
+                    { "effect": "THORNS", "amount": 55 },
+                    { "effect": "CRITICAL", "amount": 2 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "riposte", "amount": 2 },
-                    { "effect": "increaseStr", "amount": 0, "boost_type": "sourceGuild", "boost_check": "Sap Hearts", "boost_amount": 45, "all": true }
+                    { "effect": "RIPOSTE", "amount": 2 },
+                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "sourceGuild", "boost_check": "Sap Hearts", "boost_amount": 45, "all": true }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "attack", "amount": 4 }
+                    { "effect": "ATTACK", "amount": 4 }
                 ]
             }
         ]
@@ -94,21 +94,21 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "fireball", "amount": 450 }
+                    { "effect": "FIREBALL", "amount": 450 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "decreaseStr", "amount": 30 },
-                    { "effect": "increaseStr", "amount": 30 }
+                    { "effect": "DECREASE_STR", "amount": 30 },
+                    { "effect": "INCREASE_STR", "amount": 30 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "lifedrain", "amount": 250 },
-                    { "effect": "diceChangeBS", "amount": 1 }
+                    { "effect": "LIFEDRAIN", "amount": 250 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
             }
         ]
@@ -123,20 +123,20 @@
             {
                 "cost": "Y",
                 "effects": [
-                    { "effect": "dodge", "amount": 2 }
+                    { "effect": "DODGE", "amount": 2 }
                 ]
             },
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "shock", "amount": 240 },
-                    { "effect": "increaseStr", "amount": 80 }
+                    { "effect": "SHOCK", "amount": 240 },
+                    { "effect": "INCREASE_STR", "amount": 80 }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "attack", "amount": 3 }
+                    { "effect": "ATTACK", "amount": 3 }
                 ]
             }
         ]
@@ -151,22 +151,22 @@
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "hit", "amount": 200 },
-                    { "effect": "increaseStr", "amount": 0, "boost_type": "alliesGuild", "boost_check": "Sap Hearts", "boost_amount": 30 }
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "alliesGuild", "boost_check": "Sap Hearts", "boost_amount": 30 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "hit", "amount": 400 },
-                    { "effect": "diceChangeYS", "amount": 1 }
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
                 ]
             },
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "heal", "amount": 200 },
-                    { "effect": "diceChangeBS", "amount": 1 }
+                    { "effect": "HEAL", "amount": 200 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
             }
         ]
@@ -181,21 +181,21 @@
             {
                 "cost": "RRB",
                 "effects": [
-                    { "effect": "fireball", "amount": 500 },
-                    { "effect": "increaseStr", "amount": 100 }
+                    { "effect": "FIREBALL", "amount": 500 },
+                    { "effect": "INCREASE_STR", "amount": 100 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "fireball", "amount": 200 },
-                    { "effect": "hit", "amount": 0, "boost_type": "sourceStr", "boost_amount": 2 }
+                    { "effect": "FIREBALL", "amount": 200 },
+                    { "effect": "HIT", "amount": 0, "boost_type": "sourceStr", "boost_amount": 2 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "heal", "amount": 250, "boost_type": "diceB", "boost_amount": 50 }
+                    { "effect": "HEAL", "amount": 250, "boost_type": "diceB", "boost_amount": 50 }
                 ]
             }
         ]
@@ -210,20 +210,20 @@
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "fireball", "amount": 520 }
+                    { "effect": "FIREBALL", "amount": 520 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "hit", "amount": 0, "boost_type": "diceR", "boost_amount": 160 }
+                    { "effect": "HIT", "amount": 0, "boost_type": "diceR", "boost_amount": 160 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "heal", "amount": 180 },
-                    { "effect": "decreaseStr", "amount": 45 }
+                    { "effect": "HEAL", "amount": 180 },
+                    { "effect": "DECREASE_STR", "amount": 45 }
                 ]
             }
         ]
@@ -238,22 +238,22 @@
             {
                 "cost": "Y",
                 "effects": [
-                    { "effect": "critical", "amount": 1 },
-                    { "effect": "dodge", "amount": 1 }
+                    { "effect": "CRITICAL", "amount": 1 },
+                    { "effect": "DODGE", "amount": 1 }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "hit", "amount": 450 },
-                    { "effect": "rage", "amount": 75 }
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "RAGE", "amount": 75 }
                 ]
             },
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "shock", "amount": 200 },
-                    { "effect": "diceChangeRS", "amount": 1 }
+                    { "effect": "SHOCK", "amount": 200 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
                 ]
             }
         ]
@@ -268,21 +268,21 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "thorns", "amount": 50 },
-                    { "effect": "diceChangeYS", "amount": 1 }
+                    { "effect": "THORNS", "amount": 50 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "hit", "amount": 400 },
-                    { "effect": "diceChangeBS", "amount": 1 }
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "heal", "amount": 0, "boost_type": "diceR", "boost_amount": 200 }
+                    { "effect": "HEAL", "amount": 0, "boost_type": "diceR", "boost_amount": 200 }
                 ]
             }
         ]
@@ -297,22 +297,22 @@
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "hit", "amount": 450 },
-                    { "effect": "thorns", "amount": 50 }
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "THORNS", "amount": 50 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "hit", "amount": 300 },
-                    { "effect": "diceChangeBS", "amount": 1 }
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
             },
             {
                 "cost": "Y",
                 "effects": [
-                    { "effect": "heal", "amount": 350 },
-                    { "effect": "increaseStr", "amount": 50 }
+                    { "effect": "HEAL", "amount": 350 },
+                    { "effect": "INCREASE_STR", "amount": 50 }
                 ]
             }
         ]
@@ -327,22 +327,22 @@
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "increaseStr", "amount": 75 },
-                    { "effect": "damageBuff", "amount": 20, "all": true }
+                    { "effect": "INCREASE_STR", "amount": 75 },
+                    { "effect": "DAMAGE_BUFF", "amount": 20, "all": true }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "hit", "amount": 200 },
-                    { "effect": "smite", "amount": 2 }
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "SMITE", "amount": 2 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "heal", "amount": 450 },
-                    { "effect": "diceChangeBS", "amount": 1 }
+                    { "effect": "HEAL", "amount": 450 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
             }
         ]
@@ -357,21 +357,21 @@
             {
                 "cost": "Y",
                 "effects": [
-                    { "effect": "fireball", "amount": 250, "boost_type": "targetClass", "boost_check": "warrior", "boost_amount": 125 }
+                    { "effect": "FIREBALL", "amount": 250, "boost_type": "targetClass", "boost_check": "warrior", "boost_amount": 125 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "hit", "amount": 250 },
-                    { "effect": "increaseStr", "amount": 0, "boost_type": "sourceGuild", "boost_check": "Sap Hearts", "boost_amount": 50, "all": true }
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "sourceGuild", "boost_check": "Sap Hearts", "boost_amount": 50, "all": true }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "heal", "amount": 400 },
-                    { "effect": "diceChangeRS", "amount": 6 }
+                    { "effect": "HEAL", "amount": 400 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
                 ]
             }
         ]
@@ -386,20 +386,20 @@
             {
                 "cost": "RRB",
                 "effects": [
-                    { "effect": "shield", "amount": 400, "all": true }
+                    { "effect": "SHIELD", "amount": 400, "all": true }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "fireball", "amount": 400 }
+                    { "effect": "FIREBALL", "amount": 400 }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "heal", "amount": 250 },
-                    { "effect": "thorns", "amount": 125 }
+                    { "effect": "HEAL", "amount": 250 },
+                    { "effect": "THORNS", "amount": 125 }
                 ]
             }
         ]
@@ -414,20 +414,20 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "attack", "amount": 2 },
-                    { "effect": "riposte", "amount": 1 }
+                    { "effect": "ATTACK", "amount": 2 },
+                    { "effect": "RIPOSTE", "amount": 1 }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "rage", "amount": 30, "all": true }
+                    { "effect": "RAGE", "amount": 30, "all": true }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "attack", "amount": 3 }
+                    { "effect": "ATTACK", "amount": 3 }
                 ]
             }
         ]
@@ -442,21 +442,21 @@
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "critical", "amount": 2, "boost_type": "targetRace", "boost_check": "golem", "boost_amount": 1 }
+                    { "effect": "CRITICAL", "amount": 2, "boost_type": "targetRace", "boost_check": "golem", "boost_amount": 1 }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "hit", "amount": 320 },
-                    { "effect": "hit", "amount": 320 }
+                    { "effect": "HIT", "amount": 320 },
+                    { "effect": "HIT", "amount": 320 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "hit", "amount": 300 },
-                    { "effect": "shock", "amount": 150 }
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "SHOCK", "amount": 150 }
                 ]
             }
         ]
@@ -471,22 +471,22 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "hit", "amount": 300 },
-                    { "effect": "diceChangeBS", "amount": 1 }
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "hit", "amount": 600 },
-                    { "effect": "increaseStr", "amount": 120 }
+                    { "effect": "HIT", "amount": 600 },
+                    { "effect": "INCREASE_STR", "amount": 120 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "heal", "amount": 400 },
-                    { "effect": "riposte", "amount": 1 }
+                    { "effect": "HEAL", "amount": 400 },
+                    { "effect": "RIPOSTE", "amount": 1 }
                 ]
             }
         ]
@@ -501,19 +501,19 @@
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "critical", "amount": 1, "boost_type": "alliesClass", "boost_check": "marauder", "boost_amount": 1 }
+                    { "effect": "CRITICAL", "amount": 1, "boost_type": "alliesClass", "boost_check": "marauder", "boost_amount": 1 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "hit", "amount": 450, "boost_type": "alliesClass", "boost_check": "mage", "boost_amount": 100 }
+                    { "effect": "HIT", "amount": 450, "boost_type": "alliesClass", "boost_check": "mage", "boost_amount": 100 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "increaseStr", "amount": 130, "boost_type": "alliesClass", "boost_check": "warrior", "boost_amount": 65 }
+                    { "effect": "INCREASE_STR", "amount": 130, "boost_type": "alliesClass", "boost_check": "warrior", "boost_amount": 65 }
                 ]
             }
         ]
@@ -528,22 +528,22 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "shield", "amount": 420 },
-                    { "effect": "diceChangeBS", "amount": 1 }
+                    { "effect": "SHIELD", "amount": 420 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
             },
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "fireball", "amount": 400 },
-                    { "effect": "increaseStr", "amount": 100 }
+                    { "effect": "FIREBALL", "amount": 400 },
+                    { "effect": "INCREASE_STR", "amount": 100 }
                 ]
             },
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "hit", "amount": 350 },
-                    { "effect": "diceChangeRS", "amount": 1 }
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
                 ]
             }
         ]
@@ -558,19 +558,19 @@
             {
                 "cost": "RRB",
                 "effects": [
-                    { "effect": "fireball", "amount": 380, "boost_type": "sourceIsAttacker", "boost_amount": 190 }
+                    { "effect": "FIREBALL", "amount": 380, "boost_type": "sourceIsAttacker", "boost_amount": 190 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "fireball", "amount": 150, "boost_type": "targetRace", "boost_check": "guemilite", "boost_amount": 75 }
+                    { "effect": "FIREBALL", "amount": 150, "boost_type": "targetRace", "boost_check": "guemilite", "boost_amount": 75 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "heal", "amount": 350, "boost_type": "sourceIsDefender", "boost_amount": 175 }
+                    { "effect": "HEAL", "amount": 350, "boost_type": "sourceIsDefender", "boost_amount": 175 }
                 ]
             }
         ]
@@ -585,21 +585,21 @@
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "shield", "amount": 200 }
+                    { "effect": "SHIELD", "amount": 200 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "shock", "amount": 400 },
-                    { "effect": "increaseStr", "amount": 80 }
+                    { "effect": "SHOCK", "amount": 400 },
+                    { "effect": "INCREASE_STR", "amount": 80 }
                 ]
             },
             {
                 "cost": "RRB",
                 "effects": [
-                    { "effect": "shock", "amount": 400 },
-                    { "effect": "shock", "amount": 400 }
+                    { "effect": "SHOCK", "amount": 400 },
+                    { "effect": "SHOCK", "amount": 400 }
                 ]
             }
         ]
@@ -614,21 +614,21 @@
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "rage", "amount": 100 }
+                    { "effect": "RAGE", "amount": 100 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "damageBuff", "amount": 30, "all": true },
-                    { "effect": "diceChangeYS", "amount": 1 }
+                    { "effect": "DAMAGE_BUFF", "amount": 30, "all": true },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "hit", "amount": 300 },
-                    { "effect": "diceChangeBS", "amount": 1 }
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
             }
         ]
@@ -643,21 +643,21 @@
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "shield", "amount": 150, "all": true }
+                    { "effect": "SHIELD", "amount": 150, "all": true }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "hit", "amount": 480 },
-                    { "effect": "increaseStr", "amount": 120 }
+                    { "effect": "HIT", "amount": 480 },
+                    { "effect": "INCREASE_STR", "amount": 120 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "heal", "amount": 350 },
-                    { "effect": "diceChangeBS", "amount": 1 }
+                    { "effect": "HEAL", "amount": 350 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
             }
         ]

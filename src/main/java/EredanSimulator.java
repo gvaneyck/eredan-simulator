@@ -337,17 +337,17 @@ public class EredanSimulator {
     }
 
     public static NodeStats getNodeStats(TeamState state) {
-        if (!teamStats.containsKey(state)) {
-            TeamState key = state.copy();
-            NodeStats stats = new NodeStats();
+        NodeStats result = teamStats.get(state);
+        if (result == null) {
+            result = new NodeStats();
             if (state.me == null) {
-                stats.generateChildren(Math.min(3, 5 - state.round));
+                result.generateChildren(Math.min(3, 5 - state.round));
             } else {
-                stats.generateChildren(Dice.keeps[state.dice].length);
+                result.generateChildren(Dice.keeps[state.dice].length);
             }
 
-            teamStats.put(key, stats);
+            teamStats.put(state.copy(), result);
         }
-        return teamStats.get(state);
+        return result;
     }
 }

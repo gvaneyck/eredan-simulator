@@ -124,8 +124,87 @@ public class BattleActionResolver {
         return amount;
     }
 
-    public static void execute(String effect, int amount, CharacterStatus source, CharacterStatus target) {
-        actions.get(effect).accept(source, target, new BattleArgs(amount));
+    public static void execute(BattleAction effect, int amount, CharacterStatus source, CharacterStatus target) {
+        BattleArgs args = new BattleArgs(amount);
+        switch (effect) {
+            case APPLY_DAMAGE:
+                applyDamage(source, target, args);
+                break;
+            case ATTACK:
+                attack(source, target, args);
+                break;
+            case SWORD_ATTACK:
+                swordAttack(source, target, args);
+                break;
+            case RAGE:
+                rage(source, target, args);
+                break;
+            case BERSERK:
+                berserk(source, target, args);
+                break;
+            case CRITICAL:
+                critical(source, target, args);
+                break;
+            case DODGE:
+                dodge(source, target, args);
+                break;
+            case RIPOSTE:
+                riposte(source, target, args);
+                break;
+            case THORNS:
+                thorns(source, target, args);
+                break;
+            case INCREASE_STR:
+                increaseStr(source, target, args);
+                break;
+            case DECREASE_STR:
+                decreaseStr(source, target, args);
+                break;
+            case DAMAGE_BUFF:
+                damageBuff(source, target, args);
+                break;
+            case DAMAGE_DEBUFF:
+                damageDebuff(source, target, args);
+                break;
+            case HEAL:
+                heal(source, target, args);
+                break;
+            case SHIELD:
+                shield(source, target, args);
+                break;
+            case HIT:
+                hit(source, target, args);
+                break;
+            case SMITE:
+                smite(source, target, args);
+                break;
+            case BACKSTAB:
+                backstab(source, target, args);
+                break;
+            case SHOCK:
+                shock(source, target, args);
+                break;
+            case FIREBALL:
+                fireball(source, target, args);
+                break;
+            case LIGHTNING:
+                lightning(source, target, args);
+                break;
+            case LIFEDRAIN:
+                lifedrain(source, target, args);
+                break;
+            case DICE_CHANGE_RS:
+                diceChangeRS(source, target, args);
+                break;
+            case DICE_CHANGE_BS:
+                diceChangeBS(source, target, args);
+                break;
+            case DICE_CHANGE_YS:
+                diceChangeYS(source, target, args);
+                break;
+            default:
+                throw new RuntimeException("Invalid action");
+        }
     }
 
     public static int countTriggers(int[] diceCounts, int[] cost) {
@@ -184,7 +263,6 @@ public class BattleActionResolver {
                 if (target.thorns > 0) {
                     BattleArgs thornsArgs = new BattleArgs(target.thorns);
                     thornsArgs.isThorns = true;
-                    log.trace(String.format("%s spiked %d", target.name, thornsArgs.amount));
                     applyDamage(target, source, thornsArgs);
                 }
             }
@@ -197,7 +275,6 @@ public class BattleActionResolver {
             adjustDamage(source, target, hitArgs);
             boolean triggerRiposte = (args.isSword && target.riposte > 0 && hitArgs.amount > target.shield);
             applyDamage(source, target, hitArgs);
-            log.trace(String.format("%s attacked %d", source.name, hitArgs.amount));
 
             if (triggerRiposte) {
                 target.riposte--;
@@ -213,75 +290,61 @@ public class BattleActionResolver {
 
     public static void rage(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.rage += args.amount;
-        log.trace(String.format("%s rage %d", source.name, args.amount));
     }
 
     public static void berserk(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.berserk += args.amount;
-        log.trace(String.format("%s berserk %d", source.name, args.amount));
     }
 
     public static void dodge(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.dodge += args.amount;
-        log.trace(String.format("%s dodge %d", source.name, args.amount));
     }
 
     public static void critical(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.crits += args.amount;
-        log.trace(String.format("%s crits %d", source.name, args.amount));
     }
 
     public static void riposte(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.riposte += args.amount;
-        log.trace(String.format("%s riposte %d", source.name, args.amount));
     }
 
     public static void thorns(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.thorns += args.amount;
-        log.trace(String.format("%s thorns %d", source.name, args.amount));
     }
 
     public static void increaseStr(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.str += args.amount;
-        log.trace(String.format("%s increaseStr %d", source.name, args.amount));
     }
 
     public static void decreaseStr(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         target.str = Math.max(0, target.str - args.amount);
-        log.trace(String.format("%s decreaseStr %d", source.name, args.amount));
     }
 
     public static void damageBuff(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.damageBuff += args.amount;
-        log.trace(String.format("%s damageBuff %d", source.name, args.amount));
     }
 
     public static void damageDebuff(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         target.damageDebuff += args.amount;
-        log.trace(String.format("%s damageDebuff %d", source.name, args.amount));
     }
 
     public static void heal(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.damage = Math.max(0, source.damage - args.amount);
-        log.trace(String.format("%s heal %d", source.name, args.amount));
     }
 
     public static void shield(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.shield += args.amount;
-        log.trace(String.format("%s shield %d", source.name, args.amount));
     }
 
     public static void hit(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
-        log.trace(String.format("%s hit %d", source.name, args.amount));
     }
 
     public static void smite(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         BattleArgs smiteArgs = new BattleArgs(target.str * args.amount);
         adjustDamage(source, target, smiteArgs);
         applyDamage(source, target, smiteArgs);
-        log.trace(String.format("%s smite %d", source.name, args.amount));
     }
 
     public static void backstab(CharacterStatus source, CharacterStatus target, BattleArgs args) {
@@ -289,19 +352,16 @@ public class BattleActionResolver {
         decreaseStr(source, target, backstabArgs);
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
-        log.trace(String.format("%s backstab %d", source.name, args.amount));
     }
 
     public static void shock(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         applyDamage(source, target, args);
-        log.trace(String.format("%s shock %d", source.name, args.amount));
     }
 
     public static void fireball(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         target.damageDebuff += args.amount / 10;
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
-        log.trace(String.format("%s fireball %d", source.name, args.amount));
     }
 
     public static void lightning(CharacterStatus source, CharacterStatus target, BattleArgs args) {
@@ -309,34 +369,29 @@ public class BattleActionResolver {
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
         target.defenseDebuff += tempDebuff;
-        log.trace(String.format("%s lightning %d", source.name, args.amount));
     }
 
     public static void lifedrain(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         heal(source, target, args);
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
-        log.trace(String.format("%s lifedrain %d", source.name, args.amount));
     }
 
     public static void diceChangeRS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         int change = Math.min(args.amount, source.diceCounts[1]);
         source.diceCounts[1] -= change;
         source.diceCounts[0] += change;
-        log.trace(String.format("%s R->S %d", source.name, change));
     }
 
     public static void diceChangeBS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         int change = Math.min(args.amount, source.diceCounts[2]);
         source.diceCounts[2] -= change;
         source.diceCounts[0] += change;
-        log.trace(String.format("%s B->S %d", source.name, change));
     }
 
     public static void diceChangeYS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         int change = Math.min(args.amount, source.diceCounts[3]);
         source.diceCounts[3] -= change;
         source.diceCounts[0] += change;
-        log.trace(String.format("%s Y->S %d", source.name, change));
     }
 }
