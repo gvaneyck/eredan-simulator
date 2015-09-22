@@ -2,6 +2,7 @@ import lombok.EqualsAndHashCode;
 import simulator.CharacterStatus;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @EqualsAndHashCode
@@ -22,10 +23,15 @@ public class TeamState {
     public TeamState(List<CharacterStatus> myTeam) {
         allies = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            allies.add(myTeam.remove(0));
+            addAlly(myTeam.remove(0));
         }
         round = 0;
         phase = 0;
+    }
+
+    public void addAlly(CharacterStatus cs) {
+        allies.add(cs);
+        Collections.sort(allies, (cs1, cs2) -> cs1.name.compareTo(cs2.name));
     }
 
     public TeamState copy() {
@@ -34,19 +40,22 @@ public class TeamState {
 
         copy.allies = new ArrayList<>();
         for (CharacterStatus cs : allies) {
-            CharacterStatus csTemp = new CharacterStatus();
-            csTemp.name = cs.name;
-            csTemp.str = cs.str;
-            copy.allies.add(csTemp);
+            copy.allies.add(cs.copy());
         }
 
         copy.enemies = new ArrayList<>();
         for (CharacterStatus cs : enemies) {
-            CharacterStatus csTemp = new CharacterStatus();
-            csTemp.name = cs.name;
-            csTemp.str = cs.str;
-            copy.enemies.add(csTemp);
+            copy.enemies.add(cs.copy());
         }
+
+        copy.myWins = myWins;
+        copy.theirWins = theirWins;
+        copy.round = round;
+        copy.attacker = attacker;
+        copy.me = (me != null ? me.copy() : null);
+        copy.them = (them != null ? them.copy() : null);
+        copy.dice = dice;
+        copy.phase = phase;
 
         return copy;
     }

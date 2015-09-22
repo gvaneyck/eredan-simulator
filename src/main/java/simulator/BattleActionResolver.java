@@ -47,48 +47,81 @@ public class BattleActionResolver {
             }
 
             for (Effect e : ability.effects) {
-                int amount = e.amount;
-
-                // TODO:
-                // - party buffs
-                // - ally/enemy buffs, e.g. +str per mage
-                if ("sourceIsAttacker".equals(e.boostType) && source.isAttacker) {
-                    amount += e.boostAmount;
-                } else if ("sourceIsDefender".equals(e.boostType) && !source.isAttacker) {
-                    amount += e.boostAmount;
-                } else if ("sourceStr".equals(e.boostType)) {
-                    amount += source.str * e.boostAmount;
-                } else if ("sourceRace".equals(e.boostType) && source.race.equals(e.boostCheck)) {
-                    amount += e.boostAmount;
-                } else if ("sourceGuild".equals(e.boostType) && source.guild.equals(e.boostCheck)) {
-                    amount += e.boostAmount;
-                } else if ("sourceClass".equals(e.boostType) && source.clazz.equals(e.boostCheck)) {
-                    amount += e.boostAmount;
-                } else if ("targetRace".equals(e.boostType) && target.race.equals(e.boostCheck)) {
-                    amount += e.boostAmount;
-                } else if ("targetGuild".equals(e.boostType) && target.guild.equals(e.boostCheck)) {
-                    amount += e.boostAmount;
-                } else if ("targetClass".equals(e.boostType) && target.clazz.equals(e.boostCheck)) {
-                    amount += e.boostAmount;
-                } else if ("alliesRace".equals(e.boostType) && source.race.equals(e.boostCheck)) {
-                } else if ("alliesGuild".equals(e.boostType) && source.guild.equals(e.boostCheck)) {
-                } else if ("alliesClass".equals(e.boostType) && source.clazz.equals(e.boostCheck)) {
-                } else if ("enemiesRace".equals(e.boostType) && target.race.equals(e.boostCheck)) {
-                } else if ("enemiesGuild".equals(e.boostType) && target.guild.equals(e.boostCheck)) {
-                } else if ("enemiesClass".equals(e.boostType) && target.clazz.equals(e.boostCheck)) {
-                } else if ("diceS".equals(e.boostType)) {
-                    amount += source.diceCounts[0] * e.boostAmount;
-                } else if ("diceR".equals(e.boostType)) {
-                    amount += source.diceCounts[1] * e.boostAmount;
-                } else if ("diceB".equals(e.boostType)) {
-                    amount += source.diceCounts[2] * e.boostAmount;
-                } else if ("diceY".equals(e.boostType)) {
-                    amount += source.diceCounts[3] * e.boostAmount;
-                }
-
+                int amount = getEffectAmount(e, source, target);
                 execute(e.effect, amount, source, target);
+
+                if (e.all) {
+                    // TODO: All enemies
+                    if (source.ally1 != null) {
+                        amount = getEffectAmount(e, source.ally1, target);
+                        execute(e.effect, amount, source.ally1, target);
+                    }
+                    if (source.ally2 != null) {
+                        amount = getEffectAmount(e, source.ally2, target);
+                        execute(e.effect, amount, source.ally2, target);
+                    }
+                }
             }
         }
+    }
+
+    public static int getEffectAmount(Effect e, CharacterStatus source, CharacterStatus target) {
+        int amount = e.amount;
+
+        if ("sourceIsAttacker".equals(e.boostType) && source.isAttacker) {
+            amount += e.boostAmount;
+        } else if ("sourceIsDefender".equals(e.boostType) && !source.isAttacker) {
+            amount += e.boostAmount;
+        } else if ("sourceStr".equals(e.boostType)) {
+            amount += source.str * e.boostAmount;
+        } else if ("sourceRace".equals(e.boostType) && source.race.equals(e.boostCheck)) {
+            amount += e.boostAmount;
+        } else if ("sourceGuild".equals(e.boostType) && source.guild.equals(e.boostCheck)) {
+            amount += e.boostAmount;
+        } else if ("sourceClass".equals(e.boostType) && source.clazz.equals(e.boostCheck)) {
+            amount += e.boostAmount;
+        } else if ("targetRace".equals(e.boostType) && target.race.equals(e.boostCheck)) {
+            amount += e.boostAmount;
+        } else if ("targetGuild".equals(e.boostType) && target.guild.equals(e.boostCheck)) {
+            amount += e.boostAmount;
+        } else if ("targetClass".equals(e.boostType) && target.clazz.equals(e.boostCheck)) {
+            amount += e.boostAmount;
+        } else if ("alliesRace".equals(e.boostType)) {
+            if (source.ally1 != null && e.boostCheck.equals(source.ally1.race)) {
+                amount += e.boostAmount;
+            }
+            if (source.ally2 != null && e.boostCheck.equals(source.ally2.race)) {
+                amount += e.boostAmount;
+            }
+        } else if ("alliesGuild".equals(e.boostType)) {
+            if (source.ally1 != null && e.boostCheck.equals(source.ally1.guild)) {
+                amount += e.boostAmount;
+            }
+            if (source.ally2 != null && e.boostCheck.equals(source.ally2.guild)) {
+                amount += e.boostAmount;
+            }
+        } else if ("alliesClass".equals(e.boostType)) {
+            if (source.ally1 != null && e.boostCheck.equals(source.ally1.clazz)) {
+                amount += e.boostAmount;
+            }
+            if (source.ally2 != null && e.boostCheck.equals(source.ally2.clazz)) {
+                amount += e.boostAmount;
+            }
+        } else if ("enemiesRace".equals(e.boostType)) {
+            // TODO: Does this exist?
+        } else if ("enemiesGuild".equals(e.boostType)) {
+        } else if ("enemiesClass".equals(e.boostType)) {
+        } else if ("diceS".equals(e.boostType)) {
+            amount += source.diceCounts[0] * e.boostAmount;
+        } else if ("diceR".equals(e.boostType)) {
+            amount += source.diceCounts[1] * e.boostAmount;
+        } else if ("diceB".equals(e.boostType)) {
+            amount += source.diceCounts[2] * e.boostAmount;
+        } else if ("diceY".equals(e.boostType)) {
+            amount += source.diceCounts[3] * e.boostAmount;
+        }
+
+        return amount;
     }
 
     public static void execute(String effect, int amount, CharacterStatus source, CharacterStatus target) {

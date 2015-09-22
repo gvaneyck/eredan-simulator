@@ -18,20 +18,52 @@ public class EredanSimulator {
     public static Logger log = Logger.getLogger("foo");
     public static Random rand = new Random();
 
-    public static Map<Integer, NodeStats> teamStats = new HashMap<>();
-    public static Set<TeamState> initialStates = new HashSet<>();
+    public static Map<TeamState, NodeStats> teamStats = new HashMap<>();
 
     public static void main(String[] args) {
         List<Integer> team1 = new ArrayList<>();
         team1.add(0); team1.add(1); team1.add(2); team1.add(3); team1.add(4);
         List<Integer> team2 = new ArrayList<>();
-        team2.add(5); team2.add(6); team2.add(7); team2.add(8); team2.add(9);
-        runSimTeam(team1, team2);
-        for (TeamState ts : initialStates) {
-            log.debug(ts.hashCode());
-            NodeStats stats = teamStats.get(ts.hashCode());
-            log.debug("");
+        team2.add(5); team2.add(6); team2.add(7); team2.add(8); team2.add(12);
+
+        int runs = 10000000;
+        for (int i = 0; i < runs; i++) {
+            if (i % 10000 == 0) {
+                log.debug(String.format("%.1f", (double) i / runs * 100));
+            }
+            runSimTeam(team1, team2);
         }
+
+        Map<String, String> results = new HashMap<>();
+        for (TeamState ts : teamStats.keySet()) {
+            if (ts.round == 0 && ts.me == null && ts.them == null) {
+                NodeStats stats = teamStats.get(ts);
+                int bestWins = 0;
+                int bestVisits = 0;
+                double bestScore = -1;
+                for (int i = 0; i < stats.childStats.length; i++) {
+                    double tempScore = (double)stats.childStats[i].wins / stats.visits;
+                    if (tempScore > bestScore) {
+                        bestScore = tempScore;
+                        bestWins = stats.childStats[i].wins;
+                        bestVisits = stats.visits;
+                    }
+                }
+
+                String value = String.format("%5d / %5d = %.1f ", bestWins, bestVisits, bestScore * 100);
+                String key = String.format("%s %s %s VS %s %s %s",
+                        ts.allies.get(0).name.substring(0, 5),
+                        ts.allies.get(1).name.substring(0, 5),
+                        ts.allies.get(2).name.substring(0, 5),
+                        ts.enemies.get(0).name.substring(0, 5),
+                        ts.enemies.get(1).name.substring(0, 5),
+                        ts.enemies.get(2).name.substring(0, 5));
+
+                results.put(key, value);
+            }
+        }
+
+        results.entrySet().stream().sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey())).forEach(e -> log.debug(e.getValue() + " " + e.getKey()));
     }
 
     public static void mcts(int h1, int h2) {
@@ -77,12 +109,6 @@ public class EredanSimulator {
 
         p1state.enemies = p2state.allies;
         p2state.enemies = p1state.allies;
-
-        log.debug(p1state.hashCode() + " " + p1state.copy().hashCode());
-        log.debug(p2state.hashCode() + " " + p2state.copy().hashCode());
-
-        initialStates.add(p1state.copy());
-        initialStates.add(p2state.copy());
 
         List<NodeStats> p1stats = new ArrayList<>();
         List<NodeStats> p2stats = new ArrayList<>();
@@ -174,14 +200,14 @@ public class EredanSimulator {
             p1state.dice = 0;
             p1state.me = null;
             p1state.them = null;
-            if (team1cs.size() > 0) { p1state.allies.add(team1cs.remove(0)); }
+            if (team1cs.size() > 0) { p1state.addAlly(team1cs.remove(0)); }
             p1state.attacker = !p1state.attacker;
             p1state.round++;
 
             p2state.dice = 0;
             p2state.me = null;
             p2state.them = null;
-            if (team2cs.size() > 0) { p2state.allies.add(team2cs.remove(0)); }
+            if (team2cs.size() > 0) { p2state.addAlly(team2cs.remove(0)); }
             p2state.attacker = !p2state.attacker;
             p2state.round++;
         }
@@ -198,7 +224,8 @@ public class EredanSimulator {
     }
 
     public static NodeStats getNodeStats(TeamState state) {
-        if (!teamStats.containsKey(state.hashCode())) {
+        if (!teamStats.containsKey(state)) {
+            TeamState key = state.copy();
             NodeStats stats = new NodeStats();
             if (state.me == null) {
                 stats.generateChildren(Math.min(3, 5 - state.round));
@@ -206,8 +233,8 @@ public class EredanSimulator {
                 stats.generateChildren(Dice.keeps[state.dice].length);
             }
 
-            teamStats.put(state.hashCode(), stats);
+            teamStats.put(key, stats);
         }
-        return teamStats.get(state.hashCode());
+        return teamStats.get(state);
     }
 }

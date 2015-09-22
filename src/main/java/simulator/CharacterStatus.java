@@ -44,4 +44,25 @@ public class CharacterStatus implements Cloneable {
 
         this.abilities = hero.abilities;
     }
+
+    public CharacterStatus copy() {
+        CharacterStatus copy = new CharacterStatus();
+        copy.name = name;
+        copy.str = str;
+
+        copy.damage = damage;
+        copy.shield = shield;
+        copy.damageBuff = damageBuff;
+        copy.damageDebuff = damageDebuff;
+        copy.defenseBuff = defenseBuff;
+        copy.defenseDebuff = defenseDebuff;
+        copy.rage = rage;
+        copy.berserk = berserk;
+        copy.crits = crits;
+        copy.dodge = dodge;
+        copy.thorns = thorns;
+        copy.riposte = riposte;
+
+        return copy;
+    }
 }
