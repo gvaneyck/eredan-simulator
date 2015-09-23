@@ -33,6 +33,7 @@ public class CharacterStatus implements Cloneable {
     public int dodge = 0;
     public int thorns = 0;
     public int riposte = 0;
+    public int ice = 0;
 
     public CharacterStatus() { }
 

@@ -68,6 +68,10 @@ public class BattleActionResolver {
     public static int getEffectAmount(Effect e, CharacterStatus source, CharacterStatus target) {
         int amount = e.amount;
 
+        if (e.icy) {
+            amount += (int)((double)e.amount * target.ice / 10);
+        }
+
         if ("sourceIsAttacker".equals(e.boostType) && source.isAttacker) {
             amount += e.boostAmount;
         } else if ("sourceIsDefender".equals(e.boostType) && !source.isAttacker) {
@@ -201,6 +205,9 @@ public class BattleActionResolver {
                 break;
             case DICE_CHANGE_YS:
                 diceChangeYS(source, target, args);
+                break;
+            case ICE:
+                ice(source, target, args);
                 break;
             default:
                 throw new RuntimeException("Invalid action");
@@ -393,5 +400,9 @@ public class BattleActionResolver {
         int change = Math.min(args.amount, source.diceCounts[3]);
         source.diceCounts[3] -= change;
         source.diceCounts[0] += change;
+    }
+
+    public static void ice(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        target.ice += args.amount;
     }
 }

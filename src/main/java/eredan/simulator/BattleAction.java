@@ -28,6 +28,7 @@ public enum BattleAction {
     LIFEDRAIN,
     DICE_CHANGE_RS,
     DICE_CHANGE_BS,
-    DICE_CHANGE_YS
+    DICE_CHANGE_YS,
+    ICE
     ;
 }

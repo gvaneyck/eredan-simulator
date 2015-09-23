@@ -27,6 +27,35 @@
         ]
     },
     {
+        "name": "Apagori",
+        "guild": "Sap Hearts",
+        "race": "hom'chai",
+        "clazz": "warrior",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 250, "boost_type": "targetRace", "boost_check": "hom'chai", "boost_amount": 125 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "INCREASE_STR", "amount": 100 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 200 },
+                    { "effect": "HIT", "amount": 0, "boost_type": "sourceStr", "boost_amount": 3 }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Baligu'Diga Ex",
         "guild": "Sap Hearts",
         "race": "undead",
@@ -36,7 +65,8 @@
             {
                 "cost": "RRB",
                 "effects": [
-                    { "effect": "SHOCK", "amount": 600 }
+                    { "effect": "SHOCK", "amount": 600 },
+                    { "effect": "DODGE", "amount": 2 }
                 ]
             },
             {
@@ -73,7 +103,7 @@
                 "cost": "RY",
                 "effects": [
                     { "effect": "RIPOSTE", "amount": 2 },
-                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "sourceGuild", "boost_check": "Sap Hearts", "boost_amount": 45, "all": true }
+                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "sourceRace", "boost_check": "elfine", "boost_amount": 45, "all": true }
                 ]
             },
             {
@@ -109,6 +139,36 @@
                 "effects": [
                     { "effect": "LIFEDRAIN", "amount": 250 },
                     { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Cervus",
+        "guild": "Sap Hearts",
+        "race": "dais",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 0, "boost_type": "sourceRace", "boost_check": "dais", "boost_amount": 1 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "HEAL", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HEAL", "amount": 400 },
+                    { "effect": "HIT", "amount": 200 }
                 ]
             }
         ]
@@ -201,6 +261,35 @@
         ]
     },
     {
+        "name": "Eikytan Ex",
+        "guild": "Sap Hearts",
+        "race": "dais",
+        "clazz": "mage",
+        "str": 105,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "ICE", "amount": 10 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 490 },
+                    { "effect": "THORNS", "amount": 70 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "HEAL", "amount": 300, "icy": true }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Fe'y Ex",
         "guild": "Sap Hearts",
         "race": "dais",
@@ -288,6 +377,35 @@
         ]
     },
     {
+        "name": "Kabra'Kan Ex",
+        "guild": "Sap Hearts",
+        "race": "hom'chai",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 300, "boost_type": "alliesRace", "boost_check": "hom'chai", "boost_amount": 150 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 250 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RRR",
+                "effects": [
+                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "sourceStr", "boost_amount": 2 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Kachu'Taoa",
         "guild": "Sap Hearts",
         "race": "beast",
@@ -297,7 +415,7 @@
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "HIT", "amount": 500 },
                     { "effect": "THORNS", "amount": 50 }
                 ]
             },
@@ -311,8 +429,38 @@
             {
                 "cost": "Y",
                 "effects": [
-                    { "effect": "HEAL", "amount": 350 },
+                    { "effect": "HEAL", "amount": 400 },
                     { "effect": "INCREASE_STR", "amount": 50 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Katla Ex",
+        "guild": "Sap Hearts",
+        "race": "elfine",
+        "clazz": "marauder",
+        "str": 155,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "ATTACK", "amount": 1 },
+                    { "effect": "INCREASE_STR", "amount": 30 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 200 },
+                    { "effect": "ATTACK", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "HIT", "amount": 450 }
                 ]
             }
         ]
@@ -405,29 +553,63 @@
         ]
     },
     {
-        "name": "Melissandre",
+        "name": "Kyr'ieden",
         "guild": "Sap Hearts",
-        "race": "elfine",
+        "race": "dais",
         "clazz": "marauder",
-        "str": 140,
+        "str": 160,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "ATTACK", "amount": 2 },
-                    { "effect": "RIPOSTE", "amount": 1 }
-                ]
-            },
-            {
-                "cost": "RR",
-                "effects": [
-                    { "effect": "RAGE", "amount": 30, "all": true }
+                    { "effect": "THORNS", "amount": 120 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 60 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "ATTACK", "amount": 3 }
+                    { "effect": "THORNS", "amount": 60 },
+                    { "effect": "HIT", "amount": 100 },
+                    { "effect": "HIT", "amount": 100 },
+                    { "effect": "HIT", "amount": 100 },
+                    { "effect": "HIT", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "THORNS", "amount": 30 },
+                    { "effect": "HEAL", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Melissandre",
+        "guild": "Sap Hearts",
+        "race": "elfine",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "RAGE", "amount": 0, "boost_type": "sourceGuild", "boost_check": "Sap Hearts", "boost_amount": 30, "all": true }
+                ]
+            },
+            {
+                "cost": "RRR",
+                "effects": [
+                    { "effect": "ATTACK", "amount": 5 }
                 ]
             }
         ]
@@ -507,7 +689,7 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "HIT", "amount": 450, "boost_type": "alliesClass", "boost_check": "mage", "boost_amount": 100 }
+                    { "effect": "HIT", "amount": 400, "boost_type": "alliesClass", "boost_check": "mage", "boost_amount": 100 }
                 ]
             },
             {
@@ -612,23 +794,25 @@
         "str": 130,
         "abilities": [
             {
-                "cost": "RR",
+                "cost": "RB",
                 "effects": [
-                    { "effect": "RAGE", "amount": 100 }
+                    { "effect": "THORNS", "amount": 60 },
+                    { "effect": "THORNS", "amount": 40, "all": true }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "DAMAGE_BUFF", "amount": 30, "all": true },
-                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "RAGE", "amount": 40 }
                 ]
             },
             {
-                "cost": "RB",
+                "cost": "RR",
                 "effects": [
-                    { "effect": "HIT", "amount": 300 },
-                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
                 ]
             }
         ]

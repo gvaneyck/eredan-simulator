@@ -41,35 +41,24 @@ public class EredanSimulator {
     }
 
     public static void main(String[] args) {
-        try { System.in.read(); } catch (Exception e) { }
+//        try { System.in.read(); } catch (Exception e) { }
         List<List<Integer>> teams = new ArrayList<>();
 
         List<Integer> team;
-
-        team = new ArrayList<>();
-        team.add(1); team.add(8); team.add(10); team.add(12); team.add(17);
-        teams.add(team);
-
-        team = new ArrayList<>();
-        team.add(1); team.add(8); team.add(10); team.add(17); team.add(20);
-        teams.add(team);
-
-        team = new ArrayList<>();
-        team.add(1); team.add(4); team.add(8); team.add(10); team.add(12);
-        teams.add(team);
-
-        team = new ArrayList<>();
-        team.add(1); team.add(10); team.add(12); team.add(15); team.add(20);
-        teams.add(team);
-
-        team = new ArrayList<>();
-        team.add(1); team.add(4); team.add(10); team.add(17); team.add(20);
-        teams.add(team);
+        for (int i = 0; i < 5; i++) {
+            team = new ArrayList<>();
+            team.add(i*5);
+            team.add(i*5+1);
+            team.add(i*5+2);
+            team.add(i*5+3);
+            team.add(i*5+4);
+            teams.add(team);
+        }
 
         for (int i = 0; i < 5; i++) {
-            List<Integer> teamMutant = new ArrayList<>(teams.get(i));
-            mutateUnique(teams, teamMutant, 5);
-            teams.add(teamMutant);
+            mutateUniqueAndAdd(teams, new ArrayList<>(teams.get(i)), 5);
+            mutateUniqueAndAdd(teams, new ArrayList<>(teams.get(i)), 5);
+            mutateUniqueAndAdd(teams, new ArrayList<>(teams.get(i)), 5);
         }
 
         for (int i = 0; i < 100; i++) {
@@ -95,10 +84,10 @@ public class EredanSimulator {
             // +4 mutations of each
             for (int k = 0; k < 4; k++) {
                 List<Integer> sourceTeam = wlist.get(k).list;
-                mutateUnique(teams, new ArrayList<>(sourceTeam), 2);
-                mutateUnique(teams, new ArrayList<>(sourceTeam), 3);
-                mutateUnique(teams, new ArrayList<>(sourceTeam), 4);
-                mutateUnique(teams, new ArrayList<>(sourceTeam), 5);
+                mutateUniqueAndAdd(teams, new ArrayList<>(sourceTeam), 2);
+                mutateUniqueAndAdd(teams, new ArrayList<>(sourceTeam), 3);
+                mutateUniqueAndAdd(teams, new ArrayList<>(sourceTeam), 4);
+                mutateUniqueAndAdd(teams, new ArrayList<>(sourceTeam), 5);
             }
         }
     }
@@ -156,7 +145,7 @@ public class EredanSimulator {
         return teamWins;
     }
 
-    public static void mutateUnique(List<List<Integer>> teams, List<Integer> team, int n) {
+    public static void mutateUniqueAndAdd(List<List<Integer>> teams, List<Integer> team, int n) {
         mutate(team, n);
         while (teams.contains(team)) {
             mutate(team, 1);
