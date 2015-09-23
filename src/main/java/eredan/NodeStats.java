@@ -1,3 +1,5 @@
+package eredan;
+
 public class NodeStats {
     public int lastVisit;
     public int visits;
@@ -5,17 +7,15 @@ public class NodeStats {
 
     public void generateChildren(int nChildren) {
         childStats = new Stats[nChildren];
-        for (int i = 0; i < nChildren; i++) {
-            childStats[i] = new Stats();
-        }
     }
 
     public int bestChild() {
         double bestScore = -1;
         int idx = 0;
         for (int i = 0; i < childStats.length; i++) {
-            if (childStats[i].score > bestScore) {
-                bestScore = childStats[i].score;
+            double score = (childStats[i] != null ? childStats[i].score : 1);
+            if (score > bestScore) {
+                bestScore = score;
                 idx = i;
             }
         }
@@ -25,11 +25,18 @@ public class NodeStats {
     public int visitBest() {
         lastVisit = bestChild();
         visits++;
+        if (childStats[lastVisit] == null) {
+            childStats[lastVisit] = new Stats();
+        }
         childStats[lastVisit].visit(visits);
         return lastVisit;
     }
 
     public void addWin() {
         childStats[lastVisit].win(visits);
+    }
+
+    public double getChildWinRate(int i) {
+        return (childStats[i] != null ? (double)childStats[i].wins / visits : -1);
     }
 }

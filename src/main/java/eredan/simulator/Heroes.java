@@ -1,8 +1,8 @@
-package simulator;
+package eredan.simulator;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dto.Hero;
+import eredan.dto.Hero;
 
 import java.io.File;
 import java.util.List;
@@ -18,6 +18,9 @@ public class Heroes {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             heroes = objectMapper.readValue(new File("heroes.json"), new TypeReference<List<Hero>>() { });
+            for (int i = 0; i < heroes.size(); i++) {
+                heroes.get(i).id = i;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

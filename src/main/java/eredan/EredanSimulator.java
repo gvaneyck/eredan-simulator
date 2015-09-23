@@ -1,8 +1,10 @@
+package eredan;
+
 import org.apache.log4j.Logger;
-import simulator.BattleData;
-import simulator.CharacterStatus;
-import simulator.Dice;
-import simulator.Heroes;
+import eredan.simulator.BattleData;
+import eredan.simulator.CharacterStatus;
+import eredan.simulator.Dice;
+import eredan.simulator.Heroes;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,12 +13,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+/*
+TODO: Performance
+10.5 TeamState.hashCode
+8.4 EredanSimulator.getNodeStats
+8.4 CharacterStatus.copy
+7.7 CharacterStatus.equals
+7.7 TeamState.copy
+7.7 TeamState.equals
+4.6 CharacterStatus.hashCode
+ */
+
 public class EredanSimulator {
 
     public static Logger log = Logger.getLogger("foo");
     public static Random rand = new Random();
 
-    public static Map<TeamState, NodeStats> teamStats = new HashMap<>();
+    public static Map<TeamState, NodeStats> teamStats = new HashMap<>(1000000);
 
     protected static class WeightedList {
         int weight;
@@ -28,17 +41,35 @@ public class EredanSimulator {
     }
 
     public static void main(String[] args) {
+        try { System.in.read(); } catch (Exception e) { }
         List<List<Integer>> teams = new ArrayList<>();
-        for (int i = 0; i < Heroes.heroes.size() - 5; i += 5) {
-            for (int j = 0; j < 5; j++) {
-                List<Integer> team = new ArrayList<>();
-                team.add(i);
-                team.add(i + 1);
-                team.add(i + 2);
-                team.add(i + 3);
-                team.add(i + 4);
-                mutateUnique(teams, team, 2);
-            }
+
+        List<Integer> team;
+
+        team = new ArrayList<>();
+        team.add(1); team.add(8); team.add(10); team.add(12); team.add(17);
+        teams.add(team);
+
+        team = new ArrayList<>();
+        team.add(1); team.add(8); team.add(10); team.add(17); team.add(20);
+        teams.add(team);
+
+        team = new ArrayList<>();
+        team.add(1); team.add(4); team.add(8); team.add(10); team.add(12);
+        teams.add(team);
+
+        team = new ArrayList<>();
+        team.add(1); team.add(10); team.add(12); team.add(15); team.add(20);
+        teams.add(team);
+
+        team = new ArrayList<>();
+        team.add(1); team.add(4); team.add(10); team.add(17); team.add(20);
+        teams.add(team);
+
+        for (int i = 0; i < 5; i++) {
+            List<Integer> teamMutant = new ArrayList<>(teams.get(i));
+            mutateUnique(teams, teamMutant, 5);
+            teams.add(teamMutant);
         }
 
         for (int i = 0; i < 100; i++) {
@@ -73,7 +104,7 @@ public class EredanSimulator {
     }
 
     public static int[] runRoundRobin(List<List<Integer>> teams) {
-        int runs = 10000;
+        int runs = 100000;
         int[] teamWins = new int[teams.size()];
         for (int t1 = 0; t1 < teams.size(); t1++) {
             for (int t2 = 0; t2 < teams.size(); t2++) {
@@ -96,7 +127,7 @@ public class EredanSimulator {
 
                         NodeStats stats = teamStats.get(ts);
                         for (int q = 0; q < stats.childStats.length; q++) {
-                            double tempScore = (double)stats.childStats[q].wins / stats.visits;
+                            double tempScore = stats.getChildWinRate(q);
                             if (tempScore > bestScore) {
                                 bestScore = tempScore;
                                 bestWins = stats.childStats[q].wins;
@@ -190,7 +221,7 @@ public class EredanSimulator {
         int bestVisits = 0;
         double bestScore = -1;
         for (int i = 0; i < stats.childStats.length; i++) {
-            double tempScore = (double)stats.childStats[i].wins / stats.visits;
+            double tempScore = stats.getChildWinRate(i);
             if (tempScore > bestScore) {
                 bestScore = tempScore;
                 bestWins = stats.childStats[i].wins;

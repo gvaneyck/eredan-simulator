@@ -1,8 +1,8 @@
-package simulator;
+package eredan.simulator;
 
-import dto.Ability;
-import dto.Effect;
-import dto.Hero;
+import eredan.dto.Ability;
+import eredan.dto.Effect;
+import eredan.dto.Hero;
 
 import java.util.ArrayList;
 import java.util.HashMap;

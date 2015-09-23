@@ -1,4 +1,4 @@
-package simulator;
+package eredan.simulator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -106,7 +106,6 @@ public class Dice {
             }
         }
         Collections.sort(newDice);
-        Collections.reverse(newDice);
-        return toIndex.get(newDice.get(0) + (newDice.get(1) << 2) + (newDice.get(2) << 4) + (newDice.get(3) << 6) + (newDice.get(4) << 8) + (newDice.get(5) << 10));
+        return toIndex.get(newDice.get(5) + (newDice.get(4) << 2) + (newDice.get(3) << 4) + (newDice.get(2) << 6) + (newDice.get(1) << 8) + (newDice.get(0) << 10));
     }
 }

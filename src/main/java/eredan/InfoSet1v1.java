@@ -1,3 +1,5 @@
+package eredan;
+
 public class InfoSet1v1 {
     public int phase;
     public boolean attacker;

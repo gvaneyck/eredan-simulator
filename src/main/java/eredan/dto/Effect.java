@@ -1,7 +1,7 @@
-package dto;
+package eredan.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import simulator.BattleAction;
+import eredan.simulator.BattleAction;
 
 public class Effect {
     public BattleAction effect;

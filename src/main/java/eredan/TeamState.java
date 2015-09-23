@@ -1,5 +1,7 @@
+package eredan;
+
 import lombok.EqualsAndHashCode;
-import simulator.CharacterStatus;
+import eredan.simulator.CharacterStatus;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,7 +33,7 @@ public class TeamState {
 
     public void addAlly(CharacterStatus cs) {
         allies.add(cs);
-        Collections.sort(allies, (cs1, cs2) -> cs1.name.compareTo(cs2.name));
+        Collections.sort(allies, (cs1, cs2) -> Integer.compare(cs1.id, cs2.id));
     }
 
     public TeamState copy() {

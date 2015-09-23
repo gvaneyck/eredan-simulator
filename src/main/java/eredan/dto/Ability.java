@@ -1,4 +1,4 @@
-package dto;
+package eredan.dto;
 
 import java.util.List;
 

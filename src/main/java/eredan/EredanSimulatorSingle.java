@@ -1,7 +1,9 @@
+package eredan;
+
 import org.apache.log4j.Logger;
-import simulator.BattleData;
-import simulator.Dice;
-import simulator.Heroes;
+import eredan.simulator.BattleData;
+import eredan.simulator.Dice;
+import eredan.simulator.Heroes;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,13 +1,14 @@
-package simulator;
+package eredan.simulator;
 
-import dto.Ability;
-import dto.Hero;
+import eredan.dto.Ability;
+import eredan.dto.Hero;
 import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
-@EqualsAndHashCode(exclude={"guild", "race", "clazz", "diceCounts", "isAttacker", "abilities", "ally1", "ally2"})
+@EqualsAndHashCode(exclude={"name", "guild", "race", "clazz", "diceCounts", "isAttacker", "abilities", "ally1", "ally2"})
 public class CharacterStatus implements Cloneable {
+    public int id;
     public String name;
     public String guild;
     public String race;
@@ -36,6 +37,7 @@ public class CharacterStatus implements Cloneable {
     public CharacterStatus() { }
 
     public CharacterStatus(Hero hero) {
+        this.id = hero.id;
         this.name = hero.name;
         this.guild = hero.guild;
         this.race = hero.race;

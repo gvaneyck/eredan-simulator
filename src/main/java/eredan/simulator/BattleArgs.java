@@ -1,4 +1,4 @@
-package simulator;
+package eredan.simulator;
 
 public class BattleArgs {
     int amount;

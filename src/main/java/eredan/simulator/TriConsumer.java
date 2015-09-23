@@ -1,4 +1,4 @@
-package simulator;
+package eredan.simulator;
 
 import java.util.Objects;
 

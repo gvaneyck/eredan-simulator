@@ -1,7 +1,7 @@
-package simulator;
+package eredan.simulator;
 
-import dto.Ability;
-import dto.Effect;
+import eredan.dto.Ability;
+import eredan.dto.Effect;
 import org.apache.log4j.Logger;
 
 import java.util.HashMap;

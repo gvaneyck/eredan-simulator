@@ -1,3 +1,5 @@
+package eredan;
+
 public class Stats {
     public static final double C = 0.5;
 
@@ -7,11 +9,11 @@ public class Stats {
 
     public void visit(int parentVisits) {
         visits++;
-        score = (double)wins / visits + 0.5 * Math.sqrt(Math.log(parentVisits) / visits);
+        score = (double)wins / visits + C * Math.sqrt(Math.log(parentVisits) / visits);
     }
 
     public void win(int parentVisits) {
         wins++;
-        score = (double)wins / visits + 0.5 * Math.sqrt(Math.log(parentVisits) / visits);
+        score = (double)wins / visits + C * Math.sqrt(Math.log(parentVisits) / visits);
     }
 }
