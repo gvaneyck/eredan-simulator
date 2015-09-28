@@ -9,7 +9,7 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "RAGE", "amount": 30, "boost_type": "sourceIsAttacker", "boost_amount": 15 }
+                    { "effect": "RAGE", "amount": 30, "boost_type": "IS_ATTACKER", "boost_amount": 15 }
                 ]
             },
             {
@@ -36,7 +36,7 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "SHIELD", "amount": 250, "boost_type": "targetRace", "boost_check": "hom'chai", "boost_amount": 125 }
+                    { "effect": "SHIELD", "amount": 250, "boost_type": "TARGET_RACE", "boost_check": "hom'chai", "boost_amount": 125 }
                 ]
             },
             {
@@ -50,7 +50,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "SHIELD", "amount": 200 },
-                    { "effect": "HIT", "amount": 0, "boost_type": "sourceStr", "boost_amount": 3 }
+                    { "effect": "HIT", "amount": 0, "boost_type": "STR", "boost_amount": 3 }
                 ]
             }
         ]
@@ -103,7 +103,7 @@
                 "cost": "RY",
                 "effects": [
                     { "effect": "RIPOSTE", "amount": 2 },
-                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "sourceRace", "boost_check": "elfine", "boost_amount": 45, "all": true }
+                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "SOURCE_RACE", "boost_check": "elfine", "boost_amount": 45, "all": true }
                 ]
             },
             {
@@ -153,7 +153,7 @@
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "CRITICAL", "amount": 0, "boost_type": "sourceRace", "boost_check": "dais", "boost_amount": 1 },
+                    { "effect": "CRITICAL", "amount": 0, "boost_type": "SOURCE_RACE", "boost_check": "dais", "boost_amount": 1 },
                     { "effect": "DICE_CHANGE_YS", "amount": 1 }
                 ]
             },
@@ -212,7 +212,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "HIT", "amount": 200 },
-                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "alliesGuild", "boost_check": "Sap Hearts", "boost_amount": 30 }
+                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "ALLIES_GUILD", "boost_check": "Sap Hearts", "boost_amount": 30 }
                 ]
             },
             {
@@ -249,13 +249,13 @@
                 "cost": "RY",
                 "effects": [
                     { "effect": "FIREBALL", "amount": 200 },
-                    { "effect": "HIT", "amount": 0, "boost_type": "sourceStr", "boost_amount": 2 }
+                    { "effect": "HIT", "amount": 0, "boost_type": "STR", "boost_amount": 2 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "HEAL", "amount": 250, "boost_type": "diceB", "boost_amount": 50 }
+                    { "effect": "HEAL", "amount": 250, "boost_type": "DICE_B", "boost_amount": 50 }
                 ]
             }
         ]
@@ -305,7 +305,7 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "HIT", "amount": 0, "boost_type": "diceR", "boost_amount": 160 }
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_R", "boost_amount": 160 }
                 ]
             },
             {
@@ -371,7 +371,7 @@
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "HEAL", "amount": 0, "boost_type": "diceR", "boost_amount": 200 }
+                    { "effect": "HEAL", "amount": 0, "boost_type": "DICE_R", "boost_amount": 200 }
                 ]
             }
         ]
@@ -386,7 +386,7 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "HIT", "amount": 300, "boost_type": "alliesRace", "boost_check": "hom'chai", "boost_amount": 150 }
+                    { "effect": "HIT", "amount": 300, "boost_type": "ALLIES_RACE", "boost_check": "hom'chai", "boost_amount": 150 }
                 ]
             },
             {
@@ -399,14 +399,14 @@
             {
                 "cost": "RRR",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "sourceStr", "boost_amount": 2 },
+                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "STR", "boost_amount": 2 },
                     { "effect": "DICE_CHANGE_RS", "amount": 6 }
                 ]
             }
         ]
     },
     {
-        "name": "Kachu'Taoa",
+        "name": "Kachu'Taoa Sv",
         "guild": "Sap Hearts",
         "race": "beast",
         "clazz": "colossus",
@@ -505,14 +505,14 @@
             {
                 "cost": "Y",
                 "effects": [
-                    { "effect": "FIREBALL", "amount": 250, "boost_type": "targetClass", "boost_check": "warrior", "boost_amount": 125 }
+                    { "effect": "FIREBALL", "amount": 250, "boost_type": "TARGET_CLASS", "boost_check": "warrior", "boost_amount": 125 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
                     { "effect": "HIT", "amount": 250 },
-                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "sourceGuild", "boost_check": "Sap Hearts", "boost_amount": 50, "all": true }
+                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Sap Hearts", "boost_amount": 50, "all": true }
                 ]
             },
             {
@@ -603,7 +603,7 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "RAGE", "amount": 0, "boost_type": "sourceGuild", "boost_check": "Sap Hearts", "boost_amount": 30, "all": true }
+                    { "effect": "RAGE", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Sap Hearts", "boost_amount": 30, "all": true }
                 ]
             },
             {
@@ -624,7 +624,7 @@
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "CRITICAL", "amount": 2, "boost_type": "targetRace", "boost_check": "golem", "boost_amount": 1 }
+                    { "effect": "CRITICAL", "amount": 2, "boost_type": "TARGET_RACE", "boost_check": "golem", "boost_amount": 1 }
                 ]
             },
             {
@@ -683,19 +683,19 @@
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "CRITICAL", "amount": 1, "boost_type": "alliesClass", "boost_check": "marauder", "boost_amount": 1 }
+                    { "effect": "CRITICAL", "amount": 1, "boost_type": "ALLIES_CLASS", "boost_check": "marauder", "boost_amount": 1 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "HIT", "amount": 400, "boost_type": "alliesClass", "boost_check": "mage", "boost_amount": 100 }
+                    { "effect": "HIT", "amount": 400, "boost_type": "ALLIES_CLASS", "boost_check": "mage", "boost_amount": 100 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 130, "boost_type": "alliesClass", "boost_check": "warrior", "boost_amount": 65 }
+                    { "effect": "INCREASE_STR", "amount": 130, "boost_type": "ALLIES_CLASS", "boost_check": "warrior", "boost_amount": 65 }
                 ]
             }
         ]
@@ -740,19 +740,19 @@
             {
                 "cost": "RRB",
                 "effects": [
-                    { "effect": "FIREBALL", "amount": 380, "boost_type": "sourceIsAttacker", "boost_amount": 190 }
+                    { "effect": "FIREBALL", "amount": 380, "boost_type": "IS_ATTACKER", "boost_amount": 190 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "FIREBALL", "amount": 150, "boost_type": "targetRace", "boost_check": "guemilite", "boost_amount": 75 }
+                    { "effect": "FIREBALL", "amount": 150, "boost_type": "TARGET_RACE", "boost_check": "guemilite", "boost_amount": 75 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "HEAL", "amount": 350, "boost_type": "sourceIsDefender", "boost_amount": 175 }
+                    { "effect": "HEAL", "amount": 350, "boost_type": "IS_DEFENDER", "boost_amount": 175 }
                 ]
             }
         ]
@@ -842,6 +842,867 @@
                 "effects": [
                     { "effect": "HEAL", "amount": 350 },
                     { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Asajiro the Vagabond",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 330, "boost_type": "TARGET_CLASS", "boost_check": "marauder", "boost_amount": 165 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 220 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "INCREASE_STR", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Chidori",
+        "guild": "Kotoba",
+        "race": "guemelite",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 200 },
+                    { "effect": "SHOCK", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "DODGE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "INCREASE_STR", "amount": 140, "boost_type": "IS_ATTACKER", "boost_amount": 70 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Furagu",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 230, "boost_type": "IS_DEFENDER", "boost_amount": 115 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 170, "boost_type": "SOURCE_RACE", "boost_check": "human", "boost_amount": 85, "all": true }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 280 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Master Ma",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Kotoba", "boost_amount": 50, "all": true }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "STR", "boost_amount": 3 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Hisomu",
+        "guild": "Kotoba",
+        "race": "guemelite",
+        "clazz": "marauder",
+        "str": 160,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "DODGE", "amount": 2, "boost_type": "TARGET_RACE", "boost_check": "elfine", "boost_amount": 2 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 150 },
+                    { "effect": "SHOCK", "amount": 75 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 200 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Toran the Regent",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "mage",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "DAMAGE_BUFF", "amount": 40, "boost_type": "SOURCE_CLASS", "boost_check": "marauder", "boost_amount": 2, "all": true }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "RAGE", "amount": 130 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Yui Ling",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "mage",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "YY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 450, "boost_type": "TARGET_RACE", "boost_check": "demon", "boost_amount": 225 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "HIT", "amount": 750, "boost_type": "TARGET_RACE", "boost_check": "undead", "boost_amount": 375 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HEAL", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Zatochi Kage Ex",
+        "guild": "Kotoba",
+        "race": "undead",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 250, "boost_type": "IS_DEFENDER", "boost_amount": 125 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "INCREASE_STR", "amount": 250, "boost_type": "TARGET_RACE", "boost_check": "human", "boost_amount": 125 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Nashi",
+        "guild": "Kotoba",
+        "race": "undead",
+        "clazz": "mage",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "DAMAGE_BUFF", "amount": 35, "boost_type": "TARGET_RACE", "boost_check": "demon", "boost_amount": 35, "all": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 250 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Sen'Ryaku Ex",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 280 },
+                    { "effect": "INCREASE_STR", "amount": 140 }
+                ]
+            },
+            {
+                "cost": "YY",
+                "effects": [
+                    { "effect": "HIT", "amount": 700 }
+                ]
+            },
+            {
+                "cost": "RRR",
+                "effects": [
+                    { "effect": "HIT", "amount": 1000 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Gakyusha",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 200, "boost_type": "SOURCE_GUILD", "boost_check": "Kotoba", "boost_amount": 100, "all": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "INCREASE_STR", "amount": 150 }
+                ]
+            },
+            {
+                "cost": "BY",
+                "effects": [
+                    { "effect": "HIT", "amount": 300, "boost_type": "ALLIES_GUILD", "boost_check": "Kotoba", "boost_amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ijin Shisei Ex",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "mage",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 350 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 255 },
+                    { "effect": "INCREASE_STR", "amount": 85 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Gan'So",
+        "guild": "Kotoba",
+        "race": "undead",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "INCREASE_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 400 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 0, "boost_type": "DICE_S", "boost_amount": 250 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Shui Khan Ex",
+        "guild": "Kotoba",
+        "race": "guemelite",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "INCREASE_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "BB",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "STR", "boost_amount": 4 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Hime",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "marauder",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1, "all": true },
+                    { "effect": "CRITICAL", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Kotoba", "boost_amount": 1, "all": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 150 },
+                    { "effect": "INCREASE_STR", "amount": 25 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "STR", "boost_amount": 3 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Malyss Ex",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "mage",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 450 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 350 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Shori Ex",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 125 },
+                    { "effect": "INCREASE_STR", "amount": 125 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 200 },
+                    { "effect": "HIT", "amount": 0, "boost_type": "STR", "boost_amount": 2 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "STR", "boost_amount": 3 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Fu-Long Sv",
+        "guild": "Kotoba",
+        "race": "beast",
+        "clazz": "colossus",
+        "str": 200,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 400 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 250 },
+                    { "effect": "INCREASE_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_R", "boost_amount": 150 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kotori Kage Ex",
+        "guild": "Kotoba",
+        "race": "guemelite",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "INCREASE_STR", "amount": 40 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "STR", "boost_amount": 4 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 300 },
+                    { "effect": "BACKSTAB", "amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dabhu Ex",
+        "guild": "Kotoba",
+        "race": "guemelite",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 240 },
+                    { "effect": "INCREASE_STR", "amount": 40 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "SHIELD", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "STR", "boost_amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Xianren Ex",
+        "guild": "Kotoba",
+        "race": "beast",
+        "clazz": "mage",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "HIT", "amount": 250 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 500 },
+                    { "effect": "INCREASE_STR", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 0, "boost_type": "STR", "boost_amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Daijin the Crow Ex",
+        "guild": "Kotoba",
+        "race": "undead",
+        "clazz": "marauder",
+        "str": 160,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 200 },
+                    { "effect": "DODGE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 2 },
+                    { "effect": "BACKSTAB", "amount": 110 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 270 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ban Kuan",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "mage",
+        "str": 90,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 360, "boost_type": "TARGET_CLASS", "boost_check": "priest", "boost_amount": 180 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 600 },
+                    { "effect": "INCREASE_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HEAL", "amount": 250 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Tessai Ex",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RRR",
+                "effects": [
+                    { "effect": "HIT", "amount": 550 },
+                    { "effect": "HIT", "amount": 550 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "INCREASE_STR", "amount": 60 },
+                    { "effect": "SHIELD", "amount": 0, "boost_type": "STR", "boost_amount": 2 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "INCREASE_STR", "amount": 60 },
+                    { "effect": "RIPOSTE", "amount": 1 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dakeza",
+        "guild": "Kotoba",
+        "race": "beast",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 0, "boost_type": "SOURCE_CLASS", "boost_check": "warrior", "boost_amount": 1, "all": true },
+                    { "effect": "DICE_CHANGE_BS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 240 },
+                    { "effect": "HIT", "amount": 240 },
+                    { "effect": "DODGE", "amount": 0, "boost_type": "SOURCE_CLASS", "boost_check": "warrior", "boost_amount": 1, "all": true }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 500 },
+                    { "effect": "INCREASE_STR", "amount": 125 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kitsana Ex",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "mage",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 150 },
+                    { "effect": "INCREASE_STR", "amount": 30 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1 },
+                    { "effect": "FIREBALL", "amount": 600 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 0, "boost_type": "STR", "boost_amount": 4 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Jian Qiao",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "INCREASE_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "DODGE", "amount": 3 }
+                ]
+            },
+            {
+                "cost": "RRR",
+                "effects": [
+                    { "effect": "HIT", "amount": 1000 },
+                    { "effect": "RIPOSTE", "amount": 3 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Karasu Kage Ex",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 350 },
+                    { "effect": "INCREASE_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 0, "boost_type": "STR", "boost_amount": 1 },
+                    { "effect": "DODGE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "STR", "boost_amount": 4 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Li Lan",
+        "guild": "Kotoba",
+        "race": "guemelite",
+        "clazz": "mage",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "INCREASE_STR", "amount": 30 },
+                    { "effect": "SHIELD", "amount": 0, "boost_type": "STR", "boost_amount": 2 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 530 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kasai Ex",
+        "guild": "Kotoba",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "INCREASE_STR", "amount": 80 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 0, "boost_type": "STR", "boost_amount": 3 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "DAMAGE_BUFF", "amount": 180 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
                 ]
             }
         ]

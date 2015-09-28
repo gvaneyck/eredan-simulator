@@ -4,40 +4,13 @@ import eredan.dto.Ability;
 import eredan.dto.Effect;
 import org.apache.log4j.Logger;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class BattleActionResolver {
     public static Logger log = Logger.getLogger("foo");
-    static Map<String, TriConsumer<CharacterStatus, CharacterStatus, BattleArgs>> actions = new HashMap<>();
-
-    static {
-        actions.put("applyDamage", BattleActionResolver::applyDamage);
-        actions.put("attack", BattleActionResolver::attack);
-        actions.put("swordAttack", BattleActionResolver::swordAttack);
-        actions.put("rage", BattleActionResolver::rage);
-        actions.put("berserk", BattleActionResolver::berserk);
-        actions.put("critical", BattleActionResolver::critical);
-        actions.put("dodge", BattleActionResolver::dodge);
-        actions.put("riposte", BattleActionResolver::riposte);
-        actions.put("thorns", BattleActionResolver::thorns);
-        actions.put("increaseStr", BattleActionResolver::increaseStr);
-        actions.put("decreaseStr", BattleActionResolver::decreaseStr);
-        actions.put("damageBuff", BattleActionResolver::damageBuff);
-        actions.put("damageDebuff", BattleActionResolver::damageDebuff);
-        actions.put("heal", BattleActionResolver::heal);
-        actions.put("shield", BattleActionResolver::shield);
-        actions.put("hit", BattleActionResolver::hit);
-        actions.put("smite", BattleActionResolver::smite);
-        actions.put("backstab", BattleActionResolver::backstab);
-        actions.put("shock", BattleActionResolver::shock);
-        actions.put("fireball", BattleActionResolver::fireball);
-        actions.put("lightning", BattleActionResolver::lightning);
-        actions.put("lifedrain", BattleActionResolver::lifedrain);
-        actions.put("diceChangeRS", BattleActionResolver::diceChangeRS);
-        actions.put("diceChangeBS", BattleActionResolver::diceChangeBS);
-        actions.put("diceChangeYS", BattleActionResolver::diceChangeYS);
-    }
+    public static Random rand = new Random();
 
     public static void execute(Ability ability, CharacterStatus source, CharacterStatus target) {
         int activations = countTriggers(source.diceCounts, ability.cost);
@@ -72,57 +45,103 @@ public class BattleActionResolver {
             amount += (int)((double)e.amount * target.ice / 10);
         }
 
-        if ("sourceIsAttacker".equals(e.boostType) && source.isAttacker) {
-            amount += e.boostAmount;
-        } else if ("sourceIsDefender".equals(e.boostType) && !source.isAttacker) {
-            amount += e.boostAmount;
-        } else if ("sourceStr".equals(e.boostType)) {
-            amount += source.str * e.boostAmount;
-        } else if ("sourceRace".equals(e.boostType) && source.race.equals(e.boostCheck)) {
-            amount += e.boostAmount;
-        } else if ("sourceGuild".equals(e.boostType) && source.guild.equals(e.boostCheck)) {
-            amount += e.boostAmount;
-        } else if ("sourceClass".equals(e.boostType) && source.clazz.equals(e.boostCheck)) {
-            amount += e.boostAmount;
-        } else if ("targetRace".equals(e.boostType) && target.race.equals(e.boostCheck)) {
-            amount += e.boostAmount;
-        } else if ("targetGuild".equals(e.boostType) && target.guild.equals(e.boostCheck)) {
-            amount += e.boostAmount;
-        } else if ("targetClass".equals(e.boostType) && target.clazz.equals(e.boostCheck)) {
-            amount += e.boostAmount;
-        } else if ("alliesRace".equals(e.boostType)) {
-            if (source.ally1 != null && e.boostCheck.equals(source.ally1.race)) {
-                amount += e.boostAmount;
+        if (e.boostType != null) {
+            switch (e.boostType) {
+                case IS_ATTACKER:
+                    if (source.isAttacker) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case IS_DEFENDER:
+                    if (!source.isAttacker) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case STR:
+                    amount += source.str * e.boostAmount;
+                    break;
+
+                case SOURCE_RACE:
+                    if (source.race.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case SOURCE_GUILD:
+                    if (source.guild.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case SOURCE_CLASS:
+                    if (source.clazz.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case TARGET_RACE:
+                    if (target.race.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case TARGET_GUILD:
+                    if (target.guild.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case TARGET_CLASS:
+                    if (target.clazz.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case ALLIES_RACE:
+                    if (source.ally1 != null && source.ally1.race.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    if (source.ally2 != null && source.ally2.race.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case ALLIES_GUILD:
+                    if (source.ally1 != null && source.ally1.guild.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    if (source.ally2 != null && source.ally2.guild.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case ALLIES_CLASS:
+                    if (source.ally1 != null && source.ally1.clazz.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    if (source.ally2 != null && source.ally2.clazz.equals(e.boostCheck)) {
+                        amount += e.boostAmount;
+                    }
+                    break;
+
+                case DICE_S:
+                    amount += source.diceCounts[Dice.SWORD] * e.boostAmount;
+                    break;
+
+                case DICE_R:
+                    amount += source.diceCounts[Dice.RED] * e.boostAmount;
+                    break;
+
+                case DICE_B:
+                    amount += source.diceCounts[Dice.BLUE] * e.boostAmount;
+                    break;
+
+                case DICE_Y:
+                    amount += source.diceCounts[Dice.YELLOW] * e.boostAmount;
+                    break;
             }
-            if (source.ally2 != null && e.boostCheck.equals(source.ally2.race)) {
-                amount += e.boostAmount;
-            }
-        } else if ("alliesGuild".equals(e.boostType)) {
-            if (source.ally1 != null && e.boostCheck.equals(source.ally1.guild)) {
-                amount += e.boostAmount;
-            }
-            if (source.ally2 != null && e.boostCheck.equals(source.ally2.guild)) {
-                amount += e.boostAmount;
-            }
-        } else if ("alliesClass".equals(e.boostType)) {
-            if (source.ally1 != null && e.boostCheck.equals(source.ally1.clazz)) {
-                amount += e.boostAmount;
-            }
-            if (source.ally2 != null && e.boostCheck.equals(source.ally2.clazz)) {
-                amount += e.boostAmount;
-            }
-        } else if ("enemiesRace".equals(e.boostType)) {
-            // TODO: Does this exist?
-        } else if ("enemiesGuild".equals(e.boostType)) {
-        } else if ("enemiesClass".equals(e.boostType)) {
-        } else if ("diceS".equals(e.boostType)) {
-            amount += source.diceCounts[0] * e.boostAmount;
-        } else if ("diceR".equals(e.boostType)) {
-            amount += source.diceCounts[1] * e.boostAmount;
-        } else if ("diceB".equals(e.boostType)) {
-            amount += source.diceCounts[2] * e.boostAmount;
-        } else if ("diceY".equals(e.boostType)) {
-            amount += source.diceCounts[3] * e.boostAmount;
         }
 
         return amount;
@@ -196,6 +215,9 @@ public class BattleActionResolver {
                 break;
             case LIFEDRAIN:
                 lifedrain(source, target, args);
+                break;
+            case SPELLBREAKER:
+                spellbreaker(source, target, args);
                 break;
             case DICE_CHANGE_RS:
                 diceChangeRS(source, target, args);
@@ -382,6 +404,57 @@ public class BattleActionResolver {
         heal(source, target, args);
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
+    }
+
+    public static void spellbreaker(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        adjustDamage(source, target, args);
+        applyDamage(source, target, args);
+
+        List<String> buffs = new ArrayList<>();
+        if (target.shield > 0) {
+            buffs.add("shield");
+        } else if (target.damageBuff > 0) {
+            buffs.add("damageBuff");
+        } else if (target.defenseBuff > 0) {
+            buffs.add("defenseBuff");
+        } else if (target.rage > 0) {
+            buffs.add("rage");
+        } else if (target.berserk > 0) {
+            buffs.add("berserk");
+        } else if (target.crits > 0) {
+            buffs.add("crits");
+        } else if (target.dodge > 0) {
+            buffs.add("dodge");
+        } else if (target.thorns > 0) {
+            buffs.add("thorns");
+        } else if (target.riposte > 0) {
+            buffs.add("riposte");
+        }
+
+        if (buffs.isEmpty()) {
+            return;
+        }
+
+        String buffToRemove = buffs.get(rand.nextInt(buffs.size()));
+        if (buffToRemove.equals("shield")) {
+            target.shield = 0;
+        } else if (buffToRemove.equals("damageBuff")) {
+            target.damageBuff = 0;
+        } else if (buffToRemove.equals("defenseBuff")) {
+            target.defenseBuff = 0;
+        } else if (buffToRemove.equals("rage")) {
+            target.rage = 0;
+        } else if (buffToRemove.equals("berserk")) {
+            target.berserk = 0;
+        } else if (buffToRemove.equals("crits")) {
+            target.crits = 0;
+        } else if (buffToRemove.equals("dodge")) {
+            target.dodge = 0;
+        } else if (buffToRemove.equals("thorns")) {
+            target.thorns = 0;
+        } else if (buffToRemove.equals("riposte")) {
+            target.riposte = 0;
+        }
     }
 
     public static void diceChangeRS(CharacterStatus source, CharacterStatus target, BattleArgs args) {

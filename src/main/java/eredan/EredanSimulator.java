@@ -26,21 +26,31 @@ TODO: Performance
 
 public class EredanSimulator {
 
+    public static final int SIMULATIONS = 10000;
+
     public static Logger log = Logger.getLogger("foo");
     public static Random rand = new Random();
 
     public static Map<TeamState, NodeStats> teamStats = new HashMap<>(1000000);
+    public static Map<String, Boolean> recordedResults = new HashMap<>();
 
     protected static class WeightedList {
+        int idx;
         int weight;
         List<Integer> list;
-        public WeightedList(int weight, List<Integer> list) {
+        public WeightedList(int idx, int weight, List<Integer> list) {
+            this.idx = idx;
             this.weight = weight;
             this.list = list;
         }
     }
 
     public static void main(String[] args) {
+        for (int i = 0; i < Heroes.heroes.size(); i++) {
+            System.out.println(i + " " + Heroes.heroes.get(i).name);
+        }
+        System.out.println();
+
 //        try { System.in.read(); } catch (Exception e) { }
         List<List<Integer>> teams = new ArrayList<>();
 
@@ -62,15 +72,11 @@ public class EredanSimulator {
         }
 
         for (int i = 0; i < 100; i++) {
-            for (int k = 0; k < teams.size(); k++) {
-                System.out.println(k + " | " + teams.get(k));
-            }
-
             int[] teamWins = runRoundRobin(teams);
 
             List<WeightedList> wlist = new ArrayList<>();
             for (int k = 0; k < teams.size(); k++) {
-                wlist.add(new WeightedList(teamWins[k], teams.get(k)));
+                wlist.add(new WeightedList(k, teamWins[k], teams.get(k)));
             }
             Collections.sort(wlist, (e1, e2) -> Integer.compare(e2.weight, e1.weight));
 
@@ -79,21 +85,24 @@ public class EredanSimulator {
             // Keep top 5
             for (int k = 0; k < 5; k++) {
                 teams.add(wlist.get(k).list);
+                System.out.println(wlist.get(k).idx + " | " + teams.get(k));
             }
 
             // +4 mutations of each
-            for (int k = 0; k < 4; k++) {
+            for (int k = 0; k < 5; k++) {
                 List<Integer> sourceTeam = wlist.get(k).list;
                 mutateUniqueAndAdd(teams, new ArrayList<>(sourceTeam), 2);
                 mutateUniqueAndAdd(teams, new ArrayList<>(sourceTeam), 3);
                 mutateUniqueAndAdd(teams, new ArrayList<>(sourceTeam), 4);
                 mutateUniqueAndAdd(teams, new ArrayList<>(sourceTeam), 5);
             }
+
+            // And shuffle to avoid stale, many-way ties at top (lower index is tiebreaker)
+            Collections.shuffle(teams);
         }
     }
 
     public static int[] runRoundRobin(List<List<Integer>> teams) {
-        int runs = 100000;
         int[] teamWins = new int[teams.size()];
         for (int t1 = 0; t1 < teams.size(); t1++) {
             for (int t2 = 0; t2 < teams.size(); t2++) {
@@ -102,43 +111,67 @@ public class EredanSimulator {
                 }
 
                 System.out.print(t1 + " VS " + t2);
-                for (int i = 0; i < runs; i++) {
-                    runSimTeam(teams.get(t1), teams.get(t2));
-                }
+                String matchKey = String.format("%d|%d|%d|%d|%d|%d|%d|%d|%d|%d",
+                        teams.get(t1).get(0),
+                        teams.get(t1).get(1),
+                        teams.get(t1).get(2),
+                        teams.get(t1).get(3),
+                        teams.get(t1).get(4),
+                        teams.get(t2).get(0),
+                        teams.get(t2).get(1),
+                        teams.get(t2).get(2),
+                        teams.get(t2).get(3),
+                        teams.get(t2).get(4));
 
-                int wins = 0;
-                int visits = 0;
-                for (TeamState ts : teamStats.keySet()) {
-                    if (ts.round == 0 && ts.me == null && ts.them == null) {
-                        int bestWins = 0;
-                        int bestVisits = 0;
-                        double bestScore = -1;
-
-                        NodeStats stats = teamStats.get(ts);
-                        for (int q = 0; q < stats.childStats.length; q++) {
-                            double tempScore = stats.getChildWinRate(q);
-                            if (tempScore > bestScore) {
-                                bestScore = tempScore;
-                                bestWins = stats.childStats[q].wins;
-                                bestVisits = stats.visits;
-                            }
-                        }
-
-                        wins += bestWins;
-                        visits += bestVisits;
+                if (recordedResults.containsKey(matchKey)) {
+                    if (recordedResults.get(matchKey)) {
+                        System.out.println(" | " + t1);
+                        teamWins[t1]++;
+                    } else {
+                        System.out.println(" | " + t2);
+                        teamWins[t2]++;
                     }
-                }
-
-                double winRate = (double)wins / visits;
-                if (winRate > 0.5) {
-                    System.out.println(String.format(" | %d %.1f", t1, winRate * 100));
-                    teamWins[t1]++;
                 } else {
-                    System.out.println(String.format(" | %d %.1f", t2, (1 - winRate) * 100));
-                    teamWins[t2]++;
-                }
+                    for (int i = 0; i < SIMULATIONS; i++) {
+                        runSimTeam(teams.get(t1), teams.get(t2));
+                    }
 
-                teamStats.clear();
+                    int wins = 0;
+                    int visits = 0;
+                    for (TeamState ts : teamStats.keySet()) {
+                        if (ts.round == 0 && ts.me == null && ts.them == null) {
+                            int bestWins = 0;
+                            int bestVisits = 0;
+                            double bestScore = -1;
+
+                            NodeStats stats = teamStats.get(ts);
+                            for (int q = 0; q < stats.childStats.length; q++) {
+                                double tempScore = stats.getChildWinRate(q);
+                                if (tempScore > bestScore) {
+                                    bestScore = tempScore;
+                                    bestWins = stats.childStats[q].wins;
+                                    bestVisits = stats.visits;
+                                }
+                            }
+
+                            wins += bestWins;
+                            visits += bestVisits;
+                        }
+                    }
+
+                    double winRate = (double) wins / visits;
+                    if (winRate > 0.5) {
+                        System.out.println(String.format(" | %d %.1f", t1, winRate * 100));
+                        teamWins[t1]++;
+                        recordedResults.put(matchKey, true);
+                    } else {
+                        System.out.println(String.format(" | %d %.1f", t2, (1 - winRate) * 100));
+                        teamWins[t2]++;
+                        recordedResults.put(matchKey, false);
+                    }
+
+                    teamStats.clear();
+                }
             }
         }
 

@@ -1,8 +1,5 @@
 package eredan.simulator;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-@JsonFormat(shape=JsonFormat.Shape.OBJECT)
 public enum BattleAction {
     APPLY_DAMAGE,
     ATTACK,
@@ -26,9 +23,9 @@ public enum BattleAction {
     FIREBALL,
     LIGHTNING,
     LIFEDRAIN,
+    SPELLBREAKER,
     DICE_CHANGE_RS,
     DICE_CHANGE_BS,
     DICE_CHANGE_YS,
     ICE
-    ;
 }
