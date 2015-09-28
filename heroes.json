@@ -563,7 +563,7 @@
                 "cost": "RB",
                 "effects": [
                     { "effect": "THORNS", "amount": 120 },
-                    { "effect": "DICE_CHANGE_BS", "amount": 60 }
+                    { "effect": "DICE_CHANGE_BS", "amount": 6 }
                 ]
             },
             {

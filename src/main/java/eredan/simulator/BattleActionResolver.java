@@ -458,21 +458,21 @@ public class BattleActionResolver {
     }
 
     public static void diceChangeRS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        int change = Math.min(args.amount, source.diceCounts[1]);
-        source.diceCounts[1] -= change;
-        source.diceCounts[0] += change;
+        int change = Math.min(args.amount, source.diceCounts[Dice.RED]);
+        source.diceCounts[Dice.RED] -= change;
+        source.diceCounts[Dice.SWORD] += change;
     }
 
     public static void diceChangeBS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        int change = Math.min(args.amount, source.diceCounts[2]);
-        source.diceCounts[2] -= change;
-        source.diceCounts[0] += change;
+        int change = Math.min(args.amount, source.diceCounts[Dice.BLUE]);
+        source.diceCounts[Dice.BLUE] -= change;
+        source.diceCounts[Dice.SWORD] += change;
     }
 
     public static void diceChangeYS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        int change = Math.min(args.amount, source.diceCounts[3]);
-        source.diceCounts[3] -= change;
-        source.diceCounts[0] += change;
+        int change = Math.min(args.amount, source.diceCounts[Dice.YELLOW]);
+        source.diceCounts[Dice.YELLOW] -= change;
+        source.diceCounts[Dice.SWORD] += change;
     }
 
     public static void ice(CharacterStatus source, CharacterStatus target, BattleArgs args) {
