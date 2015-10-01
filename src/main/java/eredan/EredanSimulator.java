@@ -26,6 +26,7 @@ TODO: Performance
 
 public class EredanSimulator {
 
+    public static final int GENERATIONS = 1000;
     public static final int SIMULATIONS = 10000;
 
     public static Logger log = Logger.getLogger("foo");
@@ -46,16 +47,63 @@ public class EredanSimulator {
     }
 
     public static void main(String[] args) {
+        // For profiling
+//        try { System.in.read(); } catch (Exception e) { }
+
         for (int i = 0; i < Heroes.heroes.size(); i++) {
             System.out.println(i + " " + Heroes.heroes.get(i).name);
         }
         System.out.println();
 
-//        try { System.in.read(); } catch (Exception e) { }
-        List<List<Integer>> teams = new ArrayList<>();
+//        testChallenger();
+        runGeneticAlgorithm();
+    }
 
+    public static void testChallenger() {
+        List<List<Integer>> teams = new ArrayList<>();
         List<Integer> team;
-        for (int i = 0; i < 5; i++) {
+        team = new ArrayList<>(); team.add(14); team.add(46); team.add(65); team.add(71); team.add(76); teams.add(team);
+        team = new ArrayList<>(); team.add(14); team.add(46); team.add(50); team.add(76); team.add(88); teams.add(team);
+        team = new ArrayList<>(); team.add(11); team.add(14); team.add(46); team.add(65); team.add(76); teams.add(team);
+        team = new ArrayList<>(); team.add(14); team.add(19); team.add(46); team.add(76); team.add(87); teams.add(team);
+        team = new ArrayList<>(); team.add(14); team.add(17); team.add(19); team.add(46); team.add(76); teams.add(team);
+
+        // Hate, Carkasse, Kitsana, Amidaraxar, and Lania
+        List<Integer> challenger;
+        challenger = new ArrayList<>(); challenger.add(66); challenger.add(63); challenger.add(54); challenger.add(81); challenger.add(90);
+
+        int temp = 10000000;
+        for (int k = 0; k < teams.size(); k++) {
+            for (int i = 0; i < temp; i++) {
+                runSimTeam(challenger, teams.get(k));
+            }
+            summarizeStats();
+
+            double winRate = getWinRate();
+            if (winRate > 0.5) {
+                System.out.println(String.format("chal VS %d | chal %.1f", k, winRate * 100));
+            } else {
+                System.out.println(String.format("chal VS %d | %d %.1f", k, k, (1 - winRate) * 100));
+            }
+
+            for (int i = 0; i < temp; i++) {
+                runSimTeam(teams.get(k), challenger);
+            }
+            summarizeStats();
+
+            winRate = getWinRate();
+            if (winRate > 0.5) {
+                System.out.println(String.format("%d VS chal | %d %.1f", k, k, winRate * 100));
+            } else {
+                System.out.println(String.format("%d VS chal | chal %.1f", k, (1 - winRate) * 100));
+            }
+        }
+    }
+
+    public static void runGeneticAlgorithm() {
+        List<List<Integer>> teams = new ArrayList<>();
+        List<Integer> team;
+        for (int i = 0; i < 18; i++) {
             team = new ArrayList<>();
             team.add(i*5);
             team.add(i*5+1);
@@ -65,13 +113,7 @@ public class EredanSimulator {
             teams.add(team);
         }
 
-        for (int i = 0; i < 5; i++) {
-            mutateUniqueAndAdd(teams, new ArrayList<>(teams.get(i)), 5);
-            mutateUniqueAndAdd(teams, new ArrayList<>(teams.get(i)), 5);
-            mutateUniqueAndAdd(teams, new ArrayList<>(teams.get(i)), 5);
-        }
-
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < GENERATIONS; i++) {
             int[] teamWins = runRoundRobin(teams);
 
             List<WeightedList> wlist = new ArrayList<>();
@@ -123,43 +165,21 @@ public class EredanSimulator {
                         teams.get(t2).get(3),
                         teams.get(t2).get(4));
 
-                if (recordedResults.containsKey(matchKey)) {
-                    if (recordedResults.get(matchKey)) {
-                        System.out.println(" | " + t1);
-                        teamWins[t1]++;
-                    } else {
-                        System.out.println(" | " + t2);
-                        teamWins[t2]++;
-                    }
-                } else {
+                // Commented out to re-run simulations and potentially get a different winner
+//                if (recordedResults.containsKey(matchKey)) {
+//                    if (recordedResults.get(matchKey)) {
+//                        System.out.println(" | " + t1);
+//                        teamWins[t1]++;
+//                    } else {
+//                        System.out.println(" | " + t2);
+//                        teamWins[t2]++;
+//                    }
+//                } else {
                     for (int i = 0; i < SIMULATIONS; i++) {
                         runSimTeam(teams.get(t1), teams.get(t2));
                     }
 
-                    int wins = 0;
-                    int visits = 0;
-                    for (TeamState ts : teamStats.keySet()) {
-                        if (ts.round == 0 && ts.me == null && ts.them == null) {
-                            int bestWins = 0;
-                            int bestVisits = 0;
-                            double bestScore = -1;
-
-                            NodeStats stats = teamStats.get(ts);
-                            for (int q = 0; q < stats.childStats.length; q++) {
-                                double tempScore = stats.getChildWinRate(q);
-                                if (tempScore > bestScore) {
-                                    bestScore = tempScore;
-                                    bestWins = stats.childStats[q].wins;
-                                    bestVisits = stats.visits;
-                                }
-                            }
-
-                            wins += bestWins;
-                            visits += bestVisits;
-                        }
-                    }
-
-                    double winRate = (double) wins / visits;
+                    double winRate = getWinRate();
                     if (winRate > 0.5) {
                         System.out.println(String.format(" | %d %.1f", t1, winRate * 100));
                         teamWins[t1]++;
@@ -169,13 +189,50 @@ public class EredanSimulator {
                         teamWins[t2]++;
                         recordedResults.put(matchKey, false);
                     }
-
-                    teamStats.clear();
-                }
+//                }
             }
         }
 
+        // For testing one round robin with varying simulation counts
+//        for (int i = 0; i < teamWins.length; i++) {
+//            System.out.println(teamWins[i]);
+//        }
+//        System.exit(0);
+
         return teamWins;
+    }
+
+    public static double getWinRate() {
+        int wins = 0;
+        int visits = 0;
+        for (TeamState ts : teamStats.keySet()) {
+            if (ts.round == 0 && ts.me == null && ts.them == null) {
+//                            int bestWins = 0;
+//                            int bestVisits = 0;
+                double bestScore = -1;
+
+                NodeStats stats = teamStats.get(ts);
+                for (int q = 0; q < stats.childStats.length; q++) {
+                    double tempScore = stats.getChildWinRate(q);
+                    if (tempScore > bestScore) {
+                        bestScore = tempScore;
+//                                    bestWins = stats.childStats[q].wins;
+//                                    bestVisits = stats.visits;
+                    }
+                }
+
+//                            wins += bestWins;
+//                            visits += bestVisits;
+                if (bestScore > 0) {
+                    wins++;
+                }
+                visits++;
+            }
+        }
+
+        teamStats.clear();
+
+        return (double) wins / visits;
     }
 
     public static void mutateUniqueAndAdd(List<List<Integer>> teams, List<Integer> team, int n) {
@@ -215,9 +272,9 @@ public class EredanSimulator {
 
                 String value = buildStatsString(stats);
                 value += String.format(" | %5s %5s %5s",
-                        String.format("%.1f", (double)stats.childStats[0].wins / stats.visits * 100),
-                        String.format("%.1f", (double)stats.childStats[1].wins / stats.visits * 100),
-                        String.format("%.1f", (double)stats.childStats[2].wins / stats.visits * 100));
+                        String.format("%.1f", (stats.childStats[0] == null ? -1 : (double)stats.childStats[0].wins / stats.visits * 100)),
+                        String.format("%.1f", (stats.childStats[1] == null ? -1 : (double)stats.childStats[1].wins / stats.visits * 100)),
+                        String.format("%.1f", (stats.childStats[2] == null ? -1 : (double)stats.childStats[2].wins / stats.visits * 100)));
 
                 results.put(key, value);
             } else if (ts.round == 0 && ts.me == null && ts.them != null) {

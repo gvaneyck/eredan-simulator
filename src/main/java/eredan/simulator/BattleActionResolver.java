@@ -19,12 +19,14 @@ public class BattleActionResolver {
                 break;
             }
 
+            // Apply terror
+            source.damageDebuff += source.terror;
+
             for (Effect e : ability.effects) {
                 int amount = getEffectAmount(e, source, target);
                 execute(e.effect, amount, source, target);
 
                 if (e.all) {
-                    // TODO: All enemies
                     if (source.ally1 != null) {
                         amount = getEffectAmount(e, source.ally1, target);
                         execute(e.effect, amount, source.ally1, target);
@@ -32,6 +34,17 @@ public class BattleActionResolver {
                     if (source.ally2 != null) {
                         amount = getEffectAmount(e, source.ally2, target);
                         execute(e.effect, amount, source.ally2, target);
+                    }
+                }
+
+                if (e.allOpponents) {
+                    if (target.ally1 != null) {
+                        amount = getEffectAmount(e, source, target.ally1);
+                        execute(e.effect, amount, source, target.ally1);
+                    }
+                    if (target.ally2 != null) {
+                        amount = getEffectAmount(e, source, target.ally2);
+                        execute(e.effect, amount, source, target.ally2);
                     }
                 }
             }
@@ -43,6 +56,11 @@ public class BattleActionResolver {
 
         if (e.icy) {
             amount += (int)((double)e.amount * target.ice / 10);
+        }
+
+        if (e.runic) {
+            amount += (int)((double)e.amount * source.runes / 2);
+            source.runes = 0;
         }
 
         if (e.boostType != null) {
@@ -177,16 +195,16 @@ public class BattleActionResolver {
             case THORNS:
                 thorns(source, target, args);
                 break;
-            case INCREASE_STR:
+            case BUFF_STR:
                 increaseStr(source, target, args);
                 break;
-            case DECREASE_STR:
+            case DEBUFF_STR:
                 decreaseStr(source, target, args);
                 break;
-            case DAMAGE_BUFF:
+            case BUFF_DMG:
                 damageBuff(source, target, args);
                 break;
-            case DAMAGE_DEBUFF:
+            case DEBUFF_DMG:
                 damageDebuff(source, target, args);
                 break;
             case HEAL:
@@ -213,8 +231,17 @@ public class BattleActionResolver {
             case LIGHTNING:
                 lightning(source, target, args);
                 break;
+            case TERROR:
+                terror(source, target, args);
+                break;
             case LIFEDRAIN:
                 lifedrain(source, target, args);
+                break;
+            case BLESSING:
+                blessing(source, target, args);
+                break;
+            case RESILIENCE:
+                resilience(source, target, args);
                 break;
             case SPELLBREAKER:
                 spellbreaker(source, target, args);
@@ -230,6 +257,12 @@ public class BattleActionResolver {
                 break;
             case ICE:
                 ice(source, target, args);
+                break;
+            case RUNE:
+                rune(source, target, args);
+                break;
+            case PURIFY:
+                purify(source, target, args);
                 break;
             default:
                 throw new RuntimeException("Invalid action");
@@ -293,6 +326,9 @@ public class BattleActionResolver {
                     BattleArgs thornsArgs = new BattleArgs(target.thorns);
                     thornsArgs.isThorns = true;
                     applyDamage(target, source, thornsArgs);
+                }
+                if (source.blessing > 0) {
+                    heal(source, target, new BattleArgs(source.blessing));
                 }
             }
         }
@@ -388,6 +424,7 @@ public class BattleActionResolver {
     }
 
     public static void fireball(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        // TODO: Distinction between fireball/terror debuff/damage debuff for purify
         target.damageDebuff += args.amount / 10;
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
@@ -400,10 +437,23 @@ public class BattleActionResolver {
         target.defenseDebuff += tempDebuff;
     }
 
+    public static void terror(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        // TODO: Distinction between fireball/terror debuff/damage debuff for purify
+        target.terror += args.amount;
+    }
+
     public static void lifedrain(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         heal(source, target, args);
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
+    }
+
+    public static void resilience(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        source.defenseBuff += args.amount;
+    }
+
+    public static void blessing(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        source.blessing += args.amount;
     }
 
     public static void spellbreaker(CharacterStatus source, CharacterStatus target, BattleArgs args) {
@@ -429,31 +479,47 @@ public class BattleActionResolver {
             buffs.add("thorns");
         } else if (target.riposte > 0) {
             buffs.add("riposte");
+        } else if (target.runes > 0) {
+            buffs.add("runes");
         }
 
         if (buffs.isEmpty()) {
             return;
         }
 
+        // TODO: Bulwark will get halved (special case)
         String buffToRemove = buffs.get(rand.nextInt(buffs.size()));
-        if (buffToRemove.equals("shield")) {
-            target.shield = 0;
-        } else if (buffToRemove.equals("damageBuff")) {
-            target.damageBuff = 0;
-        } else if (buffToRemove.equals("defenseBuff")) {
-            target.defenseBuff = 0;
-        } else if (buffToRemove.equals("rage")) {
-            target.rage = 0;
-        } else if (buffToRemove.equals("berserk")) {
-            target.berserk = 0;
-        } else if (buffToRemove.equals("crits")) {
-            target.crits = 0;
-        } else if (buffToRemove.equals("dodge")) {
-            target.dodge = 0;
-        } else if (buffToRemove.equals("thorns")) {
-            target.thorns = 0;
-        } else if (buffToRemove.equals("riposte")) {
-            target.riposte = 0;
+        switch (buffToRemove) {
+            case "shield":
+                target.shield = 0;
+                break;
+            case "damageBuff":
+                target.damageBuff = 0;
+                break;
+            case "defenseBuff":
+                target.defenseBuff = 0;
+                break;
+            case "rage":
+                target.rage = 0;
+                break;
+            case "berserk":
+                target.berserk = 0;
+                break;
+            case "crits":
+                target.crits = 0;
+                break;
+            case "dodge":
+                target.dodge = 0;
+                break;
+            case "thorns":
+                target.thorns = 0;
+                break;
+            case "riposte":
+                target.riposte = 0;
+                break;
+            case "runes":
+                target.runes = 0;
+                break;
         }
     }
 
@@ -477,5 +543,18 @@ public class BattleActionResolver {
 
     public static void ice(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         target.ice += args.amount;
+    }
+
+    public static void rune(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        source.runes += args.amount;
+    }
+
+    public static void purify(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        for (int i = 0; i < args.amount; i++) {
+            source.damageDebuff /= 2;
+            source.defenseDebuff /= 2;
+            source.terror /= 2;
+            source.ice /= 2;
+        }
     }
 }

@@ -27,13 +27,16 @@ public class CharacterStatus implements Cloneable {
     public int damageDebuff = 0;
     public int defenseBuff = 0;
     public int defenseDebuff = 0;
+    public int terror = 0;
     public int rage = 0;
     public int berserk = 0;
     public int crits = 0;
     public int dodge = 0;
     public int thorns = 0;
     public int riposte = 0;
+    public int blessing = 0;
     public int ice = 0;
+    public int runes = 0;
 
     public CharacterStatus() { }
 
@@ -50,6 +53,7 @@ public class CharacterStatus implements Cloneable {
 
     public CharacterStatus copy() {
         CharacterStatus copy = new CharacterStatus();
+        copy.id = id;
         copy.name = name;
         copy.str = str;
 
@@ -59,12 +63,16 @@ public class CharacterStatus implements Cloneable {
         copy.damageDebuff = damageDebuff;
         copy.defenseBuff = defenseBuff;
         copy.defenseDebuff = defenseDebuff;
+        copy.terror = terror;
         copy.rage = rage;
         copy.berserk = berserk;
         copy.crits = crits;
         copy.dodge = dodge;
         copy.thorns = thorns;
         copy.riposte = riposte;
+        copy.blessing = blessing;
+        copy.ice = ice;
+        copy.runes = runes;
 
         return copy;
     }

@@ -42,7 +42,7 @@
             {
                 "cost": "Y",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 100 },
+                    { "effect": "BUFF_STR", "amount": 100 },
                     { "effect": "DICE_CHANGE_YS", "amount": 6 }
                 ]
             },
@@ -72,8 +72,8 @@
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "DECREASE_STR", "amount": 60 },
-                    { "effect": "INCREASE_STR", "amount": 60 }
+                    { "effect": "DEBUFF_STR", "amount": 60 },
+                    { "effect": "BUFF_STR", "amount": 60 }
                 ]
             },
             {
@@ -103,7 +103,7 @@
                 "cost": "RY",
                 "effects": [
                     { "effect": "RIPOSTE", "amount": 2 },
-                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "SOURCE_RACE", "boost_check": "elfine", "boost_amount": 45, "all": true }
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_RACE", "boost_check": "elfine", "boost_amount": 45, "all": true }
                 ]
             },
             {
@@ -130,8 +130,8 @@
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "DECREASE_STR", "amount": 30 },
-                    { "effect": "INCREASE_STR", "amount": 30 }
+                    { "effect": "DEBUFF_STR", "amount": 30 },
+                    { "effect": "BUFF_STR", "amount": 30 }
                 ]
             },
             {
@@ -190,7 +190,7 @@
                 "cost": "B",
                 "effects": [
                     { "effect": "SHOCK", "amount": 240 },
-                    { "effect": "INCREASE_STR", "amount": 80 }
+                    { "effect": "BUFF_STR", "amount": 80 }
                 ]
             },
             {
@@ -212,7 +212,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "HIT", "amount": 200 },
-                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "ALLIES_GUILD", "boost_check": "Sap Hearts", "boost_amount": 30 }
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "ALLIES_GUILD", "boost_check": "Sap Hearts", "boost_amount": 30 }
                 ]
             },
             {
@@ -242,7 +242,7 @@
                 "cost": "RRB",
                 "effects": [
                     { "effect": "FIREBALL", "amount": 500 },
-                    { "effect": "INCREASE_STR", "amount": 100 }
+                    { "effect": "BUFF_STR", "amount": 100 }
                 ]
             },
             {
@@ -312,7 +312,7 @@
                 "cost": "R",
                 "effects": [
                     { "effect": "HEAL", "amount": 180 },
-                    { "effect": "DECREASE_STR", "amount": 45 }
+                    { "effect": "DEBUFF_STR", "amount": 45 }
                 ]
             }
         ]
@@ -399,7 +399,7 @@
             {
                 "cost": "RRR",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "STR", "boost_amount": 2 },
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "STR", "boost_amount": 2 },
                     { "effect": "DICE_CHANGE_RS", "amount": 6 }
                 ]
             }
@@ -430,7 +430,7 @@
                 "cost": "Y",
                 "effects": [
                     { "effect": "HEAL", "amount": 400 },
-                    { "effect": "INCREASE_STR", "amount": 50 }
+                    { "effect": "BUFF_STR", "amount": 50 }
                 ]
             }
         ]
@@ -446,7 +446,7 @@
                 "cost": "R",
                 "effects": [
                     { "effect": "ATTACK", "amount": 1 },
-                    { "effect": "INCREASE_STR", "amount": 30 }
+                    { "effect": "BUFF_STR", "amount": 30 }
                 ]
             },
             {
@@ -475,8 +475,8 @@
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 75 },
-                    { "effect": "DAMAGE_BUFF", "amount": 20, "all": true }
+                    { "effect": "BUFF_STR", "amount": 75 },
+                    { "effect": "BUFF_DMG", "amount": 20, "all": true }
                 ]
             },
             {
@@ -512,7 +512,7 @@
                 "cost": "RB",
                 "effects": [
                     { "effect": "HIT", "amount": 250 },
-                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Sap Hearts", "boost_amount": 50, "all": true }
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Sap Hearts", "boost_amount": 50, "all": true }
                 ]
             },
             {
@@ -661,7 +661,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "HIT", "amount": 600 },
-                    { "effect": "INCREASE_STR", "amount": 120 }
+                    { "effect": "BUFF_STR", "amount": 120 }
                 ]
             },
             {
@@ -695,7 +695,7 @@
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 130, "boost_type": "ALLIES_CLASS", "boost_check": "warrior", "boost_amount": 65 }
+                    { "effect": "BUFF_STR", "amount": 130, "boost_type": "ALLIES_CLASS", "boost_check": "warrior", "boost_amount": 65 }
                 ]
             }
         ]
@@ -718,7 +718,7 @@
                 "cost": "RRY",
                 "effects": [
                     { "effect": "FIREBALL", "amount": 400 },
-                    { "effect": "INCREASE_STR", "amount": 100 }
+                    { "effect": "BUFF_STR", "amount": 100 }
                 ]
             },
             {
@@ -774,7 +774,7 @@
                 "cost": "RY",
                 "effects": [
                     { "effect": "SHOCK", "amount": 400 },
-                    { "effect": "INCREASE_STR", "amount": 80 }
+                    { "effect": "BUFF_STR", "amount": 80 }
                 ]
             },
             {
@@ -834,7 +834,7 @@
                 "cost": "RY",
                 "effects": [
                     { "effect": "HIT", "amount": 480 },
-                    { "effect": "INCREASE_STR", "amount": 120 }
+                    { "effect": "BUFF_STR", "amount": 120 }
                 ]
             },
             {
@@ -868,7 +868,7 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 200 }
+                    { "effect": "BUFF_STR", "amount": 200 }
                 ]
             }
         ]
@@ -896,7 +896,7 @@
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 140, "boost_type": "IS_ATTACKER", "boost_amount": 70 }
+                    { "effect": "BUFF_STR", "amount": 140, "boost_type": "IS_ATTACKER", "boost_amount": 70 }
                 ]
             }
         ]
@@ -946,7 +946,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "HIT", "amount": 250 },
-                    { "effect": "INCREASE_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Kotoba", "boost_amount": 50, "all": true }
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Kotoba", "boost_amount": 50, "all": true }
                 ]
             },
             {
@@ -997,7 +997,7 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "DAMAGE_BUFF", "amount": 40, "boost_type": "SOURCE_CLASS", "boost_check": "marauder", "boost_amount": 2, "all": true }
+                    { "effect": "BUFF_DMG", "amount": 40, "boost_type": "SOURCE_CLASS", "boost_check": "marauder", "boost_amount": 2, "all": true }
                 ]
             },
             {
@@ -1057,7 +1057,7 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 250, "boost_type": "TARGET_RACE", "boost_check": "human", "boost_amount": 125 }
+                    { "effect": "BUFF_STR", "amount": 250, "boost_type": "TARGET_RACE", "boost_check": "human", "boost_amount": 125 }
                 ]
             },
             {
@@ -1078,7 +1078,7 @@
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "DAMAGE_BUFF", "amount": 35, "boost_type": "TARGET_RACE", "boost_check": "demon", "boost_amount": 35, "all": true }
+                    { "effect": "BUFF_DMG", "amount": 35, "boost_type": "TARGET_RACE", "boost_check": "demon", "boost_amount": 35, "all": true }
                 ]
             },
             {
@@ -1106,7 +1106,7 @@
                 "cost": "B",
                 "effects": [
                     { "effect": "SHOCK", "amount": 280 },
-                    { "effect": "INCREASE_STR", "amount": 140 }
+                    { "effect": "BUFF_STR", "amount": 140 }
                 ]
             },
             {
@@ -1140,7 +1140,7 @@
                 "cost": "RY",
                 "effects": [
                     { "effect": "HIT", "amount": 300 },
-                    { "effect": "INCREASE_STR", "amount": 150 }
+                    { "effect": "BUFF_STR", "amount": 150 }
                 ]
             },
             {
@@ -1176,7 +1176,7 @@
                 "cost": "B",
                 "effects": [
                     { "effect": "HIT", "amount": 255 },
-                    { "effect": "INCREASE_STR", "amount": 85 }
+                    { "effect": "BUFF_STR", "amount": 85 }
                 ]
             }
         ]
@@ -1192,7 +1192,7 @@
                 "cost": "R",
                 "effects": [
                     { "effect": "HIT", "amount": 250 },
-                    { "effect": "INCREASE_STR", "amount": 50 }
+                    { "effect": "BUFF_STR", "amount": 50 }
                 ]
             },
             {
@@ -1221,7 +1221,7 @@
                 "cost": "R",
                 "effects": [
                     { "effect": "HIT", "amount": 200 },
-                    { "effect": "INCREASE_STR", "amount": 50 }
+                    { "effect": "BUFF_STR", "amount": 50 }
                 ]
             },
             {
@@ -1257,7 +1257,7 @@
                 "cost": "R",
                 "effects": [
                     { "effect": "HIT", "amount": 150 },
-                    { "effect": "INCREASE_STR", "amount": 25 }
+                    { "effect": "BUFF_STR", "amount": 25 }
                 ]
             },
             {
@@ -1307,7 +1307,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "HIT", "amount": 125 },
-                    { "effect": "INCREASE_STR", "amount": 125 }
+                    { "effect": "BUFF_STR", "amount": 125 }
                 ]
             },
             {
@@ -1342,7 +1342,7 @@
                 "cost": "RB",
                 "effects": [
                     { "effect": "SHOCK", "amount": 250 },
-                    { "effect": "INCREASE_STR", "amount": 50 }
+                    { "effect": "BUFF_STR", "amount": 50 }
                 ]
             },
             {
@@ -1364,7 +1364,7 @@
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 40 },
+                    { "effect": "BUFF_STR", "amount": 40 },
                     { "effect": "DODGE", "amount": 1 }
                 ]
             },
@@ -1394,7 +1394,7 @@
                 "cost": "R",
                 "effects": [
                     { "effect": "SHIELD", "amount": 240 },
-                    { "effect": "INCREASE_STR", "amount": 40 }
+                    { "effect": "BUFF_STR", "amount": 40 }
                 ]
             },
             {
@@ -1430,7 +1430,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "FIREBALL", "amount": 500 },
-                    { "effect": "INCREASE_STR", "amount": 100 }
+                    { "effect": "BUFF_STR", "amount": 100 }
                 ]
             },
             {
@@ -1488,7 +1488,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "SPELLBREAKER", "amount": 600 },
-                    { "effect": "INCREASE_STR", "amount": 50 }
+                    { "effect": "BUFF_STR", "amount": 50 }
                 ]
             },
             {
@@ -1517,14 +1517,14 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 60 },
+                    { "effect": "BUFF_STR", "amount": 60 },
                     { "effect": "SHIELD", "amount": 0, "boost_type": "STR", "boost_amount": 2 }
                 ]
             },
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 60 },
+                    { "effect": "BUFF_STR", "amount": 60 },
                     { "effect": "RIPOSTE", "amount": 1 },
                     { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
@@ -1557,7 +1557,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "SHOCK", "amount": 500 },
-                    { "effect": "INCREASE_STR", "amount": 125 }
+                    { "effect": "BUFF_STR", "amount": 125 }
                 ]
             }
         ]
@@ -1573,7 +1573,7 @@
                 "cost": "R",
                 "effects": [
                     { "effect": "HIT", "amount": 150 },
-                    { "effect": "INCREASE_STR", "amount": 30 }
+                    { "effect": "BUFF_STR", "amount": 30 }
                 ]
             },
             {
@@ -1602,7 +1602,7 @@
                 "cost": "RY",
                 "effects": [
                     { "effect": "HIT", "amount": 350 },
-                    { "effect": "INCREASE_STR", "amount": 50 }
+                    { "effect": "BUFF_STR", "amount": 50 }
                 ]
             },
             {
@@ -1631,7 +1631,7 @@
                 "cost": "Y",
                 "effects": [
                     { "effect": "SHOCK", "amount": 350 },
-                    { "effect": "INCREASE_STR", "amount": 50 }
+                    { "effect": "BUFF_STR", "amount": 50 }
                 ]
             },
             {
@@ -1659,7 +1659,7 @@
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 30 },
+                    { "effect": "BUFF_STR", "amount": 30 },
                     { "effect": "SHIELD", "amount": 0, "boost_type": "STR", "boost_amount": 2 }
                 ]
             },
@@ -1688,7 +1688,7 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "INCREASE_STR", "amount": 80 },
+                    { "effect": "BUFF_STR", "amount": 80 },
                     { "effect": "DODGE", "amount": 1 }
                 ]
             },
@@ -1701,8 +1701,943 @@
             {
                 "cost": "Y",
                 "effects": [
-                    { "effect": "DAMAGE_BUFF", "amount": 180 },
+                    { "effect": "BUFF_DMG", "amount": 180 },
                     { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ripper",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "warrior",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 200 },
+                    { "effect": "BUFF_STR", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 600 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 200, "boost_type": "TARGET_CLASS", "boost_check": "marauder", "boost_amount": 100 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dimizar",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "mage",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "DEBUFF_STR", "amount": 40, "all_opp": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "BUFF_STR", "amount": 40, "all": true }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 350 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Azaram",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 100 },
+                    { "effect": "DEBUFF_DMG", "amount": 20, "all_opp": true }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 380 },
+                    { "effect": "BUFF_STR", "amount": 190 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 400, "boost_type": "TARGET_CLASS", "boost_check": "marauder", "boost_amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Chalice",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "warrior",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 150 },
+                    { "effect": "RIPOSTE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 450 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Carkasse",
+        "guild": "Nehantist",
+        "race": "guemelite",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 250, "boost_type": "SOURCE_CLASS", "boost_check": "mage", "boost_amount": 125, "all": true }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 100 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "BY",
+                "effects": [
+                    { "effect": "HIT", "amount": 444, "boost_type": "IS_ATTACKER", "boost_amount": 222 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Zejabel",
+        "guild": "Nehantist",
+        "race": "undead",
+        "clazz": "mage",
+        "str": 90,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "DEBUFF_DMG", "amount": 30, "all_opp": true }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 500 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 200, "boost_type": "TARGET_RACE", "boost_check": "human", "boost_amount": 100 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Soul Chewer",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "marauder",
+        "str": 170,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 20, "boost_type": "SOURCE_RACE", "boost_check": "demon", "boost_amount": 10 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 200 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 150 },
+                    { "effect": "LIFEDRAIN", "amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Hate Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "marauder",
+        "str": 140,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "DEBUFF_DMG", "amount": 50, "all_opp": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 400 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Silent Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "marauder",
+        "str": 140,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BERSERK", "amount": 70 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "DEBUFF_DMG", "amount": 50 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Utkin the Spawn",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "marauder",
+        "str": 160,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "DEBUFF_DMG", "amount": 60, "boost_type": "ALLIES_GUILD", "boost_check": "Nehantist", "boost_amount": 30 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 1 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Almaria",
+        "guild": "Nehantist",
+        "race": "undead",
+        "clazz": "mage",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 200, "boost_type": "ALLIES_RACE", "boost_check": "undead", "boost_amount": 100 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Anagram Ex",
+        "guild": "Nehantist",
+        "race": "guemelite",
+        "clazz": "marauder",
+        "str": 160,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 1 },
+                    { "effect": "BUFF_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 220 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 250 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Grief",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "BERSERK", "amount": 60, "boost_type": "TARGET_RACE", "boost_check": "undead", "boost_amount": 30 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300 },
+                    { "effect": "BACKSTAB", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 250 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ishaia of the Dead",
+        "guild": "Nehantist",
+        "race": "undead",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 50, "boost_type": "ALLIES_RACE", "boost_check": "undead", "boost_amount": 25 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "HIT", "amount": 250 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 350 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Vordak Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "warrior",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 150 },
+                    { "effect": "DEBUFF_DMG", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 150 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "RIPOSTE", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Death-Tree Ex",
+        "guild": "Nehantist",
+        "race": "dais",
+        "clazz": "mage",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 500 },
+                    { "effect": "THORNS", "amount": 20 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "THORNS", "amount": 40, "all": true },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 150 },
+                    { "effect": "BUFF_STR", "amount": 75 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Inquisitor Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 120 },
+                    { "effect": "DEBUFF_DMG", "amount": 20 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 400 },
+                    { "effect": "SHOCK", "amount": 250 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "HIT", "amount": 600 },
+                    { "effect": "SHIELD", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Asmoroth Sv",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "colossus",
+        "str": 250,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 500 },
+                    { "effect": "BUFF_STR", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 500 },
+                    { "effect": "DEBUFF_DMG", "amount": 25 }
+                ]
+            },
+            {
+                "cost": "BB",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 380 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Rathamantis Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "marauder",
+        "str": 155,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 50 },
+                    { "effect": "DEBUFF_DMG", "amount": 25 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "HIT", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 200 },
+                    { "effect": "LIFEDRAIN", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Herebus Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "priest",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 400 },
+                    { "effect": "BUFF_STR", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 300 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 225 },
+                    { "effect": "SMITE", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Abraxal Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "mage",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 600 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 300, "boost_type": "ALLIES_RACE", "boost_check": "demon", "boost_amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 250 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "DeathBlade Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 200 },
+                    { "effect": "BUFF_DMG", "amount": 40 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "RIPOSTE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 275 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Amidaraxar",
+        "guild": "Nehantist",
+        "race": "guemelite",
+        "clazz": "mage",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 90 },
+                    { "effect": "DEBUFF_DMG", "amount": 30, "all_opp": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 400 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300 },
+                    { "effect": "FIREBALL", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ardrakar Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_B", "boost_amount": 270 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "DEBUFF_DMG", "amount": 90 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 300, "boost_type": "IS_ATTACKER", "boost_amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Pain",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "marauder",
+        "str": 160,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "THORNS", "amount": 200 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "HIT", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 220 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Gnarl",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 800 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "RAGE", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 200 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Edrianne Ex",
+        "guild": "Nehantist",
+        "race": "human",
+        "clazz": "mage",
+        "str": 90,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "SHIELD", "amount": 0, "boost_type": "TARGET_CLASS", "boost_check": "warrior", "boost_amount": 250 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 330 },
+                    { "effect": "DODGE", "amount": 0, "boost_type": "TARGET_CLASS", "boost_check": "marauder", "boost_amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 150 },
+                    { "effect": "SHOCK", "amount": 0, "boost_type": "TARGET_CLASS", "boost_check": "priest", "boost_amount": 75 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Scourge of Souls",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "warrior",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 600 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 300 },
+                    { "effect": "TERROR", "amount": 60 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 250 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Envy Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "marauder",
+        "str": 165,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BERSERK", "amount": 50, "boost_type": "DICE_S", "boost_amount": 25 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "HIT", "amount": 250 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Sethan Arai",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "marauder",
+        "str": 165,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 280 },
+                    { "effect": "BACKSTAB", "amount": 140 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "HIT", "amount": 270 },
+                    { "effect": "HIT", "amount": 270 },
+                    { "effect": "HIT", "amount": 270 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "The Fallen Ex",
+        "guild": "Nehantist",
+        "race": "demon",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "DEBUFF_DMG", "amount": 50 },
+                    { "effect": "BLESSING", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 320 },
+                    { "effect": "RESILIENCE", "amount": 80 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 300 },
+                    { "effect": "BUFF_STR", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Lania of Thyrs",
+        "guild": "Runic Legion",
+        "race": "human",
+        "clazz": "priest",
+        "str": 80,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BLESSING", "amount": 100, "runic": true },
+                    { "effect": "RUNE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 600, "runic": true },
+                    { "effect": "PURIFY", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 }
                 ]
             }
         ]

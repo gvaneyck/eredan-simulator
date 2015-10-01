@@ -1,6 +1,12 @@
 package eredan;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class NodeStats {
+    public static Random rand = new Random();
+
     public int lastVisit;
     public int visits;
     public Stats[] childStats;
@@ -10,16 +16,19 @@ public class NodeStats {
     }
 
     public int bestChild() {
+        List<Integer> ties = new ArrayList<>();
         double bestScore = -1;
-        int idx = 0;
         for (int i = 0; i < childStats.length; i++) {
             double score = (childStats[i] != null ? childStats[i].score : 1);
-            if (score > bestScore) {
-                bestScore = score;
-                idx = i;
+            if (score >= bestScore) {
+                if (score > bestScore) {
+                    bestScore = score;
+                    ties.clear();
+                }
+                ties.add(i);
             }
         }
-        return idx;
+        return ties.get(rand.nextInt(ties.size()));
     }
 
     public int visitBest() {
