@@ -4,13 +4,14 @@ import lombok.EqualsAndHashCode;
 import eredan.simulator.CharacterStatus;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 @EqualsAndHashCode
 public class TeamState {
-    public List<CharacterStatus> allies;
-    public List<CharacterStatus> enemies;
+    public CharacterStatus[] allies;
+    public CharacterStatus[] enemies;
     public int myWins;
     public int theirWins;
     public int round;
@@ -22,32 +23,46 @@ public class TeamState {
 
     public TeamState() { }
 
-    public TeamState(List<CharacterStatus> myTeam) {
-        allies = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            addAlly(myTeam.remove(0));
-        }
-        round = 0;
-        phase = 0;
+    public TeamState(CharacterStatus[] myTeam) {
+        allies = new CharacterStatus[3];
+        allies[0] = myTeam[0];
+        allies[1] = myTeam[1];
+        allies[2] = myTeam[2];
+        Arrays.sort(allies);
     }
 
-    public void addAlly(CharacterStatus cs) {
-        allies.add(cs);
-        Collections.sort(allies, (cs1, cs2) -> Integer.compare(cs1.id, cs2.id));
+    public void replaceAlly(int pos, CharacterStatus cs) {
+        allies[pos] = cs;
+        Arrays.sort(allies);
+    }
+
+    public void sortAllies() {
+        // Handles null "removed" allies
+        if (allies[0] == null) {
+            allies[0] = allies[1];
+            allies[1] = allies[2];
+            allies[2] = null;
+        } else if (allies[1] == null) {
+            allies[1] = allies[2];
+            allies[2] = null;
+        }
     }
 
     public TeamState copy() {
         TeamState copy = new TeamState();
-        copy.attacker = attacker;
 
-        copy.allies = new ArrayList<>();
-        for (CharacterStatus cs : allies) {
-            copy.allies.add(cs.copy());
+        copy.allies = new CharacterStatus[3];
+        for (int i = 0; i < 3; i++) {
+            if (allies[i] != null) {
+                copy.allies[i] = allies[i].copy();
+            }
         }
 
-        copy.enemies = new ArrayList<>();
-        for (CharacterStatus cs : enemies) {
-            copy.enemies.add(cs.copy());
+        copy.enemies = new CharacterStatus[3];
+        for (int i = 0; i < 3; i++) {
+            if (enemies[i] != null) {
+                copy.enemies[i] = enemies[i].copy();
+            }
         }
 
         copy.myWins = myWins;
@@ -60,5 +75,20 @@ public class TeamState {
         copy.phase = phase;
 
         return copy;
+    }
+
+    public String toString() {
+        return String.format("%s %s %d %d %d %d %d %d %d %d",
+                Arrays.toString(allies),
+                Arrays.toString(enemies),
+                myWins,
+                theirWins,
+                round,
+                attacker ? 1 : 0,
+                me != null ? me.id : -1,
+                them != null ? them.id : -1,
+                dice,
+                phase
+                );
     }
 }

@@ -7,6 +7,7 @@ import eredan.simulator.Dice;
 import eredan.simulator.Heroes;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -55,8 +56,8 @@ public class EredanSimulator {
         }
         System.out.println();
 
-        testChallenger();
-//        runGeneticAlgorithm();
+//        testChallenger();
+        runGeneticAlgorithm();
     }
 
     public static void testChallenger() {
@@ -206,6 +207,8 @@ public class EredanSimulator {
                         teamWins[t2]++;
                         recordedResults.put(matchKey, false);
                     }
+
+                    teamStats.clear();
 //                }
             }
         }
@@ -300,12 +303,12 @@ public class EredanSimulator {
             NodeStats stats = teamStats.get(ts);
             if (ts.round == 0 && ts.me == null && ts.them == null) {
                 String key = String.format("%s %s %s VS %s %s %s",
-                        ts.allies.get(0).name.substring(0, 5),
-                        ts.allies.get(1).name.substring(0, 5),
-                        ts.allies.get(2).name.substring(0, 5),
-                        ts.enemies.get(0).name.substring(0, 5),
-                        ts.enemies.get(1).name.substring(0, 5),
-                        ts.enemies.get(2).name.substring(0, 5));
+                        ts.allies[0].name.substring(0, 5),
+                        ts.allies[1].name.substring(0, 5),
+                        ts.allies[2].name.substring(0, 5),
+                        ts.enemies[0].name.substring(0, 5),
+                        ts.enemies[1].name.substring(0, 5),
+                        ts.enemies[2].name.substring(0, 5));
 
                 String value = buildStatsString(stats);
                 value += String.format(" | %5s %5s %5s",
@@ -337,18 +340,18 @@ public class EredanSimulator {
     }
 
     public static void runSimTeam(List<Integer> team1, List<Integer> team2) {
-        List<CharacterStatus> team1cs = new ArrayList<>();
-        for (int i : team1) {
-            team1cs.add(new CharacterStatus(Heroes.heroes.get(i)));
+        CharacterStatus[] team1cs = new CharacterStatus[5];
+        for (int i = 0; i < team1.size(); i++) {
+            team1cs[i] = new CharacterStatus(Heroes.heroes.get(team1.get(i)));
         }
 
-        List<CharacterStatus> team2cs = new ArrayList<>();
-        for (int i : team2) {
-            team2cs.add(new CharacterStatus(Heroes.heroes.get(i)));
+        CharacterStatus[] team2cs = new CharacterStatus[5];
+        for (int i = 0; i < team2.size(); i++) {
+            team2cs[i] = new CharacterStatus(Heroes.heroes.get(team2.get(i)));
         }
 
-        Collections.shuffle(team1cs);
-        Collections.shuffle(team2cs);
+        Util.shuffleArray(team1cs);
+        Util.shuffleArray(team2cs);
 
         TeamState p1state = new TeamState(team1cs);
         p1state.attacker = true;
@@ -358,41 +361,46 @@ public class EredanSimulator {
         p1state.enemies = p2state.allies;
         p2state.enemies = p1state.allies;
 
-        List<NodeStats> p1stats = new ArrayList<>();
-        List<NodeStats> p2stats = new ArrayList<>();
+        List<NodeStats> p1stats = new ArrayList<>(20);
+        List<NodeStats> p2stats = new ArrayList<>(20);
 
         while (p1state.myWins < 3 && p1state.theirWins < 3 && p1state.round < 5) {
+            int p1pick, p2pick;
             if (p1state.attacker) {
                 // Attacker picks
                 NodeStats p1pickStats = getNodeStats(p1state);
                 p1stats.add(p1pickStats);
-                int p1pick = p1pickStats.visitBest();
+                p1pick = p1pickStats.visitBest();
 
-                p1state.me = p1state.allies.remove(p1pick);
+                p1state.me = p1state.allies[p1pick];
+                p1state.allies[p1pick] = null;
                 p2state.them = p1state.me;
 
                 // Defender picks
                 NodeStats p2pickStats = getNodeStats(p2state);
                 p2stats.add(p2pickStats);
-                int p2pick = p2pickStats.visitBest();
+                p2pick = p2pickStats.visitBest();
 
-                p2state.me = p2state.allies.remove(p2pick);
+                p2state.me = p2state.allies[p2pick];
+                p2state.allies[p2pick] = null;
                 p1state.them = p2state.me;
             } else {
                 // Attacker picks
                 NodeStats p2pickStats = getNodeStats(p2state);
                 p2stats.add(p2pickStats);
-                int p2pick = p2pickStats.visitBest();
+                p2pick = p2pickStats.visitBest();
 
-                p2state.me = p2state.allies.remove(p2pick);
+                p2state.me = p2state.allies[p2pick];
+                p2state.allies[p2pick] = null;
                 p1state.them = p2state.me;
 
                 // Defender picks
                 NodeStats p1pickStats = getNodeStats(p1state);
                 p1stats.add(p1pickStats);
-                int p1pick = p1pickStats.visitBest();
+                p1pick = p1pickStats.visitBest();
 
-                p1state.me = p1state.allies.remove(p1pick);
+                p1state.me = p1state.allies[p1pick];
+                p1state.allies[p1pick] = null;
                 p2state.them = p1state.me;
             }
 
@@ -430,12 +438,24 @@ public class EredanSimulator {
             p2state.dice = Dice.roll(p2state.dice, p2roll2);
             p2state.phase = 0;
 
-            if (p1state.allies.size() > 0) p1state.me.ally1 = p1state.allies.get(0);
-            if (p1state.allies.size() > 1) p1state.me.ally2 = p1state.allies.get(1);
+            // Set allies on battlers
+            int pos = 0;
+            for (int i = 0; i < 3; i++) {
+                if (p1state.allies[i] != null) {
+                    p1state.me.allies[pos] = p1state.allies[i];
+                    pos++;
+                }
+            }
 
-            if (p2state.allies.size() > 0) p2state.me.ally1 = p2state.allies.get(0);
-            if (p2state.allies.size() > 1) p2state.me.ally2 = p2state.allies.get(1);
+            pos = 0;
+            for (int i = 0; i < 3; i++) {
+                if (p2state.allies[i] != null) {
+                    p2state.me.allies[pos] = p2state.allies[i];
+                    pos++;
+                }
+            }
 
+            // Get battle result
             if (p1state.attacker) {
                 int result = BattleData.simulate(p1state.me, p2state.me, p1state.dice, p2state.dice);
                 if (result == BattleData.P1_WIN) {
@@ -456,18 +476,25 @@ public class EredanSimulator {
                 }
             }
 
+            // Draw ally
+            if (p1state.round < 2) {
+                p1state.replaceAlly(p1pick, team1cs[3 + p1state.round]);
+                p2state.replaceAlly(p2pick, team2cs[3 + p1state.round]);
+            } else {
+                p1state.sortAllies();
+                p2state.sortAllies();
+            }
 
+            // Reset state
             p1state.dice = 0;
             p1state.me = null;
             p1state.them = null;
-            if (team1cs.size() > 0) { p1state.addAlly(team1cs.remove(0)); }
             p1state.attacker = !p1state.attacker;
             p1state.round++;
 
             p2state.dice = 0;
             p2state.me = null;
             p2state.them = null;
-            if (team2cs.size() > 0) { p2state.addAlly(team2cs.remove(0)); }
             p2state.attacker = !p2state.attacker;
             p2state.round++;
         }

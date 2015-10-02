@@ -6,8 +6,8 @@ import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
-@EqualsAndHashCode(exclude={"name", "guild", "race", "clazz", "diceCounts", "isAttacker", "abilities", "ally1", "ally2"})
-public class CharacterStatus implements Cloneable {
+@EqualsAndHashCode(exclude={"name", "guild", "race", "clazz", "diceId", "diceCounts", "isAttacker", "abilities", "ally1", "ally2"})
+public class CharacterStatus implements Comparable<CharacterStatus> {
     public int id;
     public String name;
     public String guild;
@@ -15,11 +15,11 @@ public class CharacterStatus implements Cloneable {
     public String clazz;
     public int str;
 
+    public int diceId;
     public int[] diceCounts;
     public boolean isAttacker;
     public List<Ability> abilities;
-    public CharacterStatus ally1;
-    public CharacterStatus ally2;
+    public CharacterStatus[] allies = new CharacterStatus[2];
 
     public int damage = 0;
     public int shield = 0;
@@ -75,5 +75,18 @@ public class CharacterStatus implements Cloneable {
         copy.runes = runes;
 
         return copy;
+    }
+
+    @Override
+    public int compareTo(CharacterStatus o) {
+        if (o == null) {
+            return -1;
+        } else {
+            return Integer.compare(id, o.id);
+        }
+    }
+
+    public String toString() {
+        return "" + id;
     }
 }

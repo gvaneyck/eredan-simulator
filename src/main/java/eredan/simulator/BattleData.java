@@ -56,8 +56,8 @@ public class BattleData {
 
     public static int simulate(CharacterStatus p1, CharacterStatus p2, int p1dice, int p2dice) {
         p1.isAttacker = true;
-        p1.diceCounts = Arrays.copyOf(Dice.counts[p1dice], 4);
-        p2.diceCounts = Arrays.copyOf(Dice.counts[p2dice], 4);
+        p1.diceCounts = Dice.counts[p1dice];
+        p2.diceCounts = Dice.counts[p2dice];
 
         // Abilities
         for (int round = 0; round < 3; round++) {

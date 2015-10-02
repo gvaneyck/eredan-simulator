@@ -16,7 +16,7 @@ public class NodeStats {
     }
 
     public int bestChild() {
-        List<Integer> ties = new ArrayList<>();
+        List<Integer> ties = new ArrayList<>(36);
         double bestScore = -1;
         for (int i = 0; i < childStats.length; i++) {
             double score = (childStats[i] != null ? childStats[i].score : 1);
@@ -28,7 +28,12 @@ public class NodeStats {
                 ties.add(i);
             }
         }
-        return ties.get(rand.nextInt(ties.size()));
+
+        if (ties.size() == 1) {
+            return ties.get(0);
+        } else {
+            return ties.get(rand.nextInt(ties.size()));
+        }
     }
 
     public int visitBest() {

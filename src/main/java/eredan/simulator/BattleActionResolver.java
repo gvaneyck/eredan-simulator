@@ -5,6 +5,7 @@ import eredan.dto.Effect;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -27,24 +28,24 @@ public class BattleActionResolver {
                 execute(e.effect, amount, source, target);
 
                 if (e.all) {
-                    if (source.ally1 != null) {
-                        amount = getEffectAmount(e, source.ally1, target);
-                        execute(e.effect, amount, source.ally1, target);
+                    if (source.allies[0] != null) {
+                        amount = getEffectAmount(e, source.allies[0], target);
+                        execute(e.effect, amount, source.allies[0], target);
                     }
-                    if (source.ally2 != null) {
-                        amount = getEffectAmount(e, source.ally2, target);
-                        execute(e.effect, amount, source.ally2, target);
+                    if (source.allies[1] != null) {
+                        amount = getEffectAmount(e, source.allies[1], target);
+                        execute(e.effect, amount, source.allies[1], target);
                     }
                 }
 
                 if (e.allOpponents) {
-                    if (target.ally1 != null) {
-                        amount = getEffectAmount(e, source, target.ally1);
-                        execute(e.effect, amount, source, target.ally1);
+                    if (target.allies[0] != null) {
+                        amount = getEffectAmount(e, source, target.allies[0]);
+                        execute(e.effect, amount, source, target.allies[0]);
                     }
-                    if (target.ally2 != null) {
-                        amount = getEffectAmount(e, source, target.ally2);
-                        execute(e.effect, amount, source, target.ally2);
+                    if (target.allies[1] != null) {
+                        amount = getEffectAmount(e, source, target.allies[1]);
+                        execute(e.effect, amount, source, target.allies[1]);
                     }
                 }
             }
@@ -118,28 +119,28 @@ public class BattleActionResolver {
                     break;
 
                 case ALLIES_RACE:
-                    if (source.ally1 != null && source.ally1.race.equals(e.boostCheck)) {
+                    if (source.allies[0] != null && source.allies[0].race.equals(e.boostCheck)) {
                         amount += e.boostAmount;
                     }
-                    if (source.ally2 != null && source.ally2.race.equals(e.boostCheck)) {
+                    if (source.allies[1] != null && source.allies[1].race.equals(e.boostCheck)) {
                         amount += e.boostAmount;
                     }
                     break;
 
                 case ALLIES_GUILD:
-                    if (source.ally1 != null && source.ally1.guild.equals(e.boostCheck)) {
+                    if (source.allies[0] != null && source.allies[0].guild.equals(e.boostCheck)) {
                         amount += e.boostAmount;
                     }
-                    if (source.ally2 != null && source.ally2.guild.equals(e.boostCheck)) {
+                    if (source.allies[1] != null && source.allies[1].guild.equals(e.boostCheck)) {
                         amount += e.boostAmount;
                     }
                     break;
 
                 case ALLIES_CLASS:
-                    if (source.ally1 != null && source.ally1.clazz.equals(e.boostCheck)) {
+                    if (source.allies[0] != null && source.allies[0].clazz.equals(e.boostCheck)) {
                         amount += e.boostAmount;
                     }
-                    if (source.ally2 != null && source.ally2.clazz.equals(e.boostCheck)) {
+                    if (source.allies[1] != null && source.allies[1].clazz.equals(e.boostCheck)) {
                         amount += e.boostAmount;
                     }
                     break;
@@ -460,7 +461,7 @@ public class BattleActionResolver {
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
 
-        List<String> buffs = new ArrayList<>();
+        List<String> buffs = new ArrayList<>(10);
         if (target.shield > 0) {
             buffs.add("shield");
         } else if (target.damageBuff > 0) {
@@ -524,18 +525,36 @@ public class BattleActionResolver {
     }
 
     public static void diceChangeRS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        // Make a copy of the dice since we're changing them
+        if (source.diceCounts == Dice.counts[source.diceId]) {
+            source.diceCounts = new int[4];
+            System.arraycopy(Dice.counts[source.diceId], 0, source.diceCounts, 0, 4);
+        }
+
         int change = Math.min(args.amount, source.diceCounts[Dice.RED]);
         source.diceCounts[Dice.RED] -= change;
         source.diceCounts[Dice.SWORD] += change;
     }
 
     public static void diceChangeBS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        // Make a copy of the dice since we're changing them
+        if (source.diceCounts == Dice.counts[source.diceId]) {
+            source.diceCounts = new int[4];
+            System.arraycopy(Dice.counts[source.diceId], 0, source.diceCounts, 0, 4);
+        }
+
         int change = Math.min(args.amount, source.diceCounts[Dice.BLUE]);
         source.diceCounts[Dice.BLUE] -= change;
         source.diceCounts[Dice.SWORD] += change;
     }
 
     public static void diceChangeYS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        // Make a copy of the dice since we're changing them
+        if (source.diceCounts == Dice.counts[source.diceId]) {
+            source.diceCounts = new int[4];
+            System.arraycopy(Dice.counts[source.diceId], 0, source.diceCounts, 0, 4);
+        }
+
         int change = Math.min(args.amount, source.diceCounts[Dice.YELLOW]);
         source.diceCounts[Dice.YELLOW] -= change;
         source.diceCounts[Dice.SWORD] += change;
