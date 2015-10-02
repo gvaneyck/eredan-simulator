@@ -5,6 +5,7 @@ import eredan.dto.Effect;
 import eredan.dto.Hero;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,8 +56,8 @@ public class BattleData {
 
     public static int simulate(CharacterStatus p1, CharacterStatus p2, int p1dice, int p2dice) {
         p1.isAttacker = true;
-        p1.diceCounts = Dice.counts[p1dice];
-        p2.diceCounts = Dice.counts[p2dice];
+        p1.diceCounts = Arrays.copyOf(Dice.counts[p1dice], 4);
+        p2.diceCounts = Arrays.copyOf(Dice.counts[p2dice], 4);
 
         // Abilities
         for (int round = 0; round < 3; round++) {
@@ -67,6 +68,20 @@ public class BattleData {
         // Swords
         BattleActionResolver.execute(basicAttack, p1, p2);
         BattleActionResolver.execute(basicAttack, p2, p1);
+
+//        if (p1.id == 66 && p1.diceCounts[Dice.RED] >= 2) {
+//            System.out.println("Hate dice: " + Arrays.toString(p1.diceCounts));
+//            System.out.println(p2.name + " dice: " + Arrays.toString(p2.diceCounts));
+//            System.out.println("Hate damage taken: " + p1.damage);
+//            System.out.println(p2.name + " damage taken: " + p2.damage);
+//            System.out.println("---------------------------------");
+//        } else if (p2.id == 66 && p2.diceCounts[Dice.RED] >= 2) {
+//            System.out.println(p1.name + " dice: " + Arrays.toString(p1.diceCounts));
+//            System.out.println("Hate dice: " + Arrays.toString(p2.diceCounts));
+//            System.out.println(p1.name + " damage taken: " + p1.damage);
+//            System.out.println("Hate damage taken: " + p2.damage);
+//            System.out.println("---------------------------------");
+//        }
 
         if (p1.damage < p2.damage) {
             return P1_WIN;

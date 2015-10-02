@@ -62,11 +62,11 @@ public class EredanSimulator {
     public static void testChallenger() {
         List<List<Integer>> teams = new ArrayList<>();
         List<Integer> team;
-        team = new ArrayList<>(); team.add(46); team.add(65); team.add(66); team.add(76); team.add(88); teams.add(team);
-        team = new ArrayList<>(); team.add(20); team.add(46); team.add(65); team.add(76); team.add(87); teams.add(team);
-        team = new ArrayList<>(); team.add(46); team.add(65); team.add(67); team.add(76); team.add(87); teams.add(team);
-        team = new ArrayList<>(); team.add(46); team.add(56); team.add(65); team.add(76); team.add(87); teams.add(team);
-        team = new ArrayList<>(); team.add(46); team.add(65); team.add(68); team.add(70); team.add(76); teams.add(team);
+        team = new ArrayList<>(); team.add(18); team.add(25); team.add(76); team.add(82); team.add(89); teams.add(team);
+        team = new ArrayList<>(); team.add(18); team.add(35); team.add(76); team.add(86); team.add(89); teams.add(team);
+        team = new ArrayList<>(); team.add(18); team.add(25); team.add(56); team.add(76); team.add(89); teams.add(team);
+        team = new ArrayList<>(); team.add(7); team.add(25); team.add(76); team.add(82); team.add(89); teams.add(team);
+        team = new ArrayList<>(); team.add(7); team.add(11); team.add(35); team.add(76); team.add(89); teams.add(team);
 
         // Hate, Carkasse, Kitsana, Amidaraxar, and Lania
         List<Integer> challenger;
@@ -398,7 +398,13 @@ public class EredanSimulator {
             if (p2state.allies.size() > 0) p2state.me.ally1 = p2state.allies.get(0);
             if (p2state.allies.size() > 1) p2state.me.ally2 = p2state.allies.get(1);
 
-            int result = BattleData.simulate(p1state.me, p2state.me, p1state.dice, p2state.dice);
+            int result;
+            if (p1state.attacker) {
+                result = BattleData.simulate(p1state.me, p2state.me, p1state.dice, p2state.dice);
+            } else {
+                result = BattleData.simulate(p2state.me, p1state.me, p2state.dice, p1state.dice);
+            }
+
             if (result == BattleData.P1_WIN) {
                 p1state.myWins++;
                 p2state.theirWins++;
