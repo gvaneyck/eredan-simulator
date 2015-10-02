@@ -69,20 +69,6 @@ public class BattleData {
         BattleActionResolver.execute(basicAttack, p1, p2);
         BattleActionResolver.execute(basicAttack, p2, p1);
 
-//        if (p1.id == 66 && p1.diceCounts[Dice.RED] >= 2) {
-//            System.out.println("Hate dice: " + Arrays.toString(p1.diceCounts));
-//            System.out.println(p2.name + " dice: " + Arrays.toString(p2.diceCounts));
-//            System.out.println("Hate damage taken: " + p1.damage);
-//            System.out.println(p2.name + " damage taken: " + p2.damage);
-//            System.out.println("---------------------------------");
-//        } else if (p2.id == 66 && p2.diceCounts[Dice.RED] >= 2) {
-//            System.out.println(p1.name + " dice: " + Arrays.toString(p1.diceCounts));
-//            System.out.println("Hate dice: " + Arrays.toString(p2.diceCounts));
-//            System.out.println(p1.name + " damage taken: " + p1.damage);
-//            System.out.println("Hate damage taken: " + p2.damage);
-//            System.out.println("---------------------------------");
-//        }
-
         if (p1.damage < p2.damage) {
             return P1_WIN;
         } else if (p1.damage > p2.damage) {

@@ -32,7 +32,7 @@ public class EredanSimulator {
     public static Logger log = Logger.getLogger("foo");
     public static Random rand = new Random();
 
-    public static Map<TeamState, NodeStats> teamStats = new HashMap<>(1000000);
+    public static Map<TeamState, NodeStats> teamStats = new HashMap<>(10000000);
     public static Map<String, Boolean> recordedResults = new HashMap<>();
 
     protected static class WeightedList {
@@ -72,31 +72,48 @@ public class EredanSimulator {
         List<Integer> challenger;
         challenger = new ArrayList<>(); challenger.add(66); challenger.add(63); challenger.add(54); challenger.add(81); challenger.add(90);
 
-        int sims = 1000000;
+        int sims = 300000;
+        double winRate;
         for (int k = 0; k < teams.size(); k++) {
             for (int i = 0; i < sims; i++) {
                 runSimTeam(challenger, teams.get(k));
             }
             summarizeStats();
 
-            double winRate = getWinRate();
+            winRate = getWinRateGr50();
+            if (winRate > 0.5) {
+                System.out.println(String.format("chal VS %d | chal %.1f", k, winRate * 100));
+            } else {
+                System.out.println(String.format("chal VS %d | %d %.1f", k, k, (1 - winRate) * 100));
+            }
+            winRate = getWinRateAvg();
             if (winRate > 0.5) {
                 System.out.println(String.format("chal VS %d | chal %.1f", k, winRate * 100));
             } else {
                 System.out.println(String.format("chal VS %d | %d %.1f", k, k, (1 - winRate) * 100));
             }
 
+            teamStats.clear();
+
             for (int i = 0; i < sims; i++) {
                 runSimTeam(teams.get(k), challenger);
             }
             summarizeStats();
 
-            winRate = getWinRate();
+            winRate = getWinRateGr50();
             if (winRate > 0.5) {
                 System.out.println(String.format("%d VS chal | %d %.1f", k, k, winRate * 100));
             } else {
                 System.out.println(String.format("%d VS chal | chal %.1f", k, (1 - winRate) * 100));
             }
+            winRate = getWinRateAvg();
+            if (winRate > 0.5) {
+                System.out.println(String.format("%d VS chal | %d %.1f", k, k, winRate * 100));
+            } else {
+                System.out.println(String.format("%d VS chal | chal %.1f", k, (1 - winRate) * 100));
+            }
+
+            teamStats.clear();
         }
     }
 
@@ -179,7 +196,7 @@ public class EredanSimulator {
                         runSimTeam(teams.get(t1), teams.get(t2));
                     }
 
-                    double winRate = getWinRate();
+                    double winRate = getWinRateGr50();
                     if (winRate > 0.5) {
                         System.out.println(String.format(" | %d %.1f", t1, winRate * 100));
                         teamWins[t1]++;
@@ -202,13 +219,12 @@ public class EredanSimulator {
         return teamWins;
     }
 
-    public static double getWinRate() {
+    // % of best choices > 50%
+    public static double getWinRateGr50() {
         int wins = 0;
         int visits = 0;
         for (TeamState ts : teamStats.keySet()) {
             if (ts.round == 0 && ts.me == null && ts.them == null) {
-//                            int bestWins = 0;
-//                            int bestVisits = 0;
                 double bestScore = -1;
 
                 NodeStats stats = teamStats.get(ts);
@@ -216,13 +232,9 @@ public class EredanSimulator {
                     double tempScore = stats.getChildWinRate(q);
                     if (tempScore > bestScore) {
                         bestScore = tempScore;
-//                                    bestWins = stats.childStats[q].wins;
-//                                    bestVisits = stats.visits;
                     }
                 }
 
-//                            wins += bestWins;
-//                            visits += bestVisits;
                 if (bestScore > 0.5) {
                     wins++;
                 }
@@ -230,7 +242,33 @@ public class EredanSimulator {
             }
         }
 
-        teamStats.clear();
+        return (double) wins / visits;
+    }
+
+    // Average of best choices
+    public static double getWinRateAvg() {
+        int wins = 0;
+        int visits = 0;
+        for (TeamState ts : teamStats.keySet()) {
+            if (ts.round == 0 && ts.me == null && ts.them == null) {
+                int bestWins = 0;
+                int bestVisits = 0;
+                double bestScore = -1;
+
+                NodeStats stats = teamStats.get(ts);
+                for (int q = 0; q < stats.childStats.length; q++) {
+                    double tempScore = stats.getChildWinRate(q);
+                    if (tempScore > bestScore) {
+                        bestScore = tempScore;
+                        bestWins = stats.childStats[q].wins;
+                        bestVisits = stats.visits;
+                    }
+                }
+
+                wins += bestWins;
+                visits += bestVisits;
+            }
+        }
 
         return (double) wins / visits;
     }
