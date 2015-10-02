@@ -55,8 +55,8 @@ public class EredanSimulator {
         }
         System.out.println();
 
-        testChallenger();
-//        runGeneticAlgorithm();
+//        testChallenger();
+        runGeneticAlgorithm();
     }
 
     public static void testChallenger() {
@@ -398,20 +398,26 @@ public class EredanSimulator {
             if (p2state.allies.size() > 0) p2state.me.ally1 = p2state.allies.get(0);
             if (p2state.allies.size() > 1) p2state.me.ally2 = p2state.allies.get(1);
 
-            int result;
             if (p1state.attacker) {
-                result = BattleData.simulate(p1state.me, p2state.me, p1state.dice, p2state.dice);
+                int result = BattleData.simulate(p1state.me, p2state.me, p1state.dice, p2state.dice);
+                if (result == BattleData.P1_WIN) {
+                    p1state.myWins++;
+                    p2state.theirWins++;
+                } else if (result == BattleData.P2_WIN) {
+                    p2state.myWins++;
+                    p1state.theirWins++;
+                }
             } else {
-                result = BattleData.simulate(p2state.me, p1state.me, p2state.dice, p1state.dice);
+                int result = BattleData.simulate(p2state.me, p1state.me, p2state.dice, p1state.dice);
+                if (result == BattleData.P1_WIN) {
+                    p2state.myWins++;
+                    p1state.theirWins++;
+                } else if (result == BattleData.P2_WIN) {
+                    p1state.myWins++;
+                    p2state.theirWins++;
+                }
             }
 
-            if (result == BattleData.P1_WIN) {
-                p1state.myWins++;
-                p2state.theirWins++;
-            } else if (result == BattleData.P2_WIN) {
-                p2state.myWins++;
-                p1state.theirWins++;
-            }
 
             p1state.dice = 0;
             p1state.me = null;
