@@ -55,26 +55,26 @@ public class EredanSimulator {
         }
         System.out.println();
 
-//        testChallenger();
-        runGeneticAlgorithm();
+        testChallenger();
+//        runGeneticAlgorithm();
     }
 
     public static void testChallenger() {
         List<List<Integer>> teams = new ArrayList<>();
         List<Integer> team;
-        team = new ArrayList<>(); team.add(14); team.add(46); team.add(65); team.add(71); team.add(76); teams.add(team);
-        team = new ArrayList<>(); team.add(14); team.add(46); team.add(50); team.add(76); team.add(88); teams.add(team);
-        team = new ArrayList<>(); team.add(11); team.add(14); team.add(46); team.add(65); team.add(76); teams.add(team);
-        team = new ArrayList<>(); team.add(14); team.add(19); team.add(46); team.add(76); team.add(87); teams.add(team);
-        team = new ArrayList<>(); team.add(14); team.add(17); team.add(19); team.add(46); team.add(76); teams.add(team);
+        team = new ArrayList<>(); team.add(46); team.add(65); team.add(66); team.add(76); team.add(88); teams.add(team);
+        team = new ArrayList<>(); team.add(20); team.add(46); team.add(65); team.add(76); team.add(87); teams.add(team);
+        team = new ArrayList<>(); team.add(46); team.add(65); team.add(67); team.add(76); team.add(87); teams.add(team);
+        team = new ArrayList<>(); team.add(46); team.add(56); team.add(65); team.add(76); team.add(87); teams.add(team);
+        team = new ArrayList<>(); team.add(46); team.add(65); team.add(68); team.add(70); team.add(76); teams.add(team);
 
         // Hate, Carkasse, Kitsana, Amidaraxar, and Lania
         List<Integer> challenger;
         challenger = new ArrayList<>(); challenger.add(66); challenger.add(63); challenger.add(54); challenger.add(81); challenger.add(90);
 
-        int temp = 10000000;
+        int sims = 1000000;
         for (int k = 0; k < teams.size(); k++) {
-            for (int i = 0; i < temp; i++) {
+            for (int i = 0; i < sims; i++) {
                 runSimTeam(challenger, teams.get(k));
             }
             summarizeStats();
@@ -86,7 +86,7 @@ public class EredanSimulator {
                 System.out.println(String.format("chal VS %d | %d %.1f", k, k, (1 - winRate) * 100));
             }
 
-            for (int i = 0; i < temp; i++) {
+            for (int i = 0; i < sims; i++) {
                 runSimTeam(teams.get(k), challenger);
             }
             summarizeStats();
@@ -223,7 +223,7 @@ public class EredanSimulator {
 
 //                            wins += bestWins;
 //                            visits += bestVisits;
-                if (bestScore > 0) {
+                if (bestScore > 0.5) {
                     wins++;
                 }
                 visits++;
@@ -258,7 +258,6 @@ public class EredanSimulator {
 
     public static void summarizeStats() {
         Map<String, String> results = new HashMap<>();
-        Map<String, String> oppresults = new HashMap<>();
         for (TeamState ts : teamStats.keySet()) {
             NodeStats stats = teamStats.get(ts);
             if (ts.round == 0 && ts.me == null && ts.them == null) {
@@ -277,22 +276,10 @@ public class EredanSimulator {
                         String.format("%.1f", (stats.childStats[2] == null ? -1 : (double)stats.childStats[2].wins / stats.visits * 100)));
 
                 results.put(key, value);
-            } else if (ts.round == 0 && ts.me == null && ts.them != null) {
-                String key = String.format("%s %s %s VS (%s) %s %s",
-                        ts.allies.get(0).name.substring(0, 5),
-                        ts.allies.get(1).name.substring(0, 5),
-                        ts.allies.get(2).name.substring(0, 5),
-                        ts.them.name.substring(0, 5),
-                        ts.enemies.get(0).name.substring(0, 5),
-                        ts.enemies.get(1).name.substring(0, 5));
-
-                oppresults.put(key, buildStatsString(stats));
             }
         }
 
         results.entrySet().stream().sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey())).forEach(e -> log.debug(e.getValue() + " " + e.getKey()));
-        log.debug("----------");
-        oppresults.entrySet().stream().sorted((e1, e2) -> e1.getKey().compareTo(e2.getKey())).forEach(e -> log.debug(e.getValue() + " " + e.getKey()));
     }
 
     public static String buildStatsString(NodeStats stats) {
