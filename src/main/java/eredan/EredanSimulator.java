@@ -55,18 +55,18 @@ public class EredanSimulator {
         }
         System.out.println();
 
-//        testChallenger();
-        runGeneticAlgorithm();
+        testChallenger();
+//        runGeneticAlgorithm();
     }
 
     public static void testChallenger() {
         List<List<Integer>> teams = new ArrayList<>();
         List<Integer> team;
-        team = new ArrayList<>(); team.add(18); team.add(25); team.add(76); team.add(82); team.add(89); teams.add(team);
-        team = new ArrayList<>(); team.add(18); team.add(35); team.add(76); team.add(86); team.add(89); teams.add(team);
-        team = new ArrayList<>(); team.add(18); team.add(25); team.add(56); team.add(76); team.add(89); teams.add(team);
-        team = new ArrayList<>(); team.add(7); team.add(25); team.add(76); team.add(82); team.add(89); teams.add(team);
-        team = new ArrayList<>(); team.add(7); team.add(11); team.add(35); team.add(76); team.add(89); teams.add(team);
+        team = new ArrayList<>(); team.add(11); team.add(27); team.add(76); team.add(66); team.add(89); teams.add(team);
+        team = new ArrayList<>(); team.add(11); team.add(14); team.add(19); team.add(27); team.add(89); teams.add(team);
+        team = new ArrayList<>(); team.add(11); team.add(14); team.add(51); team.add(58); team.add(89); teams.add(team);
+        team = new ArrayList<>(); team.add(11); team.add(57); team.add(86); team.add(87); team.add(89); teams.add(team);
+        team = new ArrayList<>(); team.add(11); team.add(86); team.add(67); team.add(88); team.add(89); teams.add(team);
 
         // Hate, Carkasse, Kitsana, Amidaraxar, and Lania
         List<Integer> challenger;
