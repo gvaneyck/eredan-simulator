@@ -49,36 +49,36 @@ public class EredanSimulatorSingle {
         InfoSet1v1 p1r0 = getInfoSet1v1(p1state);
         int p1r0best = p1r0.bestChild();
         p1r0.visits++;
-        p1r0.childStats[p1r0best].visit(p1r0.visits);
+        p1r0.childStats[p1r0best].visits++;
         p1state.dice = Dice.roll(p1state.dice, p1r0best);
         p1state.phase++;
 
         InfoSet1v1 p1r1 = getInfoSet1v1(p1state);
         int p1r1best = p1r1.bestChild();
         p1r1.visits++;
-        p1r1.childStats[p1r1best].visit(p1r1.visits);
+        p1r1.childStats[p1r1best].visits++;
         p1state.dice = Dice.roll(p1state.dice, p1r1best);
 
         InfoSet1v1 p2r0 = getInfoSet1v1(p2state);
         int p2r0best = p2r0.bestChild();
         p2r0.visits++;
-        p2r0.childStats[p2r0best].visit(p2r0.visits);
+        p2r0.childStats[p2r0best].visits++;
         p2state.dice = Dice.roll(p2state.dice, p2r0best);
         p2state.phase++;
 
         InfoSet1v1 p2r1 = getInfoSet1v1(p2state);
         int p2r1best = p2r1.bestChild();
         p2r1.visits++;
-        p2r1.childStats[p2r1best].visit(p2r1.visits);
+        p2r1.childStats[p2r1best].visits++;
         p2state.dice = Dice.roll(p2state.dice, p2r1best);
 
         int result = BattleData.simulate(h1, h2, p1state.dice, p2state.dice);
         if (result == BattleData.P1_WIN) {
-            p1r0.childStats[p1r0best].win(p1r0.visits);
-            p1r1.childStats[p1r1best].win(p1r1.visits);
+            p1r0.childStats[p1r0best].wins++;
+            p1r1.childStats[p1r1best].wins++;
         } else if (result == BattleData.P2_WIN) {
-            p2r0.childStats[p2r0best].win(p2r0.visits);
-            p2r1.childStats[p2r1best].win(p2r1.visits);
+            p2r0.childStats[p2r0best].wins++;
+            p2r1.childStats[p2r1best].wins++;
         }
     }
 

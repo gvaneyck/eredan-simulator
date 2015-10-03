@@ -210,10 +210,10 @@ public class EredanSimulator {
         }
 
         // For testing one round robin with varying simulation counts
-//        for (int i = 0; i < teamWins.length; i++) {
-//            System.out.println(teamWins[i]);
-//        }
-//        System.exit(0);
+        for (int i = 0; i < teamWins.length; i++) {
+            System.out.println(teamWins[i]);
+        }
+        System.exit(0);
 
         return teamWins;
     }

@@ -7,13 +7,7 @@ public class Stats {
     public int wins;
     public double score = 1.0;
 
-    public void visit(int parentVisits) {
-        visits++;
-        score = (double)wins / visits + C * Math.sqrt(Math.log(parentVisits) / visits);
-    }
-
-    public void win(int parentVisits) {
-        wins++;
-        score = (double)wins / visits + C * Math.sqrt(Math.log(parentVisits) / visits);
+    public double getScore(int parentVisits) {
+        return (double)wins / visits + C * Math.sqrt(Math.log(parentVisits) / visits);
     }
 }

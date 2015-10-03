@@ -19,7 +19,7 @@ public class NodeStats {
         List<Integer> ties = new ArrayList<>(36);
         double bestScore = -1;
         for (int i = 0; i < childStats.length; i++) {
-            double score = (childStats[i] != null ? childStats[i].score : 1);
+            double score = (childStats[i] == null ? 1 : childStats[i].getScore(visits));
             if (score >= bestScore) {
                 if (score > bestScore) {
                     bestScore = score;
@@ -42,12 +42,12 @@ public class NodeStats {
         if (childStats[lastVisit] == null) {
             childStats[lastVisit] = new Stats();
         }
-        childStats[lastVisit].visit(visits);
+        childStats[lastVisit].visits++;
         return lastVisit;
     }
 
     public void addWin() {
-        childStats[lastVisit].win(visits);
+        childStats[lastVisit].wins++;
     }
 
     public double getChildWinRate(int i) {
