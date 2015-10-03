@@ -3121,7 +3121,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "HIT", "amount": 350 },
-                    { "effect": "INCREASE_STR", "amount": 100 }
+                    { "effect": "BUFF_STR", "amount": 100 }
                 ]
             },
             {

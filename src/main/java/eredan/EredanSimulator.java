@@ -55,8 +55,8 @@ public class EredanSimulator {
         }
         System.out.println();
 
-        testChallenger();
-//        runGeneticAlgorithm();
+//        testChallenger();
+        runGeneticAlgorithm();
     }
 
     public static void testChallenger() {
@@ -117,7 +117,7 @@ public class EredanSimulator {
     public static void runGeneticAlgorithm() {
         List<List<Integer>> teams = new ArrayList<>();
         List<Integer> team;
-        for (int i = 0; i < 18; i++) {
+        for (int i = 0; i < 23; i++) {
             team = new ArrayList<>();
             team.add(i*5);
             team.add(i*5+1);
