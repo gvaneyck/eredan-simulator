@@ -19,8 +19,9 @@ public class BattleActionResolver {
                 break;
             }
 
-            // Apply terror
+            // Apply terror & stench
             source.damageDebuff += source.terror;
+            target.str -= source.stench;
 
             for (Effect e : ability.effects) {
                 int amount = getEffectAmount(e, source, target);
@@ -285,6 +286,15 @@ public class BattleActionResolver {
             case SCARAB:
                 scarab(source, target, args);
                 break;
+            case DIVIDE_STR:
+                divideStr(source, target, args);
+                break;
+            case BLIZZARD:
+                blizzard(source, target, args);
+                break;
+            case STENCH:
+                stench(source, target, args);
+                break;
             default:
                 throw new RuntimeException("Invalid action");
         }
@@ -320,10 +330,23 @@ public class BattleActionResolver {
                 source.crits--;
                 args.amount *= 2;
             }
-            if (target.dodge > 0) {
+
+            if (target.icyShield > 0) {
+                source.ice++;
+                if (args.amount > target.icyShield) {
+                    args.amount -= target.icyShield;
+                    target.icyShield = 0;
+                } else {
+                    target.icyShield -= args.amount;
+                    args.amount = 0;
+                }
+            }
+
+            if (target.dodge > 0 && args.amount > 0) {
                 target.dodge--;
                 args.amount /= 2;
             }
+
             if (target.bulwark > 0 && args.amount > target.bulwark) {
                 args.amount = target.bulwark;
             }
@@ -514,6 +537,10 @@ public class BattleActionResolver {
             buffs.add("bulwark");
         } else if (target.scarabs > 0) {
             buffs.add("scarabs");
+        } else if (target.icyShield > 0) {
+            buffs.add("icyShield");
+        } else if (target.stench > 0) {
+            buffs.add("stench");
         }
 
         if (buffs.isEmpty()) {
@@ -557,6 +584,12 @@ public class BattleActionResolver {
                 break;
             case "scarabs":
                 target.scarabs = 0;
+                break;
+            case "icyShield":
+                target.icyShield = 0;
+                break;
+            case "stench":
+                target.stench = 0;
                 break;
         }
     }
@@ -602,10 +635,25 @@ public class BattleActionResolver {
     }
 
     public static void setStr(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        source.str = args.amount;
+        // Special case: Ignore 0 (see Stone Eater)
+        if (args.amount > 0) {
+            source.str = args.amount;
+        }
     }
 
     public static void scarab(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.scarabs += args.amount;
+    }
+
+    public static void divideStr(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        target.str /= args.amount;
+    }
+
+    public static void blizzard(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        source.icyShield += args.amount;
+    }
+
+    public static void stench(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        source.stench += args.amount;
     }
 }

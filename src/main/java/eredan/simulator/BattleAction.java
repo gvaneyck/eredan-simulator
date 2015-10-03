@@ -37,5 +37,8 @@ public enum BattleAction {
     BULWARK,
     SHIELD_BASH,
     SET_STR,
-    SCARAB
+    SCARAB,
+    DIVIDE_STR,
+    BLIZZARD,
+    STENCH
 }

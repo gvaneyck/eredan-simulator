@@ -3375,5 +3375,503 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Santa Ex",
+        "guild": "Mercenaries",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "DODGE", "amount": 2 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 240 },
+                    { "effect": "BUFF_STR", "amount": 80 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "DIVIDE_STR", "amount": 2 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Adhikara Ex",
+        "guild": "Mercenaries",
+        "race": "guemelite",
+        "clazz": "priest",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 200 },
+                    { "effect": "BUFF_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 350 },
+                    { "effect": "PURIFY", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "BB",
+                "effects": [
+                    { "effect": "HEAL", "amount": 350 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Fog Hydra Sv",
+        "guild": "Mercenaries",
+        "race": "undead",
+        "clazz": "colossus",
+        "str": 175,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 400 },
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_CLASS", "boost_check": "colossus", "boost_amount": 50, "all": true }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 300 },
+                    { "effect": "BUFF_STR", "amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Amnezy Ex",
+        "guild": "Mercenaries",
+        "race": "unknown",
+        "clazz": "marauder",
+        "str": 170,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 300 },
+                    { "effect": "DODGE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RYY",
+                "effects": [
+                    { "effect": "HIT", "amount": 1001 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Jack Al'Azred Ex",
+        "guild": "Mercenaries",
+        "race": "undead",
+        "clazz": "mage",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 300 },
+                    { "effect": "TERROR", "amount": 20 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "BUFF_DMG", "amount": 75 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ayir",
+        "guild": "Mercenaries",
+        "race": "ice elf",
+        "clazz": "berserker",
+        "str": 140,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BERSERK", "amount": 30 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "ICE", "amount": 5 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 500, "icy": 5 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Lady Ylith",
+        "guild": "Mercenaries",
+        "race": "ice elf",
+        "clazz": "priest",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 500 },
+                    { "effect": "BLIZZARD", "amount": 100, "all": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "PURIFY", "amount": 2, "all": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HEAL", "amount": 250, "icy": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ursyd",
+        "guild": "Mercenaries",
+        "race": "ice elf",
+        "clazz": "berserker",
+        "str": 140,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BERSERK", "amount": 0, "boost_type": "SOURCE_CLASS", "boost_check": "berserker", "boost_amount": 30, "all": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 500, "icy": true },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "RAGE", "amount": 75 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kokrem",
+        "guild": "Mercenaries",
+        "race": "ice elf",
+        "clazz": "berserker",
+        "str": 140,
+        "abilities": [
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "BLIZZARD", "amount": 400, "all": true }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 300, "icy": true },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 400, "icy": true },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Yulven",
+        "guild": "Mercenaries",
+        "race": "ice elf",
+        "clazz": "berserker",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BLIZZARD", "amount": 500 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "RIPOSTE", "amount": 2 },
+                    { "effect": "ICE", "amount": 3 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 500, "icy": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Fyrnir the Ancient Ex",
+        "guild": "Mercenaries",
+        "race": "ice elf",
+        "clazz": "berserker",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "BLIZZARD", "amount": 200, "boost_type": "IS_ATTACKER", "boost_amount": 100 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 300, "icy": true }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HEAL", "amount": 300, "icy": true },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "King Hrimnir",
+        "guild": "Mercenaries",
+        "race": "undead",
+        "clazz": "berserker",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "STENCH", "amount": 25 },
+                    { "effect": "HIT", "amount": 100, "icy": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "ICE", "amount": 1, "all_opp": true }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 500, "boost_type": "IS_ATTACKER", "boost_amount": 250, "icy": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Quilingo Ex",
+        "guild": "Mercenaries",
+        "race": "beast",
+        "clazz": "warrior",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 0, "boost_type": "DICE_B", "boost_amount": 250 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 0, "boost_type": "DICE_R", "boost_amount": 200 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 50 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Vixen Ex",
+        "guild": "Mercenaries",
+        "race": "beast",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 200 },
+                    { "effect": "BUFF_STR", "amount": 40 }
+                ]
+            },
+            {
+                "cost": "BBB",
+                "effects": [
+                    { "effect": "HIT", "amount": 600, "icy": true },
+                    { "effect": "HIT", "amount": 600, "icy": true },
+                    { "effect": "HIT", "amount": 600, "icy": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Stone Eater",
+        "guild": "Mercenaries",
+        "race": "guemelite",
+        "clazz": "priest",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 500 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 400 },
+                    { "effect": "SMITE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 650 },
+                    { "effect": "SET_STR", "amount": 0, "boost_type": "TARGET_CLASS", "boost_check": "colossus", "boost_amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Cherub Ex",
+        "guild": "Mercenaries",
+        "race": "human",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 400 },
+                    { "effect": "BUFF_STR", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 250 },
+                    { "effect": "ATTACK", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Admiral Rabbit Ex",
+        "guild": "Mercenaries",
+        "race": "golem",
+        "clazz": "warrior",
+        "str": 50,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 200 },
+                    { "effect": "BUFF_DMG", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 450 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_R", "boost_amount": 150 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
     }
 ]

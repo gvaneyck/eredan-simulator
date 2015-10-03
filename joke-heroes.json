@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Ateb Ex (beta)",
+        "guild": "Mercenaries",
+        "race": "undead",
+        "clazz": "marauder",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HEAL", "amount": 350 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Akra Ex (worst at level 3)",
+        "guild": "Mercenaries",
+        "race": "beast",
+        "clazz": "warrior",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "STENCH", "amount": 30 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "DEATH_STARE", "amount": 450 }
+                ]
+            }
+        ]
+    }
+]

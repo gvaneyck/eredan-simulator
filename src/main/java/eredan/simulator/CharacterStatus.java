@@ -6,14 +6,15 @@ import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
-@EqualsAndHashCode(exclude={"name", "guild", "race", "clazz", "diceId", "diceCounts", "isAttacker", "abilities", "ally1", "ally2"})
+// Exclude elements only used during combat resolution, i.e. ones not important to the game state
+@EqualsAndHashCode(exclude={"name", "guild", "race", "clazz", "diceId", "diceCounts", "isAttacker", "abilities", "ally1", "ally2",
+                            "damage", "defenseBuff", "defenseDebuff", "bulwark", "scarabs", "stench"})
 public class CharacterStatus implements Comparable<CharacterStatus> {
     public int id;
     public String name;
     public String guild;
     public String race;
     public String clazz;
-    public int str;
 
     public int diceId;
     public int[] diceCounts;
@@ -21,6 +22,7 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
     public List<Ability> abilities;
     public CharacterStatus[] allies = new CharacterStatus[2];
 
+    public int str;
     public int damage = 0;
     public int shield = 0;
     public int damageBuff = 0;
@@ -39,6 +41,8 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
     public int runes = 0;
     public int bulwark = 0;
     public int scarabs = 0;
+    public int icyShield = 0;
+    public int stench = 0;
 
     public CharacterStatus() { }
 
@@ -48,9 +52,10 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
         this.guild = hero.guild;
         this.race = hero.race;
         this.clazz = hero.clazz;
-        this.str = hero.str;
 
         this.abilities = hero.abilities;
+
+        this.str = hero.str;
     }
 
     public CharacterStatus copy() {
@@ -59,12 +64,12 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
         copy.name = name;
         copy.str = str;
 
-        copy.damage = damage;
+//        copy.damage = damage;
         copy.shield = shield;
         copy.damageBuff = damageBuff;
         copy.damageDebuff = damageDebuff;
-        copy.defenseBuff = defenseBuff;
-        copy.defenseDebuff = defenseDebuff;
+//        copy.defenseBuff = defenseBuff;
+//        copy.defenseDebuff = defenseDebuff;
         copy.terror = terror;
         copy.rage = rage;
         copy.berserk = berserk;
@@ -75,8 +80,10 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
         copy.blessing = blessing;
         copy.ice = ice;
         copy.runes = runes;
-        copy.bulwark = bulwark;
-        copy.scarabs = scarabs;
+//        copy.bulwark = bulwark;
+//        copy.scarabs = scarabs;
+        copy.icyShield = icyShield;
+//        copy.stench = stench;
 
         return copy;
     }
