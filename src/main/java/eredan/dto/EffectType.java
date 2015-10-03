@@ -1,6 +1,6 @@
-package eredan.simulator;
+package eredan.dto;
 
-public enum BattleAction {
+public enum EffectType {
     APPLY_DAMAGE,
     ATTACK,
     SWORD_ATTACK,

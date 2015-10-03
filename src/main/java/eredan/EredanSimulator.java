@@ -1,6 +1,6 @@
 package eredan;
 
-import eredan.simulator.BattleData;
+import eredan.simulator.BattleSimulator;
 import eredan.simulator.CharacterStatus;
 import eredan.simulator.Dice;
 import eredan.simulator.Heroes;
@@ -453,20 +453,20 @@ public class EredanSimulator {
 
             // Get battle result
             if (p1state.attacker) {
-                int result = BattleData.simulate(p1state.me, p2state.me, p1state.dice, p2state.dice);
-                if (result == BattleData.P1_WIN) {
+                int result = BattleSimulator.simulate(p1state.me, p2state.me, p1state.dice, p2state.dice);
+                if (result == BattleSimulator.P1_WIN) {
                     p1state.myWins++;
                     p2state.theirWins++;
-                } else if (result == BattleData.P2_WIN) {
+                } else if (result == BattleSimulator.P2_WIN) {
                     p2state.myWins++;
                     p1state.theirWins++;
                 }
             } else {
-                int result = BattleData.simulate(p2state.me, p1state.me, p2state.dice, p1state.dice);
-                if (result == BattleData.P1_WIN) {
+                int result = BattleSimulator.simulate(p2state.me, p1state.me, p2state.dice, p1state.dice);
+                if (result == BattleSimulator.P1_WIN) {
                     p2state.myWins++;
                     p1state.theirWins++;
-                } else if (result == BattleData.P2_WIN) {
+                } else if (result == BattleSimulator.P2_WIN) {
                     p1state.myWins++;
                     p2state.theirWins++;
                 }

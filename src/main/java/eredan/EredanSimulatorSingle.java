@@ -1,6 +1,6 @@
 package eredan;
 
-import eredan.simulator.BattleData;
+import eredan.simulator.BattleSimulator;
 import eredan.simulator.Dice;
 import eredan.simulator.Heroes;
 import org.apache.log4j.Logger;
@@ -72,11 +72,11 @@ public class EredanSimulatorSingle {
         p2r1.childStats[p2r1best].visits++;
         p2state.dice = Dice.roll(p2state.dice, p2r1best);
 
-        int result = BattleData.simulate(h1, h2, p1state.dice, p2state.dice);
-        if (result == BattleData.P1_WIN) {
+        int result = BattleSimulator.simulate(h1, h2, p1state.dice, p2state.dice);
+        if (result == BattleSimulator.P1_WIN) {
             p1r0.childStats[p1r0best].wins++;
             p1r1.childStats[p1r1best].wins++;
-        } else if (result == BattleData.P2_WIN) {
+        } else if (result == BattleSimulator.P2_WIN) {
             p2r0.childStats[p2r0best].wins++;
             p2r1.childStats[p2r1best].wins++;
         }

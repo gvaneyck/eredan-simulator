@@ -1,7 +1,10 @@
 package eredan.simulator;
 
 import eredan.dto.Ability;
+import eredan.dto.Clazz;
+import eredan.dto.Guild;
 import eredan.dto.Hero;
+import eredan.dto.Race;
 import lombok.EqualsAndHashCode;
 
 import java.util.List;

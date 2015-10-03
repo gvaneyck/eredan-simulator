@@ -2,6 +2,7 @@ package eredan.simulator;
 
 import eredan.dto.Ability;
 import eredan.dto.Effect;
+import eredan.dto.EffectType;
 import eredan.dto.Hero;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BattleData {
+public class BattleSimulator {
     public static final int TIE = 0;
     public static final int P1_WIN = 1;
     public static final int P2_WIN = 2;
@@ -18,7 +19,7 @@ public class BattleData {
 
     public static Ability basicAttack = new Ability();
     static {
-        Effect e = new Effect(BattleAction.SWORD_ATTACK, 1);
+        Effect e = new Effect(EffectType.SWORD_ATTACK, 1);
         List<Effect> effects = new ArrayList<>(1);
         effects.add(e);
 
@@ -60,22 +61,22 @@ public class BattleData {
 
         // Abilities
         for (int round = 0; round < 3; round++) {
-            BattleActionResolver.execute(p1.abilities.get(round), p1, p2);
-            BattleActionResolver.execute(p2.abilities.get(round), p2, p1);
+            EffectResolver.execute(p1.abilities.get(round), p1, p2);
+            EffectResolver.execute(p2.abilities.get(round), p2, p1);
         }
 
         // Runes
         // TODO: Are these individual hits?
         for (int i = 0; i < p1.runes; i++) {
-            BattleActionResolver.execute(BattleAction.HIT, 200, p1, p2);
+            EffectResolver.execute(EffectType.HIT, 200, p1, p2);
         }
         for (int i = 0; i < p2.runes; i++) {
-            BattleActionResolver.execute(BattleAction.HIT, 200, p2, p1);
+            EffectResolver.execute(EffectType.HIT, 200, p2, p1);
         }
 
         // Swords
-        BattleActionResolver.execute(basicAttack, p1, p2);
-        BattleActionResolver.execute(basicAttack, p2, p1);
+        EffectResolver.execute(basicAttack, p1, p2);
+        EffectResolver.execute(basicAttack, p2, p1);
 
         if (p1.damage < p2.damage) {
             return P1_WIN;

@@ -2,13 +2,14 @@ package eredan.simulator;
 
 import eredan.dto.Ability;
 import eredan.dto.Effect;
+import eredan.dto.EffectType;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BattleActionResolver {
+public class EffectResolver {
     public static Logger log = Logger.getLogger("foo");
     public static Random rand = new Random();
 
@@ -25,27 +26,27 @@ public class BattleActionResolver {
 
             for (Effect e : ability.effects) {
                 int amount = getEffectAmount(e, source, target);
-                execute(e.effect, amount, source, target);
+                execute(e.effectType, amount, source, target);
 
                 if (e.all) {
                     if (source.allies[0] != null) {
                         amount = getEffectAmount(e, source.allies[0], target);
-                        execute(e.effect, amount, source.allies[0], target);
+                        execute(e.effectType, amount, source.allies[0], target);
                     }
                     if (source.allies[1] != null) {
                         amount = getEffectAmount(e, source.allies[1], target);
-                        execute(e.effect, amount, source.allies[1], target);
+                        execute(e.effectType, amount, source.allies[1], target);
                     }
                 }
 
                 if (e.allOpponents) {
                     if (target.allies[0] != null) {
                         amount = getEffectAmount(e, source, target.allies[0]);
-                        execute(e.effect, amount, source, target.allies[0]);
+                        execute(e.effectType, amount, source, target.allies[0]);
                     }
                     if (target.allies[1] != null) {
                         amount = getEffectAmount(e, source, target.allies[1]);
-                        execute(e.effect, amount, source, target.allies[1]);
+                        execute(e.effectType, amount, source, target.allies[1]);
                     }
                 }
             }
@@ -172,9 +173,9 @@ public class BattleActionResolver {
         return amount;
     }
 
-    public static void execute(BattleAction effect, int amount, CharacterStatus source, CharacterStatus target) {
-        BattleArgs args = new BattleArgs(amount);
-        switch (effect) {
+    public static void execute(EffectType effectType, int amount, CharacterStatus source, CharacterStatus target) {
+        EffectArgs args = new EffectArgs(amount);
+        switch (effectType) {
             case APPLY_DAMAGE:
                 applyDamage(source, target, args);
                 break;
@@ -322,7 +323,7 @@ public class BattleActionResolver {
         return true;
     }
 
-    public static void adjustDamage(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void adjustDamage(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         args.amount += source.damageBuff - source.damageDebuff;
         args.amount += target.defenseDebuff - target.defenseBuff;
 
@@ -356,7 +357,7 @@ public class BattleActionResolver {
         }
     }
 
-    public static void applyDamage(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void applyDamage(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         if (target.shield > 0) {
             if (args.amount > target.shield) {
                 args.amount -= target.shield;
@@ -377,76 +378,76 @@ public class BattleActionResolver {
                     source.str += source.rage;
                     target.str += target.berserk;
                     if (target.thorns > 0) {
-                        applyDamage(target, source, new BattleArgs(target.thorns, false, true));
+                        applyDamage(target, source, new EffectArgs(target.thorns, false, true));
                     }
                     if (source.blessing > 0) {
-                        heal(source, target, new BattleArgs(source.blessing));
+                        heal(source, target, new EffectArgs(source.blessing));
                     }
                 }
             }
         }
     }
 
-    public static void attack(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void attack(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         for (int i = 0; i < args.amount; i++) {
-            BattleArgs hitArgs = new BattleArgs(source.str, args.isSword, args.isThorns);
+            EffectArgs hitArgs = new EffectArgs(source.str, args.isSword, args.isThorns);
             adjustDamage(source, target, hitArgs);
             boolean triggerRiposte = (args.isSword && target.riposte > 0 && hitArgs.amount > target.shield);
             applyDamage(source, target, hitArgs);
 
             if (triggerRiposte) {
                 target.riposte--;
-                attack(target, source, new BattleArgs(1));
+                attack(target, source, new EffectArgs(1));
             }
         }
     }
 
-    public static void swordAttack(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void swordAttack(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         args.isSword = true;
         attack(source, target, args);
     }
 
-    public static void rage(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void rage(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.rage += args.amount;
     }
 
-    public static void berserk(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void berserk(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.berserk += args.amount;
     }
 
-    public static void dodge(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void dodge(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.dodge += args.amount;
     }
 
-    public static void critical(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void critical(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.crits += args.amount;
     }
 
-    public static void riposte(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void riposte(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.riposte += args.amount;
     }
 
-    public static void thorns(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void thorns(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.thorns += args.amount;
     }
 
-    public static void increaseStr(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void increaseStr(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.str += args.amount;
     }
 
-    public static void decreaseStr(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void decreaseStr(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         target.str = Math.max(0, target.str - args.amount);
     }
 
-    public static void damageBuff(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void damageBuff(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.damageBuff += args.amount;
     }
 
-    public static void damageDebuff(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void damageDebuff(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         target.damageDebuff += args.amount;
     }
 
-    public static void heal(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void heal(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         if (source.eclipse > 0) {
             source.eclipse--;
         } else {
@@ -454,65 +455,65 @@ public class BattleActionResolver {
         }
     }
 
-    public static void shield(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void shield(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.shield += args.amount;
     }
 
-    public static void hit(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void hit(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
     }
 
-    public static void smite(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        BattleArgs smiteArgs = new BattleArgs(target.str * args.amount);
+    public static void smite(CharacterStatus source, CharacterStatus target, EffectArgs args) {
+        EffectArgs smiteArgs = new EffectArgs(target.str * args.amount);
         adjustDamage(source, target, smiteArgs);
         applyDamage(source, target, smiteArgs);
     }
 
-    public static void backstab(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        decreaseStr(source, target, new BattleArgs(args.amount / 2));
+    public static void backstab(CharacterStatus source, CharacterStatus target, EffectArgs args) {
+        decreaseStr(source, target, new EffectArgs(args.amount / 2));
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
     }
 
-    public static void shock(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void shock(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         applyDamage(source, target, args);
     }
 
-    public static void fireball(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void fireball(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         // TODO: Distinction between fireball/terror debuff/damage debuff for purify
         target.damageDebuff += args.amount / 10;
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
     }
 
-    public static void lightning(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void lightning(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         int tempDebuff = args.amount / 10;
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
         target.defenseDebuff += tempDebuff;
     }
 
-    public static void terror(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void terror(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         // TODO: Distinction between fireball/terror debuff/damage debuff for purify
         target.terror += args.amount;
     }
 
-    public static void lifedrain(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void lifedrain(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         heal(source, target, args);
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
     }
 
-    public static void resilience(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void resilience(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.defenseBuff += args.amount;
     }
 
-    public static void blessing(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void blessing(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.blessing += args.amount;
     }
 
-    public static void spellbreaker(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void spellbreaker(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
 
@@ -598,7 +599,7 @@ public class BattleActionResolver {
         }
     }
 
-    public static void diceChange(int sourceDice, int destDice, CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void diceChange(int sourceDice, int destDice, CharacterStatus source, CharacterStatus target, EffectArgs args) {
         // Make a copy of the dice since we're changing them
         if (source.diceCounts == Dice.counts[source.diceId]) {
             source.diceCounts = new int[4];
@@ -610,15 +611,15 @@ public class BattleActionResolver {
         source.diceCounts[destDice] += change;
     }
 
-    public static void ice(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void ice(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         target.ice += args.amount;
     }
 
-    public static void rune(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void rune(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.runes += args.amount;
     }
 
-    public static void purify(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void purify(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         for (int i = 0; i < args.amount; i++) {
             source.damageDebuff /= 2;
             source.defenseDebuff /= 2;
@@ -628,41 +629,41 @@ public class BattleActionResolver {
         }
     }
 
-    public static void bulwark(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void bulwark(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.bulwark = args.amount;
     }
 
-    public static void shieldBash(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        BattleArgs bashDamage = new BattleArgs((int)(source.shield * 1.5 + args.amount));
+    public static void shieldBash(CharacterStatus source, CharacterStatus target, EffectArgs args) {
+        EffectArgs bashDamage = new EffectArgs((int)(source.shield * 1.5 + args.amount));
         source.shield = 0;
         adjustDamage(source, target, bashDamage);
         applyDamage(source, target, bashDamage);
     }
 
-    public static void setStr(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void setStr(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         // Special case: Ignore 0 (see Stone Eater)
         if (args.amount > 0) {
             source.str = args.amount;
         }
     }
 
-    public static void scarab(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void scarab(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.scarabs += args.amount;
     }
 
-    public static void divideStr(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void divideStr(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         target.str /= args.amount;
     }
 
-    public static void blizzard(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void blizzard(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.icyShield += args.amount;
     }
 
-    public static void stench(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void stench(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         source.stench += args.amount;
     }
 
-    public static void eclipse(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void eclipse(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         target.eclipse += args.amount;
     }
 }

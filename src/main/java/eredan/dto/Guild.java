@@ -1,4 +1,4 @@
-package eredan.simulator;
+package eredan.dto;
 
 public enum Guild {
     SAP_HEARTS,

@@ -1,14 +1,9 @@
 package eredan.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import eredan.simulator.BattleAction;
-import eredan.simulator.BoostType;
-import eredan.simulator.Guild;
-import eredan.simulator.Race;
-import eredan.simulator.Clazz;
 
 public class Effect {
-    public BattleAction effect;
+    public EffectType effectType;
     public int amount;
 
     public boolean icy;
@@ -26,8 +21,8 @@ public class Effect {
 
     public Effect() { }
 
-    public Effect(BattleAction effect, int amount) {
-        this.effect = effect;
+    public Effect(EffectType effectType, int amount) {
+        this.effectType = effectType;
         this.amount = amount;
     }
 }

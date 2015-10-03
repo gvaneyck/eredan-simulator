@@ -1,4 +1,4 @@
-package eredan.simulator;
+package eredan.dto;
 
 public enum BoostType {
     IS_ATTACKER,
