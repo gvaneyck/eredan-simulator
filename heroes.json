@@ -2614,6 +2614,94 @@
         ]
     },
     {
+        "name": "Lord Elios",
+        "guild": "Runic Legion",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "RUNE", "amount": 3 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 400, "boost_type": "ALLIES_GUILD", "boost_check": "Runic Legion", "boost_amount": 150, "runic": true }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 120 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Loquitus",
+        "guild": "Runic Legion",
+        "race": "beast",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BULWARK", "amount": 390 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "RUNE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 180, "runic": true },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Agillian",
+        "guild": "Runic Legion",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "RUNE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 600, "runic": true }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHIELD_BASH", "amount": 200 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Lania of Thyrs",
         "guild": "Runic Legion",
         "race": "human",
@@ -2638,6 +2726,652 @@
                 "cost": "R",
                 "effects": [
                     { "effect": "HIT", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Coranthia Ex",
+        "guild": "Runic Legion",
+        "race": "human",
+        "clazz": "priest",
+        "str": 175,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "RUNE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BULWARK", "amount": 290 },
+                    { "effect": "PURIFY", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 500, "runic": true },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Exymos Sv",
+        "guild": "Runic Legion",
+        "race": "beast",
+        "clazz": "colossus",
+        "str": 245,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BULWARK", "amount": 390 },
+                    { "effect": "RUNE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300, "runic": true },
+                    { "effect": "RUNE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 600, "runic": true },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Centorium Aurius Ex",
+        "guild": "Runic Legion",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 400 },
+                    { "effect": "RUNE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 50 },
+                    { "effect": "RIPOSTE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 600, "runic": true },
+                    { "effect": "DICE_CHANGE_BS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Privus",
+        "guild": "Runic Legion",
+        "race": "beast",
+        "clazz": "warrior",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "HIT", "amount": 500, "runic": true },
+                    { "effect": "RUNE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 520, "runic": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 100 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Sapient",
+        "guild": "Runic Legion",
+        "race": "human",
+        "clazz": "priest",
+        "str": 90,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "RUNE", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Runic Legion", "boost_amount": 1, "all": true },
+                    { "effect": "DICE_CHANGE_BR", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RRR",
+                "effects": [
+                    { "effect": "RUNE", "amount": 4 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 450 },
+                    { "effect": "HEAL", "amount": 225 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Delphea Ex",
+        "guild": "Runic Legion",
+        "race": "human",
+        "clazz": "priest",
+        "str": 105,
+        "abilities": [
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 800, "runic": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 100, "runic": true },
+                    { "effect": "RUNE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HEAL", "amount": 400, "runic": true },
+                    { "effect": "SMITE", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Warrior Myrina",
+        "guild": "Runic Legion",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 450 },
+                    { "effect": "RUNE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD_BASH", "amount": 100 },
+                    { "effect": "SHIELD", "amount": 300 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 360, "runic": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Lady Jane Ex",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "priest",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 220 },
+                    { "effect": "SHIELD", "amount": 110 }
+                ]
+            },
+            {
+                "cost": "YY",
+                "effects": [
+                    { "effect": "SET_STR", "amount": 300 },
+                    { "effect": "PURIFY", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HEAL", "amount": 150, "noble": true },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Johan of Avalonia",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "RIPOSTE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 250 },
+                    { "effect": "BUFF_STR", "amount": 50, "noble": true }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 400, "noble": true },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ysild",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 240, "boost_type": "IS_ATTACKER", "boost_amount": 120 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 300 },
+                    { "effect": "BUFF_STR", "amount": 75 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 300, "noble": true },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Thunder King",
+        "guild": "Avalonians",
+        "race": "guemelite",
+        "clazz": "warrior",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 200 },
+                    { "effect": "RIPOSTE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RBY",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 500, "noble": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Enguerrand",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "BUFF_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 500, "noble": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Aez, King of Avalonia",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 400, "boost_type": "ALLIES_GUILD", "boost_check": "Avalonians", "boost_amount": 125, "noble": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "RIPOSTE", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Avalonians", "boost_amount": 2, "all": true },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 85 },
+                    { "effect": "SHIELD", "amount": 125, "noble": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Panturien Sv",
+        "guild": "Avalonians",
+        "race": "beast",
+        "clazz": "colossus",
+        "str": 200,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "INCREASE_STR", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 200, "noble": true },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 400, "noble": true },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Great Duke",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "priest",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "PURIFY", "amount": 1 },
+                    { "effect": "SHOCK", "amount": 400, "noble": true }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SMITE", "amount": 2, "noble": true },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Myria of Avalonia",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "mage",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 150 },
+                    { "effect": "BUFF_DMG", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 200, "noble": true },
+                    { "effect": "SPELLBREAKER", "amount": 150 }
+                ]
+            },
+            {
+                "cost": "BB",
+                "effects": [
+                    { "effect": "HEAL", "amount": 300, "noble": true },
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "HIT", "amount": 250 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Saethwir",
+        "guild": "Avalonians",
+        "race": "undead",
+        "clazz": "marauder",
+        "str": 155,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 200 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 200, "noble": true },
+                    { "effect": "HIT", "amount": 350 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 300, "noble": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Queen Aelide",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "priest",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 400, "boost_type": "ALLIES_GUILD", "boost_check": "Avalonians", "boost_amount": 150, "noble": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "PURIFY", "amount": 1 },
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Avalonians", "boost_amount": 30, "all": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HEAL", "amount": 0, "boost_type": "STR", "boost_amount": 2, "noble": true },
+                    { "effect": "SMITE", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Sevylath",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "priest",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BLESSING", "amount": 0, "boost_type": "SOURCE_CLASS", "boost_check": "priest", "boost_amount": 20, "all": true },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 300, "noble": true },
+                    { "effect": "BUFF_STR", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 0, "boost_type": "STR", "boost_amount": 2 },
+                    { "effect": "SMITE", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Knight Oscar",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 120 },
+                    { "effect": "RIPOSTE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 500, "noble": true },
+                    { "effect": "HIT", "amount": 250 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD_BASH", "amount": 200 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Deirf Geis",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "marauder",
+        "str": 170,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 2 },
+                    { "effect": "HIT", "amount": 300 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SCARAB", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HIT", "amount": 300, "noble": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Konis",
+        "guild": "Avalonians",
+        "race": "human",
+        "clazz": "warrior",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 300, "noble": true }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 150, "noble": true },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RRR",
+                "effects": [
+                    { "effect": "HIT", "amount": 1250 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
                 ]
             }
         ]

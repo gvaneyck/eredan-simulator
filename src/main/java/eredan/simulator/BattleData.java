@@ -5,7 +5,6 @@ import eredan.dto.Effect;
 import eredan.dto.Hero;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,6 +62,15 @@ public class BattleData {
         for (int round = 0; round < 3; round++) {
             BattleActionResolver.execute(p1.abilities.get(round), p1, p2);
             BattleActionResolver.execute(p2.abilities.get(round), p2, p1);
+        }
+
+        // Runes
+        // TODO: Are these individual hits?
+        for (int i = 0; i < p1.runes; i++) {
+            BattleActionResolver.execute(BattleAction.HIT, 200, p1, p2);
+        }
+        for (int i = 0; i < p2.runes; i++) {
+            BattleActionResolver.execute(BattleAction.HIT, 200, p2, p1);
         }
 
         // Swords

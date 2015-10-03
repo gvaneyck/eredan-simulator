@@ -30,7 +30,12 @@ public enum BattleAction {
     DICE_CHANGE_RS,
     DICE_CHANGE_BS,
     DICE_CHANGE_YS,
+    DICE_CHANGE_BR,
     ICE,
     RUNE,
-    PURIFY
+    PURIFY,
+    BULWARK,
+    SHIELD_BASH,
+    SET_STR,
+    SCARAB
 }

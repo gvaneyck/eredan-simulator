@@ -5,7 +5,6 @@ import eredan.dto.Effect;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -54,15 +53,6 @@ public class BattleActionResolver {
 
     public static int getEffectAmount(Effect e, CharacterStatus source, CharacterStatus target) {
         int amount = e.amount;
-
-        if (e.icy) {
-            amount += (int)((double)e.amount * target.ice / 10);
-        }
-
-        if (e.runic) {
-            amount += (int)((double)e.amount * source.runes / 2);
-            source.runes = 0;
-        }
 
         if (e.boostType != null) {
             switch (e.boostType) {
@@ -163,6 +153,21 @@ public class BattleActionResolver {
             }
         }
 
+        // These boosts happen after other boosts
+        if (e.icy) {
+            amount += e.amount * target.ice / 10;
+        }
+
+        if (e.runic) {
+            amount += e.amount * source.runes / 2;
+            source.runes = 0;
+        }
+
+        if (e.noble && source.damage > target.damage) {
+            amount += e.amount / 2;
+            source.runes = 0;
+        }
+
         return amount;
     }
 
@@ -248,13 +253,16 @@ public class BattleActionResolver {
                 spellbreaker(source, target, args);
                 break;
             case DICE_CHANGE_RS:
-                diceChangeRS(source, target, args);
+                diceChange(Dice.RED, Dice.SWORD, source, target, args);
                 break;
             case DICE_CHANGE_BS:
-                diceChangeBS(source, target, args);
+                diceChange(Dice.BLUE, Dice.SWORD, source, target, args);
                 break;
             case DICE_CHANGE_YS:
-                diceChangeYS(source, target, args);
+                diceChange(Dice.YELLOW, Dice.SWORD, source, target, args);
+                break;
+            case DICE_CHANGE_BR:
+                diceChange(Dice.BLUE, Dice.RED, source, target, args);
                 break;
             case ICE:
                 ice(source, target, args);
@@ -264,6 +272,18 @@ public class BattleActionResolver {
                 break;
             case PURIFY:
                 purify(source, target, args);
+                break;
+            case BULWARK:
+                bulwark(source, target, args);
+                break;
+            case SHIELD_BASH:
+                shieldBash(source, target, args);
+                break;
+            case SET_STR:
+                setStr(source, target, args);
+                break;
+            case SCARAB:
+                scarab(source, target, args);
                 break;
             default:
                 throw new RuntimeException("Invalid action");
@@ -304,6 +324,9 @@ public class BattleActionResolver {
                 target.dodge--;
                 args.amount /= 2;
             }
+            if (target.bulwark > 0 && args.amount > target.bulwark) {
+                args.amount = target.bulwark;
+            }
         }
     }
 
@@ -319,17 +342,22 @@ public class BattleActionResolver {
         }
 
         if (args.amount > 0) {
-            target.damage += args.amount;
-            if (!args.isThorns) {
-                source.str += source.rage;
-                target.str += target.berserk;
-                if (target.thorns > 0) {
-                    BattleArgs thornsArgs = new BattleArgs(target.thorns);
-                    thornsArgs.isThorns = true;
-                    applyDamage(target, source, thornsArgs);
-                }
-                if (source.blessing > 0) {
-                    heal(source, target, new BattleArgs(source.blessing));
+            if (target.scarabs > 0) {
+                heal(target, source, args);
+                target.scarabs--;
+            } else {
+                target.damage += args.amount;
+                if (!args.isThorns) {
+                    source.str += source.rage;
+                    target.str += target.berserk;
+                    if (target.thorns > 0) {
+                        BattleArgs thornsArgs = new BattleArgs(target.thorns);
+                        thornsArgs.isThorns = true;
+                        applyDamage(target, source, thornsArgs);
+                    }
+                    if (source.blessing > 0) {
+                        heal(source, target, new BattleArgs(source.blessing));
+                    }
                 }
             }
         }
@@ -482,13 +510,16 @@ public class BattleActionResolver {
             buffs.add("riposte");
         } else if (target.runes > 0) {
             buffs.add("runes");
+        } else if (target.bulwark > 0) {
+            buffs.add("bulwark");
+        } else if (target.scarabs > 0) {
+            buffs.add("scarabs");
         }
 
         if (buffs.isEmpty()) {
             return;
         }
 
-        // TODO: Bulwark will get halved (special case)
         String buffToRemove = buffs.get(rand.nextInt(buffs.size()));
         switch (buffToRemove) {
             case "shield":
@@ -521,43 +552,25 @@ public class BattleActionResolver {
             case "runes":
                 target.runes = 0;
                 break;
+            case "bulwark":
+                target.bulwark /= 2;
+                break;
+            case "scarabs":
+                target.scarabs = 0;
+                break;
         }
     }
 
-    public static void diceChangeRS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+    public static void diceChange(int sourceDice, int destDice, CharacterStatus source, CharacterStatus target, BattleArgs args) {
         // Make a copy of the dice since we're changing them
         if (source.diceCounts == Dice.counts[source.diceId]) {
             source.diceCounts = new int[4];
             System.arraycopy(Dice.counts[source.diceId], 0, source.diceCounts, 0, 4);
         }
 
-        int change = Math.min(args.amount, source.diceCounts[Dice.RED]);
-        source.diceCounts[Dice.RED] -= change;
-        source.diceCounts[Dice.SWORD] += change;
-    }
-
-    public static void diceChangeBS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        // Make a copy of the dice since we're changing them
-        if (source.diceCounts == Dice.counts[source.diceId]) {
-            source.diceCounts = new int[4];
-            System.arraycopy(Dice.counts[source.diceId], 0, source.diceCounts, 0, 4);
-        }
-
-        int change = Math.min(args.amount, source.diceCounts[Dice.BLUE]);
-        source.diceCounts[Dice.BLUE] -= change;
-        source.diceCounts[Dice.SWORD] += change;
-    }
-
-    public static void diceChangeYS(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        // Make a copy of the dice since we're changing them
-        if (source.diceCounts == Dice.counts[source.diceId]) {
-            source.diceCounts = new int[4];
-            System.arraycopy(Dice.counts[source.diceId], 0, source.diceCounts, 0, 4);
-        }
-
-        int change = Math.min(args.amount, source.diceCounts[Dice.YELLOW]);
-        source.diceCounts[Dice.YELLOW] -= change;
-        source.diceCounts[Dice.SWORD] += change;
+        int change = Math.min(args.amount, source.diceCounts[sourceDice]);
+        source.diceCounts[sourceDice] -= change;
+        source.diceCounts[destDice] += change;
     }
 
     public static void ice(CharacterStatus source, CharacterStatus target, BattleArgs args) {
@@ -575,5 +588,24 @@ public class BattleActionResolver {
             source.terror /= 2;
             source.ice /= 2;
         }
+    }
+
+    public static void bulwark(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        source.bulwark = args.amount;
+    }
+
+    public static void shieldBash(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        BattleArgs bashDamage = new BattleArgs((int)(source.shield * 1.5 + args.amount));
+        source.shield = 0;
+        adjustDamage(source, target, bashDamage);
+        applyDamage(source, target, bashDamage);
+    }
+
+    public static void setStr(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        source.str = args.amount;
+    }
+
+    public static void scarab(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        source.scarabs += args.amount;
     }
 }

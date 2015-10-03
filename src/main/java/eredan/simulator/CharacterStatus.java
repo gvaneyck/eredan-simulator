@@ -37,6 +37,8 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
     public int blessing = 0;
     public int ice = 0;
     public int runes = 0;
+    public int bulwark = 0;
+    public int scarabs = 0;
 
     public CharacterStatus() { }
 
@@ -73,6 +75,8 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
         copy.blessing = blessing;
         copy.ice = ice;
         copy.runes = runes;
+        copy.bulwark = bulwark;
+        copy.scarabs = scarabs;
 
         return copy;
     }

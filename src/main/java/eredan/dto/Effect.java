@@ -10,6 +10,7 @@ public class Effect {
 
     public boolean icy;
     public boolean runic;
+    public boolean noble;
 
     public boolean all;
     @JsonProperty("all_opp") public boolean allOpponents;

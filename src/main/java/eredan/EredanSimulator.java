@@ -1,13 +1,12 @@
 package eredan;
 
-import org.apache.log4j.Logger;
 import eredan.simulator.BattleData;
 import eredan.simulator.CharacterStatus;
 import eredan.simulator.Dice;
 import eredan.simulator.Heroes;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -56,18 +55,15 @@ public class EredanSimulator {
         }
         System.out.println();
 
-//        testChallenger();
-        runGeneticAlgorithm();
+        testChallenger();
+//        runGeneticAlgorithm();
     }
 
     public static void testChallenger() {
         List<List<Integer>> teams = new ArrayList<>();
         List<Integer> team;
         team = new ArrayList<>(); team.add(11); team.add(27); team.add(76); team.add(66); team.add(89); teams.add(team);
-        team = new ArrayList<>(); team.add(11); team.add(14); team.add(19); team.add(27); team.add(89); teams.add(team);
-        team = new ArrayList<>(); team.add(11); team.add(14); team.add(51); team.add(58); team.add(89); teams.add(team);
-        team = new ArrayList<>(); team.add(11); team.add(57); team.add(86); team.add(87); team.add(89); teams.add(team);
-        team = new ArrayList<>(); team.add(11); team.add(86); team.add(67); team.add(88); team.add(89); teams.add(team);
+        team = new ArrayList<>(); team.add(15); team.add(33); team.add(46); team.add(65); team.add(76); teams.add(team);
 
         // Hate, Carkasse, Kitsana, Amidaraxar, and Lania
         List<Integer> challenger;
