@@ -1,9 +1,9 @@
 [
     {
         "name": "Aleshane",
-        "guild": "Sap Hearts",
-        "race": "elfine",
-        "clazz": "marauder",
+        "guild": "SAP_HEARTS",
+        "race": "ELFINE",
+        "clazz": "MARAUDER",
         "str": 140,
         "abilities": [
             {
@@ -28,15 +28,15 @@
     },
     {
         "name": "Apagori",
-        "guild": "Sap Hearts",
-        "race": "hom'chai",
-        "clazz": "warrior",
+        "guild": "SAP_HEARTS",
+        "race": "HOM_CHAI",
+        "clazz": "WARRIOR",
         "str": 120,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "SHIELD", "amount": 250, "boost_type": "TARGET_RACE", "boost_check": "hom'chai", "boost_amount": 125 }
+                    { "effect": "SHIELD", "amount": 250, "boost_type": "TARGET_RACE", "race_check": "HOM_CHAI", "boost_amount": 125 }
                 ]
             },
             {
@@ -57,9 +57,9 @@
     },
     {
         "name": "Baligu'Diga Ex",
-        "guild": "Sap Hearts",
-        "race": "undead",
-        "clazz": "marauder",
+        "guild": "SAP_HEARTS",
+        "race": "UNDEAD",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -87,9 +87,9 @@
     },
     {
         "name": "Belladone",
-        "guild": "Sap Hearts",
-        "race": "elfine",
-        "clazz": "warrior",
+        "guild": "SAP_HEARTS",
+        "race": "ELFINE",
+        "clazz": "WARRIOR",
         "str": 135,
         "abilities": [
             {
@@ -103,7 +103,7 @@
                 "cost": "RY",
                 "effects": [
                     { "effect": "RIPOSTE", "amount": 2 },
-                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_RACE", "boost_check": "elfine", "boost_amount": 45, "all": true }
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_RACE", "race_check": "ELFINE", "boost_amount": 45, "all": true }
                 ]
             },
             {
@@ -116,9 +116,9 @@
     },
     {
         "name": "Bulu'Baga Ex",
-        "guild": "Sap Hearts",
-        "race": "undead",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "UNDEAD",
+        "clazz": "MAGE",
         "str": 100,
         "abilities": [
             {
@@ -145,15 +145,15 @@
     },
     {
         "name": "Cervus",
-        "guild": "Sap Hearts",
-        "race": "dais",
-        "clazz": "warrior",
+        "guild": "SAP_HEARTS",
+        "race": "DAIS",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "CRITICAL", "amount": 0, "boost_type": "SOURCE_RACE", "boost_check": "dais", "boost_amount": 1 },
+                    { "effect": "CRITICAL", "amount": 0, "boost_type": "SOURCE_RACE", "race_check": "DAIS", "boost_amount": 1, "all": true },
                     { "effect": "DICE_CHANGE_YS", "amount": 1 }
                 ]
             },
@@ -175,9 +175,9 @@
     },
     {
         "name": "Chestnut",
-        "guild": "Sap Hearts",
-        "race": "elfine",
-        "clazz": "marauder",
+        "guild": "SAP_HEARTS",
+        "race": "ELFINE",
+        "clazz": "MARAUDER",
         "str": 145,
         "abilities": [
             {
@@ -203,16 +203,16 @@
     },
     {
         "name": "Dionaea",
-        "guild": "Sap Hearts",
-        "race": "dais",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "DAIS",
+        "clazz": "MAGE",
         "str": 130,
         "abilities": [
             {
                 "cost": "RR",
                 "effects": [
                     { "effect": "HIT", "amount": 200 },
-                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "ALLIES_GUILD", "boost_check": "Sap Hearts", "boost_amount": 30 }
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "ALLIES_GUILD", "guild_check": "SAP_HEARTS", "boost_amount": 30 }
                 ]
             },
             {
@@ -233,9 +233,9 @@
     },
     {
         "name": "Ebony Ex",
-        "guild": "Sap Hearts",
-        "race": "dais",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "DAIS",
+        "clazz": "MAGE",
         "str": 100,
         "abilities": [
             {
@@ -262,9 +262,9 @@
     },
     {
         "name": "Eikytan Ex",
-        "guild": "Sap Hearts",
-        "race": "dais",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "DAIS",
+        "clazz": "MAGE",
         "str": 105,
         "abilities": [
             {
@@ -291,9 +291,9 @@
     },
     {
         "name": "Fe'y Ex",
-        "guild": "Sap Hearts",
-        "race": "dais",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "DAIS",
+        "clazz": "MAGE",
         "str": 90,
         "abilities": [
             {
@@ -319,9 +319,9 @@
     },
     {
         "name": "Grandao Ex",
-        "guild": "Sap Hearts",
-        "race": "hom'chai",
-        "clazz": "marauder",
+        "guild": "SAP_HEARTS",
+        "race": "HOM_CHAI",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -349,9 +349,9 @@
     },
     {
         "name": "Hundawa Ex",
-        "guild": "Sap Hearts",
-        "race": "beast",
-        "clazz": "warrior",
+        "guild": "SAP_HEARTS",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -378,15 +378,15 @@
     },
     {
         "name": "Kabra'Kan Ex",
-        "guild": "Sap Hearts",
-        "race": "hom'chai",
-        "clazz": "warrior",
+        "guild": "SAP_HEARTS",
+        "race": "HOM_CHAI",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "HIT", "amount": 300, "boost_type": "ALLIES_RACE", "boost_check": "hom'chai", "boost_amount": 150 }
+                    { "effect": "HIT", "amount": 300, "boost_type": "ALLIES_RACE", "race_check": "HOM_CHAI", "boost_amount": 150 }
                 ]
             },
             {
@@ -407,9 +407,9 @@
     },
     {
         "name": "Kachu'Taoa Sv",
-        "guild": "Sap Hearts",
-        "race": "beast",
-        "clazz": "colossus",
+        "guild": "SAP_HEARTS",
+        "race": "BEAST",
+        "clazz": "COLOSSUS",
         "str": 200,
         "abilities": [
             {
@@ -437,9 +437,9 @@
     },
     {
         "name": "Katla Ex",
-        "guild": "Sap Hearts",
-        "race": "elfine",
-        "clazz": "marauder",
+        "guild": "SAP_HEARTS",
+        "race": "ELFINE",
+        "clazz": "MARAUDER",
         "str": 155,
         "abilities": [
             {
@@ -467,9 +467,9 @@
     },
     {
         "name": "Keep-the-Totems Ex",
-        "guild": "Sap Hearts",
-        "race": "hom'chai",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "HOM_CHAI",
+        "clazz": "MAGE",
         "str": 90,
         "abilities": [
             {
@@ -497,22 +497,22 @@
     },
     {
         "name": "Kei'Zan",
-        "guild": "Sap Hearts",
-        "race": "dais",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "DAIS",
+        "clazz": "MAGE",
         "str": 150,
         "abilities": [
             {
                 "cost": "Y",
                 "effects": [
-                    { "effect": "FIREBALL", "amount": 250, "boost_type": "TARGET_CLASS", "boost_check": "warrior", "boost_amount": 125 }
+                    { "effect": "FIREBALL", "amount": 250, "boost_type": "TARGET_CLASS", "class_check": "WARRIOR", "boost_amount": 125 }
                 ]
             },
             {
                 "cost": "RB",
                 "effects": [
                     { "effect": "HIT", "amount": 250 },
-                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Sap Hearts", "boost_amount": 50, "all": true }
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "guild_check": "SAP_HEARTS", "boost_amount": 50, "all": true }
                 ]
             },
             {
@@ -526,9 +526,9 @@
     },
     {
         "name": "Koria Ex",
-        "guild": "Sap Hearts",
-        "race": "beast",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "BEAST",
+        "clazz": "MAGE",
         "str": 90,
         "abilities": [
             {
@@ -554,9 +554,9 @@
     },
     {
         "name": "Kyr'ieden",
-        "guild": "Sap Hearts",
-        "race": "dais",
-        "clazz": "marauder",
+        "guild": "SAP_HEARTS",
+        "race": "DAIS",
+        "clazz": "MARAUDER",
         "str": 160,
         "abilities": [
             {
@@ -587,9 +587,9 @@
     },
     {
         "name": "Melissandre",
-        "guild": "Sap Hearts",
-        "race": "elfine",
-        "clazz": "marauder",
+        "guild": "SAP_HEARTS",
+        "race": "ELFINE",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -603,7 +603,7 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "RAGE", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Sap Hearts", "boost_amount": 30, "all": true }
+                    { "effect": "RAGE", "amount": 0, "boost_type": "SOURCE_GUILD", "guild_check": "SAP_HEARTS", "boost_amount": 30, "all": true }
                 ]
             },
             {
@@ -616,15 +616,15 @@
     },
     {
         "name": "Pilferess",
-        "guild": "Sap Hearts",
-        "race": "beast",
-        "clazz": "marauder",
+        "guild": "SAP_HEARTS",
+        "race": "BEAST",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "CRITICAL", "amount": 2, "boost_type": "TARGET_RACE", "boost_check": "golem", "boost_amount": 1 }
+                    { "effect": "CRITICAL", "amount": 2, "boost_type": "TARGET_RACE", "race_check": "GOLEM", "boost_amount": 1 }
                 ]
             },
             {
@@ -645,9 +645,9 @@
     },
     {
         "name": "Quercus Ex",
-        "guild": "Sap Hearts",
-        "race": "dais",
-        "clazz": "warrior",
+        "guild": "SAP_HEARTS",
+        "race": "DAIS",
+        "clazz": "WARRIOR",
         "str": 120,
         "abilities": [
             {
@@ -675,36 +675,36 @@
     },
     {
         "name": "Rargnor",
-        "guild": "Sap Hearts",
-        "race": "hom'chai",
-        "clazz": "warrior",
+        "guild": "SAP_HEARTS",
+        "race": "HOM_CHAI",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
                 "cost": "B",
                 "effects": [
-                    { "effect": "CRITICAL", "amount": 1, "boost_type": "ALLIES_CLASS", "boost_check": "marauder", "boost_amount": 1 }
+                    { "effect": "CRITICAL", "amount": 1, "boost_type": "ALLIES_CLASS", "class_check": "MARAUDER", "boost_amount": 1 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "HIT", "amount": 400, "boost_type": "ALLIES_CLASS", "boost_check": "mage", "boost_amount": 100 }
+                    { "effect": "HIT", "amount": 400, "boost_type": "ALLIES_CLASS", "class_check": "MAGE", "boost_amount": 100 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "BUFF_STR", "amount": 130, "boost_type": "ALLIES_CLASS", "boost_check": "warrior", "boost_amount": 65 }
+                    { "effect": "BUFF_STR", "amount": 130, "boost_type": "ALLIES_CLASS", "class_check": "WARRIOR", "boost_amount": 65 }
                 ]
             }
         ]
     },
     {
         "name": "Rockspeaker",
-        "guild": "Sap Hearts",
-        "race": "hom'chai",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "HOM_CHAI",
+        "clazz": "MAGE",
         "str": 130,
         "abilities": [
             {
@@ -732,9 +732,9 @@
     },
     {
         "name": "Spiritspeaker",
-        "guild": "Sap Hearts",
-        "race": "dais",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "DAIS",
+        "clazz": "MAGE",
         "str": 100,
         "abilities": [
             {
@@ -746,7 +746,7 @@
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "FIREBALL", "amount": 150, "boost_type": "TARGET_RACE", "boost_check": "guemilite", "boost_amount": 75 }
+                    { "effect": "FIREBALL", "amount": 150, "boost_type": "TARGET_RACE", "race_check": "GUEMELITE", "boost_amount": 75 }
                 ]
             },
             {
@@ -759,9 +759,9 @@
     },
     {
         "name": "The Claw Ex",
-        "guild": "Sap Hearts",
-        "race": "beast",
-        "clazz": "marauder",
+        "guild": "SAP_HEARTS",
+        "race": "BEAST",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -788,9 +788,9 @@
     },
     {
         "name": "The Hailwalker",
-        "guild": "Sap Hearts",
-        "race": "dais",
-        "clazz": "warrior",
+        "guild": "SAP_HEARTS",
+        "race": "DAIS",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -819,9 +819,9 @@
     },
     {
         "name": "The Sachem",
-        "guild": "Sap Hearts",
-        "race": "elfine",
-        "clazz": "mage",
+        "guild": "SAP_HEARTS",
+        "race": "ELFINE",
+        "clazz": "MAGE",
         "str": 120,
         "abilities": [
             {
@@ -848,15 +848,15 @@
     },
     {
         "name": "Asajiro the Vagabond",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "SHIELD", "amount": 330, "boost_type": "TARGET_CLASS", "boost_check": "marauder", "boost_amount": 165 }
+                    { "effect": "SHIELD", "amount": 330, "boost_type": "TARGET_CLASS", "class_check": "MARAUDER", "boost_amount": 165 }
                 ]
             },
             {
@@ -875,9 +875,9 @@
     },
     {
         "name": "Chidori",
-        "guild": "Kotoba",
-        "race": "guemelite",
-        "clazz": "marauder",
+        "guild": "KOTOBA",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -903,9 +903,9 @@
     },
     {
         "name": "Furagu",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 120,
         "abilities": [
             {
@@ -917,7 +917,7 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "SHIELD", "amount": 170, "boost_type": "SOURCE_RACE", "boost_check": "human", "boost_amount": 85, "all": true }
+                    { "effect": "SHIELD", "amount": 170, "boost_type": "SOURCE_RACE", "race_check": "HUMAN", "boost_amount": 85, "all": true }
                 ]
             },
             {
@@ -930,9 +930,9 @@
     },
     {
         "name": "Master Ma",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -946,7 +946,7 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "HIT", "amount": 250 },
-                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Kotoba", "boost_amount": 50, "all": true }
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "guild_check": "KOTOBA", "boost_amount": 50, "all": true }
                 ]
             },
             {
@@ -960,15 +960,15 @@
     },
     {
         "name": "Hisomu",
-        "guild": "Kotoba",
-        "race": "guemelite",
-        "clazz": "marauder",
+        "guild": "KOTOBA",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
         "str": 160,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "DODGE", "amount": 2, "boost_type": "TARGET_RACE", "boost_check": "elfine", "boost_amount": 2 }
+                    { "effect": "DODGE", "amount": 2, "boost_type": "TARGET_RACE", "race_check": "ELFINE", "boost_amount": 2 }
                 ]
             },
             {
@@ -989,15 +989,15 @@
     },
     {
         "name": "Toran the Regent",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "mage",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "MAGE",
         "str": 125,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "BUFF_DMG", "amount": 40, "boost_type": "SOURCE_CLASS", "boost_check": "marauder", "boost_amount": 2, "all": true }
+                    { "effect": "BUFF_DMG", "amount": 40, "boost_type": "SOURCE_CLASS", "class_check": "MARAUDER", "boost_amount": 20, "all": true }
                 ]
             },
             {
@@ -1016,21 +1016,21 @@
     },
     {
         "name": "Yui Ling",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "mage",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "MAGE",
         "str": 120,
         "abilities": [
             {
                 "cost": "YY",
                 "effects": [
-                    { "effect": "FIREBALL", "amount": 450, "boost_type": "TARGET_RACE", "boost_check": "demon", "boost_amount": 225 }
+                    { "effect": "FIREBALL", "amount": 450, "boost_type": "TARGET_RACE", "race_check": "DEMON", "boost_amount": 225 }
                 ]
             },
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "HIT", "amount": 750, "boost_type": "TARGET_RACE", "boost_check": "undead", "boost_amount": 375 }
+                    { "effect": "HIT", "amount": 750, "boost_type": "TARGET_RACE", "race_check": "UNDEAD", "boost_amount": 375 }
                 ]
             },
             {
@@ -1043,9 +1043,9 @@
     },
     {
         "name": "Zatochi Kage Ex",
-        "guild": "Kotoba",
-        "race": "undead",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "UNDEAD",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -1057,7 +1057,7 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "BUFF_STR", "amount": 250, "boost_type": "TARGET_RACE", "boost_check": "human", "boost_amount": 125 }
+                    { "effect": "BUFF_STR", "amount": 250, "boost_type": "TARGET_RACE", "race_check": "HUMAN", "boost_amount": 125 }
                 ]
             },
             {
@@ -1070,15 +1070,15 @@
     },
     {
         "name": "Nashi",
-        "guild": "Kotoba",
-        "race": "undead",
-        "clazz": "mage",
+        "guild": "KOTOBA",
+        "race": "UNDEAD",
+        "clazz": "MAGE",
         "str": 125,
         "abilities": [
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "BUFF_DMG", "amount": 35, "boost_type": "TARGET_RACE", "boost_check": "demon", "boost_amount": 35, "all": true }
+                    { "effect": "BUFF_DMG", "amount": 35, "boost_type": "TARGET_RACE", "race_check": "DEMON", "boost_amount": 35, "all": true }
                 ]
             },
             {
@@ -1097,9 +1097,9 @@
     },
     {
         "name": "Sen'Ryaku Ex",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
@@ -1125,15 +1125,15 @@
     },
     {
         "name": "Gakyusha",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "SHIELD", "amount": 200, "boost_type": "SOURCE_GUILD", "boost_check": "Kotoba", "boost_amount": 100, "all": true }
+                    { "effect": "SHIELD", "amount": 200, "boost_type": "SOURCE_GUILD", "guild_check": "KOTOBA", "boost_amount": 100, "all": true }
                 ]
             },
             {
@@ -1146,16 +1146,16 @@
             {
                 "cost": "BY",
                 "effects": [
-                    { "effect": "HIT", "amount": 300, "boost_type": "ALLIES_GUILD", "boost_check": "Kotoba", "boost_amount": 150 }
+                    { "effect": "HIT", "amount": 300, "boost_type": "ALLIES_GUILD", "guild_check": "KOTOBA", "boost_amount": 150 }
                 ]
             }
         ]
     },
     {
         "name": "Ijin Shisei Ex",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "mage",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "MAGE",
         "str": 120,
         "abilities": [
             {
@@ -1183,9 +1183,9 @@
     },
     {
         "name": "Gan'So",
-        "guild": "Kotoba",
-        "race": "undead",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "UNDEAD",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
@@ -1212,9 +1212,9 @@
     },
     {
         "name": "Shui Khan Ex",
-        "guild": "Kotoba",
-        "race": "guemelite",
-        "clazz": "marauder",
+        "guild": "KOTOBA",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -1241,16 +1241,16 @@
     },
     {
         "name": "Hime",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "marauder",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
         "str": 135,
         "abilities": [
             {
                 "cost": "RRB",
                 "effects": [
                     { "effect": "DODGE", "amount": 1, "all": true },
-                    { "effect": "CRITICAL", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Kotoba", "boost_amount": 1, "all": true }
+                    { "effect": "CRITICAL", "amount": 0, "boost_type": "SOURCE_GUILD", "guild_check": "KOTOBA", "boost_amount": 1, "all": true }
                 ]
             },
             {
@@ -1270,9 +1270,9 @@
     },
     {
         "name": "Malyss Ex",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "mage",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "MAGE",
         "str": 100,
         "abilities": [
             {
@@ -1298,9 +1298,9 @@
     },
     {
         "name": "Shori Ex",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
@@ -1327,9 +1327,9 @@
     },
     {
         "name": "Fu-Long Sv",
-        "guild": "Kotoba",
-        "race": "beast",
-        "clazz": "colossus",
+        "guild": "KOTOBA",
+        "race": "BEAST",
+        "clazz": "COLOSSUS",
         "str": 200,
         "abilities": [
             {
@@ -1356,9 +1356,9 @@
     },
     {
         "name": "Kotori Kage Ex",
-        "guild": "Kotoba",
-        "race": "guemelite",
-        "clazz": "marauder",
+        "guild": "KOTOBA",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -1385,9 +1385,9 @@
     },
     {
         "name": "Dabhu Ex",
-        "guild": "Kotoba",
-        "race": "guemelite",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "GUEMELITE",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
@@ -1414,9 +1414,9 @@
     },
     {
         "name": "Xianren Ex",
-        "guild": "Kotoba",
-        "race": "beast",
-        "clazz": "mage",
+        "guild": "KOTOBA",
+        "race": "BEAST",
+        "clazz": "MAGE",
         "str": 120,
         "abilities": [
             {
@@ -1443,9 +1443,9 @@
     },
     {
         "name": "Daijin the Crow Ex",
-        "guild": "Kotoba",
-        "race": "undead",
-        "clazz": "marauder",
+        "guild": "KOTOBA",
+        "race": "UNDEAD",
+        "clazz": "MARAUDER",
         "str": 160,
         "abilities": [
             {
@@ -1473,15 +1473,15 @@
     },
     {
         "name": "Ban Kuan",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "mage",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "MAGE",
         "str": 90,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "FIREBALL", "amount": 360, "boost_type": "TARGET_CLASS", "boost_check": "priest", "boost_amount": 180 }
+                    { "effect": "FIREBALL", "amount": 360, "boost_type": "TARGET_CLASS", "class_check": "PRIEST", "boost_amount": 180 }
                 ]
             },
             {
@@ -1502,9 +1502,9 @@
     },
     {
         "name": "Tessai Ex",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -1533,15 +1533,15 @@
     },
     {
         "name": "Dakeza",
-        "guild": "Kotoba",
-        "race": "beast",
-        "clazz": "marauder",
+        "guild": "KOTOBA",
+        "race": "BEAST",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "CRITICAL", "amount": 0, "boost_type": "SOURCE_CLASS", "boost_check": "warrior", "boost_amount": 1, "all": true },
+                    { "effect": "CRITICAL", "amount": 0, "boost_type": "SOURCE_CLASS", "class_check": "WARRIOR", "boost_amount": 1, "all": true },
                     { "effect": "DICE_CHANGE_BS", "amount": 6 }
                 ]
             },
@@ -1550,7 +1550,7 @@
                 "effects": [
                     { "effect": "HIT", "amount": 240 },
                     { "effect": "HIT", "amount": 240 },
-                    { "effect": "DODGE", "amount": 0, "boost_type": "SOURCE_CLASS", "boost_check": "warrior", "boost_amount": 1, "all": true }
+                    { "effect": "DODGE", "amount": 0, "boost_type": "SOURCE_CLASS", "class_check": "WARRIOR", "boost_amount": 1, "all": true }
                 ]
             },
             {
@@ -1564,9 +1564,9 @@
     },
     {
         "name": "Kitsana Ex",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "mage",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "MAGE",
         "str": 100,
         "abilities": [
             {
@@ -1593,9 +1593,9 @@
     },
     {
         "name": "Jian Qiao",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 120,
         "abilities": [
             {
@@ -1622,9 +1622,9 @@
     },
     {
         "name": "Karasu Kage Ex",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "marauder",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -1651,9 +1651,9 @@
     },
     {
         "name": "Li Lan",
-        "guild": "Kotoba",
-        "race": "guemelite",
-        "clazz": "mage",
+        "guild": "KOTOBA",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
         "str": 120,
         "abilities": [
             {
@@ -1680,9 +1680,9 @@
     },
     {
         "name": "Kasai Ex",
-        "guild": "Kotoba",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "KOTOBA",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -1709,9 +1709,9 @@
     },
     {
         "name": "Ripper",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "WARRIOR",
         "str": 120,
         "abilities": [
             {
@@ -1730,16 +1730,16 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "LIFEDRAIN", "amount": 200, "boost_type": "TARGET_CLASS", "boost_check": "marauder", "boost_amount": 100 }
+                    { "effect": "LIFEDRAIN", "amount": 200, "boost_type": "TARGET_CLASS", "class_check": "MARAUDER", "boost_amount": 100 }
                 ]
             }
         ]
     },
     {
         "name": "Dimizar",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "mage",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MAGE",
         "str": 100,
         "abilities": [
             {
@@ -1766,9 +1766,9 @@
     },
     {
         "name": "Azaram",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
@@ -1788,16 +1788,16 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "HIT", "amount": 400, "boost_type": "TARGET_CLASS", "boost_check": "marauder", "boost_amount": 200 }
+                    { "effect": "HIT", "amount": 400, "boost_type": "TARGET_CLASS", "class_check": "MARAUDER", "boost_amount": 200 }
                 ]
             }
         ]
     },
     {
         "name": "Chalice",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "WARRIOR",
         "str": 0,
         "abilities": [
             {
@@ -1824,15 +1824,15 @@
     },
     {
         "name": "Carkasse",
-        "guild": "Nehantist",
-        "race": "guemelite",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "GUEMELITE",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "SHIELD", "amount": 250, "boost_type": "SOURCE_CLASS", "boost_check": "mage", "boost_amount": 125, "all": true }
+                    { "effect": "SHIELD", "amount": 250, "boost_type": "SOURCE_CLASS", "class_check": "MAGE", "boost_amount": 125, "all": true }
                 ]
             },
             {
@@ -1852,9 +1852,9 @@
     },
     {
         "name": "Zejabel",
-        "guild": "Nehantist",
-        "race": "undead",
-        "clazz": "mage",
+        "guild": "NEHANTIST",
+        "race": "UNDEAD",
+        "clazz": "MAGE",
         "str": 90,
         "abilities": [
             {
@@ -1873,22 +1873,22 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "LIFEDRAIN", "amount": 200, "boost_type": "TARGET_RACE", "boost_check": "human", "boost_amount": 100 }
+                    { "effect": "LIFEDRAIN", "amount": 200, "boost_type": "TARGET_RACE", "race_check": "HUMAN", "boost_amount": 100 }
                 ]
             }
         ]
     },
     {
         "name": "Soul Chewer",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MARAUDER",
         "str": 170,
         "abilities": [
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "BUFF_DMG", "amount": 20, "boost_type": "SOURCE_RACE", "boost_check": "demon", "boost_amount": 10 }
+                    { "effect": "BUFF_DMG", "amount": 20, "boost_type": "SOURCE_RACE", "race_check": "DEMON", "boost_amount": 10, "all": true }
                 ]
             },
             {
@@ -1909,9 +1909,9 @@
     },
     {
         "name": "Hate Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MARAUDER",
         "str": 140,
         "abilities": [
             {
@@ -1937,9 +1937,9 @@
     },
     {
         "name": "Silent Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MARAUDER",
         "str": 140,
         "abilities": [
             {
@@ -1966,15 +1966,15 @@
     },
     {
         "name": "Utkin the Spawn",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MARAUDER",
         "str": 160,
         "abilities": [
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "DEBUFF_DMG", "amount": 60, "boost_type": "ALLIES_GUILD", "boost_check": "Nehantist", "boost_amount": 30 }
+                    { "effect": "DEBUFF_DMG", "amount": 60, "boost_type": "ALLIES_GUILD", "guild_check": "NEHANTIST", "boost_amount": 30 }
                 ]
             },
             {
@@ -1995,9 +1995,9 @@
     },
     {
         "name": "Almaria",
-        "guild": "Nehantist",
-        "race": "undead",
-        "clazz": "mage",
+        "guild": "NEHANTIST",
+        "race": "UNDEAD",
+        "clazz": "MAGE",
         "str": 130,
         "abilities": [
             {
@@ -2016,16 +2016,16 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "LIFEDRAIN", "amount": 200, "boost_type": "ALLIES_RACE", "boost_check": "undead", "boost_amount": 100 }
+                    { "effect": "LIFEDRAIN", "amount": 200, "boost_type": "ALLIES_RACE", "race_check": "UNDEAD", "boost_amount": 100 }
                 ]
             }
         ]
     },
     {
         "name": "Anagram Ex",
-        "guild": "Nehantist",
-        "race": "guemelite",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
         "str": 160,
         "abilities": [
             {
@@ -2052,15 +2052,15 @@
     },
     {
         "name": "Grief",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
                 "cost": "RRY",
                 "effects": [
-                    { "effect": "BERSERK", "amount": 60, "boost_type": "TARGET_RACE", "boost_check": "undead", "boost_amount": 30 }
+                    { "effect": "BERSERK", "amount": 60, "boost_type": "TARGET_RACE", "race_check": "UNDEAD", "boost_amount": 30 }
                 ]
             },
             {
@@ -2081,15 +2081,15 @@
     },
     {
         "name": "Ishaia of the Dead",
-        "guild": "Nehantist",
-        "race": "undead",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "UNDEAD",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "BUFF_DMG", "amount": 50, "boost_type": "ALLIES_RACE", "boost_check": "undead", "boost_amount": 25 }
+                    { "effect": "BUFF_DMG", "amount": 50, "boost_type": "ALLIES_RACE", "race_check": "UNDEAD", "boost_amount": 25 }
                 ]
             },
             {
@@ -2110,9 +2110,9 @@
     },
     {
         "name": "Vordak Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "WARRIOR",
         "str": 135,
         "abilities": [
             {
@@ -2140,9 +2140,9 @@
     },
     {
         "name": "Death-Tree Ex",
-        "guild": "Nehantist",
-        "race": "dais",
-        "clazz": "mage",
+        "guild": "NEHANTIST",
+        "race": "DAIS",
+        "clazz": "MAGE",
         "str": 100,
         "abilities": [
             {
@@ -2170,9 +2170,9 @@
     },
     {
         "name": "Inquisitor Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
@@ -2200,9 +2200,9 @@
     },
     {
         "name": "Asmoroth Sv",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "colossus",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "COLOSSUS",
         "str": 250,
         "abilities": [
             {
@@ -2230,9 +2230,9 @@
     },
     {
         "name": "Rathamantis Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MARAUDER",
         "str": 155,
         "abilities": [
             {
@@ -2261,9 +2261,9 @@
     },
     {
         "name": "Herebus Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "priest",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "PRIEST",
         "str": 125,
         "abilities": [
             {
@@ -2291,9 +2291,9 @@
     },
     {
         "name": "Abraxal Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "mage",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MAGE",
         "str": 120,
         "abilities": [
             {
@@ -2305,7 +2305,7 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "HIT", "amount": 300, "boost_type": "ALLIES_RACE", "boost_check": "demon", "boost_amount": 100 }
+                    { "effect": "HIT", "amount": 300, "boost_type": "ALLIES_RACE", "race_check": "DEMON", "boost_amount": 100 }
                 ]
             },
             {
@@ -2318,9 +2318,9 @@
     },
     {
         "name": "DeathBlade Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -2348,9 +2348,9 @@
     },
     {
         "name": "Amidaraxar",
-        "guild": "Nehantist",
-        "race": "guemelite",
-        "clazz": "mage",
+        "guild": "NEHANTIST",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
         "str": 100,
         "abilities": [
             {
@@ -2377,9 +2377,9 @@
     },
     {
         "name": "Ardrakar Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -2405,9 +2405,9 @@
     },
     {
         "name": "Pain",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MARAUDER",
         "str": 160,
         "abilities": [
             {
@@ -2436,9 +2436,9 @@
     },
     {
         "name": "Gnarl",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -2466,39 +2466,39 @@
     },
     {
         "name": "Edrianne Ex",
-        "guild": "Nehantist",
-        "race": "human",
-        "clazz": "mage",
+        "guild": "NEHANTIST",
+        "race": "HUMAN",
+        "clazz": "MAGE",
         "str": 90,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
                     { "effect": "HIT", "amount": 400 },
-                    { "effect": "SHIELD", "amount": 0, "boost_type": "TARGET_CLASS", "boost_check": "warrior", "boost_amount": 250 }
+                    { "effect": "SHIELD", "amount": 0, "boost_type": "TARGET_CLASS", "class_check": "WARRIOR", "boost_amount": 250 }
                 ]
             },
             {
                 "cost": "RY",
                 "effects": [
                     { "effect": "FIREBALL", "amount": 330 },
-                    { "effect": "DODGE", "amount": 0, "boost_type": "TARGET_CLASS", "boost_check": "marauder", "boost_amount": 1 }
+                    { "effect": "DODGE", "amount": 0, "boost_type": "TARGET_CLASS", "class_check": "MARAUDER", "boost_amount": 1 }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
                     { "effect": "LIFEDRAIN", "amount": 150 },
-                    { "effect": "SHOCK", "amount": 0, "boost_type": "TARGET_CLASS", "boost_check": "priest", "boost_amount": 75 }
+                    { "effect": "SHOCK", "amount": 0, "boost_type": "TARGET_CLASS", "class_check": "PRIEST", "boost_amount": 75 }
                 ]
             }
         ]
     },
     {
         "name": "Scourge of Souls",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "WARRIOR",
         "str": 0,
         "abilities": [
             {
@@ -2525,9 +2525,9 @@
     },
     {
         "name": "Envy Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MARAUDER",
         "str": 165,
         "abilities": [
             {
@@ -2555,9 +2555,9 @@
     },
     {
         "name": "Sethan Arai",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "marauder",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "MARAUDER",
         "str": 165,
         "abilities": [
             {
@@ -2585,9 +2585,9 @@
     },
     {
         "name": "The Fallen Ex",
-        "guild": "Nehantist",
-        "race": "demon",
-        "clazz": "warrior",
+        "guild": "NEHANTIST",
+        "race": "DEMON",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -2615,9 +2615,9 @@
     },
     {
         "name": "Lord Elios",
-        "guild": "Runic Legion",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "RUNIC_LEGION",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 120,
         "abilities": [
             {
@@ -2630,7 +2630,7 @@
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "SHOCK", "amount": 400, "boost_type": "ALLIES_GUILD", "boost_check": "Runic Legion", "boost_amount": 150, "runic": true }
+                    { "effect": "SHOCK", "amount": 400, "boost_type": "ALLIES_GUILD", "guild_check": "RUNIC_LEGION", "boost_amount": 150, "runic": true }
                 ]
             },
             {
@@ -2644,9 +2644,9 @@
     },
     {
         "name": "Loquitus",
-        "guild": "Runic Legion",
-        "race": "beast",
-        "clazz": "warrior",
+        "guild": "RUNIC_LEGION",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -2674,9 +2674,9 @@
     },
     {
         "name": "Agillian",
-        "guild": "Runic Legion",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "RUNIC_LEGION",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
@@ -2703,9 +2703,9 @@
     },
     {
         "name": "Lania of Thyrs",
-        "guild": "Runic Legion",
-        "race": "human",
-        "clazz": "priest",
+        "guild": "RUNIC_LEGION",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
         "str": 80,
         "abilities": [
             {
@@ -2732,9 +2732,9 @@
     },
     {
         "name": "Coranthia Ex",
-        "guild": "Runic Legion",
-        "race": "human",
-        "clazz": "priest",
+        "guild": "RUNIC_LEGION",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
         "str": 175,
         "abilities": [
             {
@@ -2761,9 +2761,9 @@
     },
     {
         "name": "Exymos Sv",
-        "guild": "Runic Legion",
-        "race": "beast",
-        "clazz": "colossus",
+        "guild": "RUNIC_LEGION",
+        "race": "BEAST",
+        "clazz": "COLOSSUS",
         "str": 245,
         "abilities": [
             {
@@ -2791,9 +2791,9 @@
     },
     {
         "name": "Centorium Aurius Ex",
-        "guild": "Runic Legion",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "RUNIC_LEGION",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -2821,9 +2821,9 @@
     },
     {
         "name": "Privus",
-        "guild": "Runic Legion",
-        "race": "beast",
-        "clazz": "warrior",
+        "guild": "RUNIC_LEGION",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
         "str": 135,
         "abilities": [
             {
@@ -2850,15 +2850,15 @@
     },
     {
         "name": "Sapient",
-        "guild": "Runic Legion",
-        "race": "human",
-        "clazz": "priest",
+        "guild": "RUNIC_LEGION",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
         "str": 90,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "RUNE", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Runic Legion", "boost_amount": 1, "all": true },
+                    { "effect": "RUNE", "amount": 0, "boost_type": "SOURCE_GUILD", "guild_check": "RUNIC_LEGION", "boost_amount": 1, "all": true },
                     { "effect": "DICE_CHANGE_BR", "amount": 1 }
                 ]
             },
@@ -2879,9 +2879,9 @@
     },
     {
         "name": "Delphea Ex",
-        "guild": "Runic Legion",
-        "race": "human",
-        "clazz": "priest",
+        "guild": "RUNIC_LEGION",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
         "str": 105,
         "abilities": [
             {
@@ -2907,10 +2907,10 @@
         ]
     },
     {
-        "name": "Warrior Myrina",
-        "guild": "Runic Legion",
-        "race": "human",
-        "clazz": "warrior",
+        "name": "WARRIOR Myrina",
+        "guild": "RUNIC_LEGION",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 120,
         "abilities": [
             {
@@ -2937,9 +2937,9 @@
     },
     {
         "name": "Lady Jane Ex",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "priest",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
         "str": 130,
         "abilities": [
             {
@@ -2967,9 +2967,9 @@
     },
     {
         "name": "Johan of Avalonia",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -2997,9 +2997,9 @@
     },
     {
         "name": "Ysild",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
@@ -3026,9 +3026,9 @@
     },
     {
         "name": "Thunder King",
-        "guild": "Avalonians",
-        "race": "guemelite",
-        "clazz": "warrior",
+        "guild": "AVALONIANS",
+        "race": "GUEMELITE",
+        "clazz": "WARRIOR",
         "str": 135,
         "abilities": [
             {
@@ -3054,9 +3054,9 @@
     },
     {
         "name": "Enguerrand",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
@@ -3083,21 +3083,21 @@
     },
     {
         "name": "Aez, King of Avalonia",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 130,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "HIT", "amount": 400, "boost_type": "ALLIES_GUILD", "boost_check": "Avalonians", "boost_amount": 125, "noble": true }
+                    { "effect": "HIT", "amount": 400, "boost_type": "ALLIES_GUILD", "guild_check": "AVALONIANS", "boost_amount": 125, "noble": true }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
-                    { "effect": "RIPOSTE", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Avalonians", "boost_amount": 2, "all": true },
+                    { "effect": "RIPOSTE", "amount": 0, "boost_type": "SOURCE_GUILD", "guild_check": "AVALONIANS", "boost_amount": 2, "all": true },
                     { "effect": "DICE_CHANGE_RS", "amount": 6 }
                 ]
             },
@@ -3112,9 +3112,9 @@
     },
     {
         "name": "Panturien Sv",
-        "guild": "Avalonians",
-        "race": "beast",
-        "clazz": "colossus",
+        "guild": "AVALONIANS",
+        "race": "BEAST",
+        "clazz": "COLOSSUS",
         "str": 200,
         "abilities": [
             {
@@ -3142,9 +3142,9 @@
     },
     {
         "name": "Great Duke",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "priest",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
         "str": 150,
         "abilities": [
             {
@@ -3172,9 +3172,9 @@
     },
     {
         "name": "Myria of Avalonia",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "mage",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "MAGE",
         "str": 100,
         "abilities": [
             {
@@ -3203,9 +3203,9 @@
     },
     {
         "name": "Saethwir",
-        "guild": "Avalonians",
-        "race": "undead",
-        "clazz": "marauder",
+        "guild": "AVALONIANS",
+        "race": "UNDEAD",
+        "clazz": "MARAUDER",
         "str": 155,
         "abilities": [
             {
@@ -3232,22 +3232,22 @@
     },
     {
         "name": "Queen Aelide",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "priest",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
         "str": 120,
         "abilities": [
             {
                 "cost": "RB",
                 "effects": [
-                    { "effect": "SHOCK", "amount": 400, "boost_type": "ALLIES_GUILD", "boost_check": "Avalonians", "boost_amount": 150, "noble": true }
+                    { "effect": "SHOCK", "amount": 400, "boost_type": "ALLIES_GUILD", "guild_check": "AVALONIANS", "boost_amount": 150, "noble": true }
                 ]
             },
             {
                 "cost": "R",
                 "effects": [
                     { "effect": "PURIFY", "amount": 1 },
-                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "boost_check": "Avalonians", "boost_amount": 30, "all": true }
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_GUILD", "guild_check": "AVALONIANS", "boost_amount": 30, "all": true }
                 ]
             },
             {
@@ -3261,15 +3261,15 @@
     },
     {
         "name": "Sevylath",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "priest",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
         "str": 130,
         "abilities": [
             {
                 "cost": "Y",
                 "effects": [
-                    { "effect": "BLESSING", "amount": 0, "boost_type": "SOURCE_CLASS", "boost_check": "priest", "boost_amount": 20, "all": true },
+                    { "effect": "BLESSING", "amount": 0, "boost_type": "SOURCE_CLASS", "class_check": "PRIEST", "boost_amount": 20, "all": true },
                     { "effect": "DICE_CHANGE_YS", "amount": 1 }
                 ]
             },
@@ -3291,9 +3291,9 @@
     },
     {
         "name": "Knight Oscar",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 120,
         "abilities": [
             {
@@ -3321,9 +3321,9 @@
     },
     {
         "name": "Deirf Geis",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "marauder",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
         "str": 170,
         "abilities": [
             {
@@ -3349,9 +3349,9 @@
     },
     {
         "name": "Konis",
-        "guild": "Avalonians",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "AVALONIANS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
@@ -3378,9 +3378,9 @@
     },
     {
         "name": "Santa Ex",
-        "guild": "Mercenaries",
-        "race": "human",
-        "clazz": "warrior",
+        "guild": "MERCENARIES",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
         "str": 125,
         "abilities": [
             {
@@ -3408,9 +3408,9 @@
     },
     {
         "name": "Adhikara Ex",
-        "guild": "Mercenaries",
-        "race": "guemelite",
-        "clazz": "priest",
+        "guild": "MERCENARIES",
+        "race": "GUEMELITE",
+        "clazz": "PRIEST",
         "str": 135,
         "abilities": [
             {
@@ -3438,9 +3438,9 @@
     },
     {
         "name": "Fog Hydra Sv",
-        "guild": "Mercenaries",
-        "race": "undead",
-        "clazz": "colossus",
+        "guild": "MERCENARIES",
+        "race": "UNDEAD",
+        "clazz": "COLOSSUS",
         "str": 175,
         "abilities": [
             {
@@ -3454,7 +3454,7 @@
                 "cost": "RB",
                 "effects": [
                     { "effect": "SHOCK", "amount": 400 },
-                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_CLASS", "boost_check": "colossus", "boost_amount": 50, "all": true }
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_CLASS", "class_check": "COLOSSUS", "boost_amount": 50, "all": true }
                 ]
             },
             {
@@ -3468,9 +3468,9 @@
     },
     {
         "name": "Amnezy Ex",
-        "guild": "Mercenaries",
-        "race": "unknown",
-        "clazz": "marauder",
+        "guild": "MERCENARIES",
+        "race": "UNKNOWN",
+        "clazz": "MARAUDER",
         "str": 170,
         "abilities": [
             {
@@ -3498,9 +3498,9 @@
     },
     {
         "name": "Jack Al'Azred Ex",
-        "guild": "Mercenaries",
-        "race": "undead",
-        "clazz": "mage",
+        "guild": "MERCENARIES",
+        "race": "UNDEAD",
+        "clazz": "MAGE",
         "str": 125,
         "abilities": [
             {
@@ -3527,9 +3527,9 @@
     },
     {
         "name": "Ayir",
-        "guild": "Mercenaries",
-        "race": "ice elf",
-        "clazz": "berserker",
+        "guild": "MERCENARIES",
+        "race": "ICE_ELF",
+        "clazz": "BERSERKER",
         "str": 140,
         "abilities": [
             {
@@ -3556,9 +3556,9 @@
     },
     {
         "name": "Lady Ylith",
-        "guild": "Mercenaries",
-        "race": "ice elf",
-        "clazz": "priest",
+        "guild": "MERCENARIES",
+        "race": "ICE_ELF",
+        "clazz": "PRIEST",
         "str": 135,
         "abilities": [
             {
@@ -3584,15 +3584,15 @@
     },
     {
         "name": "Ursyd",
-        "guild": "Mercenaries",
-        "race": "ice elf",
-        "clazz": "berserker",
+        "guild": "MERCENARIES",
+        "race": "ICE_ELF",
+        "clazz": "BERSERKER",
         "str": 140,
         "abilities": [
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "BERSERK", "amount": 0, "boost_type": "SOURCE_CLASS", "boost_check": "berserker", "boost_amount": 30, "all": true }
+                    { "effect": "BERSERK", "amount": 0, "boost_type": "SOURCE_CLASS", "class_check": "BERSERKER", "boost_amount": 30, "all": true }
                 ]
             },
             {
@@ -3613,9 +3613,9 @@
     },
     {
         "name": "Kokrem",
-        "guild": "Mercenaries",
-        "race": "ice elf",
-        "clazz": "berserker",
+        "guild": "MERCENARIES",
+        "race": "ICE_ELF",
+        "clazz": "BERSERKER",
         "str": 140,
         "abilities": [
             {
@@ -3642,9 +3642,9 @@
     },
     {
         "name": "Yulven",
-        "guild": "Mercenaries",
-        "race": "ice elf",
-        "clazz": "berserker",
+        "guild": "MERCENARIES",
+        "race": "ICE_ELF",
+        "clazz": "BERSERKER",
         "str": 130,
         "abilities": [
             {
@@ -3670,9 +3670,9 @@
     },
     {
         "name": "Fyrnir the Ancient Ex",
-        "guild": "Mercenaries",
-        "race": "ice elf",
-        "clazz": "berserker",
+        "guild": "MERCENARIES",
+        "race": "ICE_ELF",
+        "clazz": "BERSERKER",
         "str": 150,
         "abilities": [
             {
@@ -3699,9 +3699,9 @@
     },
     {
         "name": "King Hrimnir",
-        "guild": "Mercenaries",
-        "race": "undead",
-        "clazz": "berserker",
+        "guild": "MERCENARIES",
+        "race": "UNDEAD",
+        "clazz": "BERSERKER",
         "str": 135,
         "abilities": [
             {
@@ -3727,9 +3727,9 @@
     },
     {
         "name": "Quilingo Ex",
-        "guild": "Mercenaries",
-        "race": "beast",
-        "clazz": "warrior",
+        "guild": "MERCENARIES",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
         "str": 120,
         "abilities": [
             {
@@ -3755,9 +3755,9 @@
     },
     {
         "name": "Vixen Ex",
-        "guild": "Mercenaries",
-        "race": "beast",
-        "clazz": "marauder",
+        "guild": "MERCENARIES",
+        "race": "BEAST",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -3786,9 +3786,9 @@
     },
     {
         "name": "Stone Eater",
-        "guild": "Mercenaries",
-        "race": "guemelite",
-        "clazz": "priest",
+        "guild": "MERCENARIES",
+        "race": "GUEMELITE",
+        "clazz": "PRIEST",
         "str": 125,
         "abilities": [
             {
@@ -3809,16 +3809,16 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "HIT", "amount": 650 },
-                    { "effect": "SET_STR", "amount": 0, "boost_type": "TARGET_CLASS", "boost_check": "colossus", "boost_amount": 300 }
+                    { "effect": "SET_STR", "amount": 0, "boost_type": "TARGET_CLASS", "class_check": "COLOSSUS", "boost_amount": 300 }
                 ]
             }
         ]
     },
     {
         "name": "Cherub Ex",
-        "guild": "Mercenaries",
-        "race": "human",
-        "clazz": "marauder",
+        "guild": "MERCENARIES",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -3846,9 +3846,9 @@
     },
     {
         "name": "Admiral Rabbit Ex",
-        "guild": "Mercenaries",
-        "race": "golem",
-        "clazz": "warrior",
+        "guild": "MERCENARIES",
+        "race": "GOLEM",
+        "clazz": "WARRIOR",
         "str": 50,
         "abilities": [
             {
@@ -3870,6 +3870,753 @@
                 "effects": [
                     { "effect": "HIT", "amount": 0, "boost_type": "DICE_R", "boost_amount": 150 },
                     { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Vizir Mahaud",
+        "guild": "DESERT_NOMADS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 300 },
+                    { "effect": "RESILIENCE", "amount": 0, "boost_type": "SOURCE_GUILD", "guild_check": "DESERT_NOMADS", "boost_amount": 30, "all": true }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 500 },
+                    { "effect": "ECLIPSE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 150 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Hakim",
+        "guild": "DESERT_NOMADS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "RESILIENCE", "amount": 40 },
+                    { "effect": "HIT", "amount": 230 },
+                    { "effect": "HIT", "amount": 230 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 500 },
+                    { "effect": "RIPOSTE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HEAL", "amount": 300 },
+                    { "effect": "BUFF_STR", "amount": 50 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Inatka",
+        "guild": "DESERT_NOMADS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 160,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 2 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "ECLIPSE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Neythiri",
+        "guild": "DESERT_NOMADS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 155,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 125 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "ECLIPSE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "BACKSTAB", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Mouktar",
+        "guild": "DESERT_NOMADS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "ECLIPSE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 300 },
+                    { "effect": "CRITICAL", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Sakina",
+        "guild": "DESERT_NOMADS",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 300 },
+                    { "effect": "RESILIENCE", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "PURIFY", "amount": 1 },
+                    { "effect": "HIT", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HEAL", "amount": 300 },
+                    { "effect": "HIT", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Djamena",
+        "guild": "DESERT_NOMADS",
+        "race": "SOLARIAN",
+        "clazz": "PRIEST",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BLESSING", "amount": 150 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "PURIFY", "amount": 1 },
+                    { "effect": "SMITE", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ozymandias Ex",
+        "guild": "DESERT_NOMADS",
+        "race": "SOLARIAN",
+        "clazz": "PRIEST",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BLESSING", "amount": 30 },
+                    { "effect": "HIT", "amount": 300 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 450 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 100 },
+                    { "effect": "SMITE", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dahre'ma Sv",
+        "guild": "DESERT_NOMADS",
+        "race": "SOLARIAN",
+        "clazz": "COLOSSUS",
+        "str": 200,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 400 },
+                    { "effect": "RESILIENCE", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "ECLIPSE", "amount": 1 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BLESSING", "amount": 150 },
+                    { "effect": "SMITE", "amount": 3 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ahzred Ex",
+        "guild": "DESERT_NOMADS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "RESILIENCE", "amount": 50 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "BLESSING", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 330 },
+                    { "effect": "BUFF_STR", "amount": 55 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Orzine",
+        "guild": "DESERT_NOMADS",
+        "race": "ELFINE",
+        "clazz": "PRIEST",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "PURIFY", "amount": 1 },
+                    { "effect": "BLESSING", "amount": 60 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "SMITE", "amount": 1 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 325 },
+                    { "effect": "SHOCK", "amount": 325 },
+                    { "effect": "SHOCK", "amount": 325 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ankhou",
+        "guild": "DESERT_NOMADS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "RESILIENCE", "amount": 40 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 200 },
+                    { "effect": "RIPOSTE", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Nethjim",
+        "guild": "DESERT_NOMADS",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "ECLIPSE", "amount": 1 },
+                    { "effect": "HIT", "amount": 325 },
+                    { "effect": "HIT", "amount": 325 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "PURIFY", "amount": 1 },
+                    { "effect": "SMITE", "amount": 3 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 200 },
+                    { "effect": "HEAL", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kebek",
+        "guild": "DESERT_NOMADS",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 400 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 500 },
+                    { "effect": "BUFF_STR", "amount": 150 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 550 },
+                    { "effect": "RESILIENCE", "amount": 120 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Idriss Ex",
+        "guild": "DESERT_NOMADS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 300 },
+                    { "effect": "ECLIPSE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 500 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ayept Ex",
+        "guild": "DESERT_NOMADS",
+        "race": "UNDEAD",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "RESILIENCE", "amount": 40 },
+                    { "effect": "DODGE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 550 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 250 },
+                    { "effect": "BUFF_STR", "amount": 75 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Sael'ik Ex",
+        "guild": "DESERT_NOMADS",
+        "race": "SOLARIAN",
+        "clazz": "PRIEST",
+        "str": 80,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 100 },
+                    { "effect": "BLESSING", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 700 },
+                    { "effect": "PURIFY", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "HIT", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kahlel",
+        "guild": "DESERT_NOMADS",
+        "race": "SOLARIAN",
+        "clazz": "MARAUDER",
+        "str": 175,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 420 },
+                    { "effect": "ECLIPSE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RRR",
+                "effects": [
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "HIT", "amount": 350 },
+                    { "effect": "HIT", "amount": 350 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Prince Metchaf",
+        "guild": "DESERT_NOMADS",
+        "race": "SOLARIAN",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 350 },
+                    { "effect": "BLESSING", "amount": 0, "boost_type": "SOURCE_RACE", "race_check": "SOLARIAN", "boost_amount": 30, "all": true }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1 },
+                    { "effect": "RIPOSTE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "BUFF_STR", "amount": 125 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ahkmosis Ex",
+        "guild": "DESERT_NOMADS",
+        "race": "UNDEAD",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 380 },
+                    { "effect": "HIT", "amount": 380 },
+                    { "effect": "ECLIPSE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 0, "boost_type": "DICE_S", "boost_amount": 160 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Amhid",
+        "guild": "DESERT_NOMADS",
+        "race": "UNDEAD",
+        "clazz": "WARRIOR",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "RESILIENCE", "amount": 0, "boost_type": "SOURCE_RACE", "race_check": "UNDEAD", "boost_amount": 50, "all": true },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "BUFF_STR", "amount": 150 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 350 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Shrikan",
+        "guild": "DESERT_NOMADS",
+        "race": "SOLARIAN",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BLESSING", "amount": 300 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 100 },
+                    { "effect": "RIPOSTE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RRR",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 800, "boost_type": "ALLIES_RACE", "race_check": "SOLARIAN", "boost_amount": 400 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Soraya Ex",
+        "guild": "DESERT_NOMADS",
+        "race": "SOLARIAN",
+        "clazz": "PRIEST",
+        "str": 110,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 500 },
+                    { "effect": "PURIFY", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 240, "boost_type": "ALLIES_CLASS", "class_check": "PRIEST", "boost_amount": 80 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "SCARAB", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ahlem",
+        "guild": "DESERT_NOMADS",
+        "race": "SOLARIAN",
+        "clazz": "PRIEST",
+        "str": 145,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BLESSING", "amount": 150 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 1000 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "SMITE", "amount": 1 },
+                    { "effect": "RESILIENCE", "amount": 50 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kararine Ex",
+        "guild": "DESERT_NOMADS",
+        "race": "SOLARIAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "ECLIPSE", "amount": 1 },
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "HIT", "amount": 400 }
+                ]
+            },
+            {
+                "cost": "BY",
+                "effects": [
+                    { "effect": "SCARAB", "amount": 1 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
                 ]
             }
         ]

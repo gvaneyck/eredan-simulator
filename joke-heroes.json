@@ -1,9 +1,9 @@
 [
     {
         "name": "Ateb Ex (beta)",
-        "guild": "Mercenaries",
-        "race": "undead",
-        "clazz": "marauder",
+        "guild": "MERCENARIES",
+        "race": "UNDEAD",
+        "clazz": "MARAUDER",
         "str": 150,
         "abilities": [
             {
@@ -28,9 +28,9 @@
     },
     {
         "name": "Akra Ex (worst at level 3)",
-        "guild": "Mercenaries",
-        "race": "beast",
-        "clazz": "warrior",
+        "guild": "MERCENARIES",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
         "str": 100,
         "abilities": [
             {

@@ -8,13 +8,13 @@ import java.util.List;
 
 // Exclude elements only used during combat resolution, i.e. ones not important to the game state
 @EqualsAndHashCode(exclude={"name", "guild", "race", "clazz", "diceId", "diceCounts", "isAttacker", "abilities", "ally1", "ally2",
-                            "damage", "defenseBuff", "defenseDebuff", "bulwark", "scarabs", "stench"})
+                            "damage", "defenseDebuff", "bulwark", "scarabs", "stench"})
 public class CharacterStatus implements Comparable<CharacterStatus> {
     public int id;
     public String name;
-    public String guild;
-    public String race;
-    public String clazz;
+    public Guild guild;
+    public Race race;
+    public Clazz clazz;
 
     public int diceId;
     public int[] diceCounts;
@@ -43,6 +43,7 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
     public int scarabs = 0;
     public int icyShield = 0;
     public int stench = 0;
+    public int eclipse = 0;
 
     public CharacterStatus() { }
 
@@ -68,7 +69,7 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
         copy.shield = shield;
         copy.damageBuff = damageBuff;
         copy.damageDebuff = damageDebuff;
-//        copy.defenseBuff = defenseBuff;
+        copy.defenseBuff = defenseBuff;
 //        copy.defenseDebuff = defenseDebuff;
         copy.terror = terror;
         copy.rage = rage;
@@ -84,6 +85,7 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
 //        copy.scarabs = scarabs;
         copy.icyShield = icyShield;
 //        copy.stench = stench;
+//        copy.eclipse = eclipse;
 
         return copy;
     }

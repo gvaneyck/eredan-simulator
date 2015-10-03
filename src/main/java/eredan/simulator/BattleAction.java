@@ -40,5 +40,6 @@ public enum BattleAction {
     SCARAB,
     DIVIDE_STR,
     BLIZZARD,
-    STENCH
+    STENCH,
+    ECLIPSE
 }

@@ -74,64 +74,64 @@ public class BattleActionResolver {
                     break;
 
                 case SOURCE_RACE:
-                    if (source.race.equals(e.boostCheck)) {
+                    if (source.race == e.raceCheck) {
                         amount += e.boostAmount;
                     }
                     break;
 
                 case SOURCE_GUILD:
-                    if (source.guild.equals(e.boostCheck)) {
+                    if (source.guild == e.guildCheck) {
                         amount += e.boostAmount;
                     }
                     break;
 
                 case SOURCE_CLASS:
-                    if (source.clazz.equals(e.boostCheck)) {
+                    if (source.clazz == e.classCheck) {
                         amount += e.boostAmount;
                     }
                     break;
 
                 case TARGET_RACE:
-                    if (target.race.equals(e.boostCheck)) {
+                    if (target.race == e.raceCheck) {
                         amount += e.boostAmount;
                     }
                     break;
 
                 case TARGET_GUILD:
-                    if (target.guild.equals(e.boostCheck)) {
+                    if (target.guild == e.guildCheck) {
                         amount += e.boostAmount;
                     }
                     break;
 
                 case TARGET_CLASS:
-                    if (target.clazz.equals(e.boostCheck)) {
+                    if (target.clazz == e.classCheck) {
                         amount += e.boostAmount;
                     }
                     break;
 
                 case ALLIES_RACE:
-                    if (source.allies[0] != null && source.allies[0].race.equals(e.boostCheck)) {
+                    if (source.allies[0] != null && source.allies[0].race == e.raceCheck) {
                         amount += e.boostAmount;
                     }
-                    if (source.allies[1] != null && source.allies[1].race.equals(e.boostCheck)) {
+                    if (source.allies[1] != null && source.allies[1].race == e.raceCheck) {
                         amount += e.boostAmount;
                     }
                     break;
 
                 case ALLIES_GUILD:
-                    if (source.allies[0] != null && source.allies[0].guild.equals(e.boostCheck)) {
+                    if (source.allies[0] != null && source.allies[0].guild == e.guildCheck) {
                         amount += e.boostAmount;
                     }
-                    if (source.allies[1] != null && source.allies[1].guild.equals(e.boostCheck)) {
+                    if (source.allies[1] != null && source.allies[1].guild == e.guildCheck) {
                         amount += e.boostAmount;
                     }
                     break;
 
                 case ALLIES_CLASS:
-                    if (source.allies[0] != null && source.allies[0].clazz.equals(e.boostCheck)) {
+                    if (source.allies[0] != null && source.allies[0].clazz == e.classCheck) {
                         amount += e.boostAmount;
                     }
-                    if (source.allies[1] != null && source.allies[1].clazz.equals(e.boostCheck)) {
+                    if (source.allies[1] != null && source.allies[1].clazz == e.classCheck) {
                         amount += e.boostAmount;
                     }
                     break;
@@ -295,6 +295,9 @@ public class BattleActionResolver {
             case STENCH:
                 stench(source, target, args);
                 break;
+            case ECLIPSE:
+                eclipse(source, target, args);
+                break;
             default:
                 throw new RuntimeException("Invalid action");
         }
@@ -374,9 +377,7 @@ public class BattleActionResolver {
                     source.str += source.rage;
                     target.str += target.berserk;
                     if (target.thorns > 0) {
-                        BattleArgs thornsArgs = new BattleArgs(target.thorns);
-                        thornsArgs.isThorns = true;
-                        applyDamage(target, source, thornsArgs);
+                        applyDamage(target, source, new BattleArgs(target.thorns, false, true));
                     }
                     if (source.blessing > 0) {
                         heal(source, target, new BattleArgs(source.blessing));
@@ -388,7 +389,7 @@ public class BattleActionResolver {
 
     public static void attack(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         for (int i = 0; i < args.amount; i++) {
-            BattleArgs hitArgs = new BattleArgs(source.str);
+            BattleArgs hitArgs = new BattleArgs(source.str, args.isSword, args.isThorns);
             adjustDamage(source, target, hitArgs);
             boolean triggerRiposte = (args.isSword && target.riposte > 0 && hitArgs.amount > target.shield);
             applyDamage(source, target, hitArgs);
@@ -446,7 +447,11 @@ public class BattleActionResolver {
     }
 
     public static void heal(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        source.damage = Math.max(0, source.damage - args.amount);
+        if (source.eclipse > 0) {
+            source.eclipse--;
+        } else {
+            source.damage = Math.max(0, source.damage - args.amount);
+        }
     }
 
     public static void shield(CharacterStatus source, CharacterStatus target, BattleArgs args) {
@@ -465,8 +470,7 @@ public class BattleActionResolver {
     }
 
     public static void backstab(CharacterStatus source, CharacterStatus target, BattleArgs args) {
-        BattleArgs backstabArgs = new BattleArgs(args.amount / 2);
-        decreaseStr(source, target, backstabArgs);
+        decreaseStr(source, target, new BattleArgs(args.amount / 2));
         adjustDamage(source, target, args);
         applyDamage(source, target, args);
     }
@@ -620,6 +624,7 @@ public class BattleActionResolver {
             source.defenseDebuff /= 2;
             source.terror /= 2;
             source.ice /= 2;
+            source.eclipse /= 2;
         }
     }
 
@@ -655,5 +660,9 @@ public class BattleActionResolver {
 
     public static void stench(CharacterStatus source, CharacterStatus target, BattleArgs args) {
         source.stench += args.amount;
+    }
+
+    public static void eclipse(CharacterStatus source, CharacterStatus target, BattleArgs args) {
+        target.eclipse += args.amount;
     }
 }
