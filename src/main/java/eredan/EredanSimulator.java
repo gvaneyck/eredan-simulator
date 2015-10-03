@@ -401,7 +401,7 @@ public class EredanSimulator {
             }
 
             // P1 dice rolling
-            p1state.dice = rand.nextInt(84);
+            p1state.dice = Dice.roll(0, 0); // Random roll
 
             NodeStats p1roll1set = getNodeStats(p1state);
             p1stats.add(p1roll1set);
@@ -418,7 +418,7 @@ public class EredanSimulator {
             p1state.phase = 0;
 
             // P2 dice rolling
-            p2state.dice = rand.nextInt(84);
+            p2state.dice = Dice.roll(0, 0); // Random roll
 
             NodeStats p2roll1set = getNodeStats(p2state);
             p2stats.add(p2roll1set);

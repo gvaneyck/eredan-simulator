@@ -1,6 +1,7 @@
 package eredan.simulator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -96,16 +97,16 @@ public class Dice {
     }
 
     public static int roll(int idx, int keepIdx) {
-        List<Integer> newDice = new ArrayList<>(6);
+        int[] newDice = new int[6];
         for (int i = 0; i < 6; i++) {
             if (keeps[idx][keepIdx][i]) {
-                newDice.add(possibilities[idx][i]);
+                newDice[i] = possibilities[idx][i];
             } else {
                 int val = rand.nextInt(6);
-                newDice.add(val == 5 ? YELLOW : val / 2);
+                newDice[i] = (val == 5 ? YELLOW : val / 2);
             }
         }
-        Collections.sort(newDice);
-        return toIndex.get(newDice.get(5) + (newDice.get(4) << 2) + (newDice.get(3) << 4) + (newDice.get(2) << 6) + (newDice.get(1) << 8) + (newDice.get(0) << 10));
+        Arrays.sort(newDice);
+        return toIndex.get(newDice[5] + (newDice[4] << 2) + (newDice[3] << 4) + (newDice[2] << 6) + (newDice[1] << 8) + (newDice[0] << 10));
     }
 }
