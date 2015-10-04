@@ -6469,5 +6469,881 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Absalon",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 300, "boost_type": "TARGET_RACE", "race_check": "GUEMELITE", "boost_amount": 150 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 400, "boost_type": "DICE_B", "boost_amount": 200 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_R", "boost_amount": 200 },
+                    { "effect": "BUFF_DMG", "amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kounok",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "RAGE", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 600 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 350 },
+                    { "effect": "SHOCK", "amount": 0, "boost_type": "TARGET_CLASS", "class_check": "MAGE", "boost_amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Archmage Anryena",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 150 },
+                    { "effect": "BUFF_DMG", "amount": 0, "boost_type": "SOURCE_RACE", "race_check": "GUEMELITE", "boost_amount": 50, "all": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "RAGE", "amount": 145 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 250 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Arkalon",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "UNDEAD",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BERSERK", "amount": 80, "boost_type": "TARGET_CLASS", "class_check": "MARAUDER", "boost_amount": 40 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 500, "boost_type": "DICE_S" }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 170 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Master-Mage Marzhin",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 500 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 250 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 150 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Marlok the Repentant",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 30, "boost_type": "SOURCE_CLASS", "class_check": "MARAUDER", "boost_amount": 15, "all": true }
+                ]
+            },
+            {
+                "cost": "BYY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 1000 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_Y", "boost_amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ylliana",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 140,
+        "abilities": [
+            {
+                "cost": "BY",
+                "effects": [
+                    { "effect": "DODGE", "amount": 3 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "BB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 500 }
+                ]
+            },
+            {
+                "cost": "YY",
+                "effects": [
+                    { "effect": "HIT", "amount": 650 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Naya Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "DODGE", "amount": 3 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300 },
+                    { "effect": "BUFF_DMG", "amount": 150 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 500 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Valentin Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "WARRIOR",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_Y", "boost_amount": 200 }
+                ]
+            },
+            {
+                "cost": "YY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 400 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 500 },
+                    { "effect": "BUFF_STR", "amount": 250 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Blanche of Arcania",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 110,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 40, "boost_type": "SOURCE_GUILD", "guild_check": "NOZ_DINGARD_ENVOYS", "boost_amount": 20, "all": true }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 200 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_R", "boost_amount": 330 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Tanaer of Arcania Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 400 },
+                    { "effect": "BUFF_DMG", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "BB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 500, "boost_type": "ALLIES_CLASS", "class_check": "MAGE", "boost_amount": 100 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_B", "boost_amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Bomzar",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GOLEM",
+        "clazz": "WARRIOR",
+        "str": 110,
+        "abilities": [
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 600 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 100, "boost_type": "ALLIES_RACE", "race_check": "HUMAN", "boost_amount": 50 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Exhien Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 260 },
+                    { "effect": "BUFF_DMG", "amount": 20, "all": true }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 400 },
+                    { "effect": "BUFF_DMG", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 125 },
+                    { "effect": "HIT", "amount": 125 },
+                    { "effect": "HIT", "amount": 125 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Moira",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 160,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1 },
+                    { "effect": "BUFF_DMG", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 0, "boost_type": "DICE_R", "boost_amount": 190 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 450 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Vaerzar",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 110,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 30, "boost_type": "ALLIES_RACE", "race_check": "BEAST", "boost_amount": 15, "all": true }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 150, "boost_type": "ALLIES_RACE", "race_check": "BEAST", "boost_amount": 15 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "HIT", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Loryana Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 100 },
+                    { "effect": "BUFF_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 330 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_R", "boost_amount": 250 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Selestyne Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 140,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 375 },
+                    { "effect": "BUFF_DMG", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 320 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 30 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Zeranax Sv",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "COLOSSUS",
+        "str": 190,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 100 },
+                    { "effect": "BUFF_DMG", "amount": 20, "all": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 150 },
+                    { "effect": "FIREBALL", "amount": 150 },
+                    { "effect": "FIREBALL", "amount": 150 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "HIT", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ogmor of Arcania Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300 },
+                    { "effect": "BUFF_DMG", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 250 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 200 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Freiyar Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 400 },
+                    { "effect": "BUFF_STR", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Mirval Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 600 },
+                    { "effect": "BUFF_STR", "amount": -50 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 350 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 150 },
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "DICE_B", "boost_amount": 50 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Vanalys Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 70,
+        "abilities": [
+            {
+                "cost": "BY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 100 },
+                    { "effect": "FIREBALL", "amount": 100 },
+                    { "effect": "FIREBALL", "amount": 100 },
+                    { "effect": "DICE_CHANGE_BY", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "YY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 650 },
+                    { "effect": "DICE_CHANGE_YR", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_B", "boost_amount": 90 },
+                    { "effect": "DICE_CHANGE_RB", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dragast",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GOLEM",
+        "clazz": "WARRIOR",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 500 },
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_B", "boost_amount": 100 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 50 },
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_R", "boost_amount": 100 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 350 },
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_Y", "boost_amount": 250 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Senya Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 450 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 0, "boost_type": "DICE_R", "boost_amount": 50 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "HIT", "amount": 250 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Anazra",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 0, "boost_type": "DICE_R", "boost_amount": 150 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "ICE", "amount": 5 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 250, "icy": true },
+                    { "effect": "HIT", "amount": 250, "icy": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Thyonus Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 90,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 500 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 60 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 200 },
+                    { "effect": "SPELLBREAKER", "amount": 200 },
+                    { "effect": "SPELLBREAKER", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "The Pythia",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 450 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 60 },
+                    { "effect": "PURIFY", "amount": 0, "boost_type": "SOURCE_GUILD", "guild_check": "NOZ_DINGARD_ENVOYS", "boost_amount": 2, "all": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "HIT", "amount": 250 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Breor of Gwad",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 0, "boost_type": "DICE_B", "boost_amount": 300 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_R", "boost_amount": 200 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 75 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Master-Mage Pilkim",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 150 },
+                    { "effect": "HIT", "amount": 150 },
+                    { "effect": "DICE_CHANGE_YB", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "BB",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 500 },
+                    { "effect": "SPELLBREAKER", "amount": 500 },
+                    { "effect": "DICE_CHANGE_BR", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 10 },
+                    { "effect": "BUFF_DMG", "amount": 50 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Zahal Ex",
+        "guild": "NOZ_DINGARD_ENVOYS",
+        "race": "GUEMELITE",
+        "clazz": "WARRIOR",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 100, "boost_type": "ALLIES_GUILD", "guild_check": "NOZ_DINGARD_ENVOYS", "boost_amount": 50 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_R", "boost_amount": 150 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 250, "boost_type": "DICE_B", "boost_amount": 50 }
+                ]
+            }
+        ]
     }
 ]

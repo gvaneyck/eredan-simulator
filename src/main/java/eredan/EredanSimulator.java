@@ -440,6 +440,8 @@ public class EredanSimulator {
                 if (p1state.allies[i] != null) {
                     p1state.me.allies[pos] = p1state.allies[i];
                     pos++;
+                    // Also set identical allies on allies, see Vaerzar
+                    p1state.allies[i].allies = p1state.me.allies;
                 }
             }
 
@@ -448,6 +450,8 @@ public class EredanSimulator {
                 if (p2state.allies[i] != null) {
                     p2state.me.allies[pos] = p2state.allies[i];
                     pos++;
+                    // Also set identical allies on allies, see Vaerzar
+                    p2state.allies[i].allies = p2state.me.allies;
                 }
             }
 

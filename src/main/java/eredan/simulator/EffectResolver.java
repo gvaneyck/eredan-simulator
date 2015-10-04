@@ -270,6 +270,18 @@ public class EffectResolver {
             case DICE_CHANGE_BR:
                 diceChange(Dice.BLUE, Dice.RED, source, target, args);
                 break;
+            case DICE_CHANGE_BY:
+                diceChange(Dice.BLUE, Dice.YELLOW, source, target, args);
+                break;
+            case DICE_CHANGE_YR:
+                diceChange(Dice.YELLOW, Dice.RED, source, target, args);
+                break;
+            case DICE_CHANGE_RB:
+                diceChange(Dice.RED, Dice.BLUE, source, target, args);
+                break;
+            case DICE_CHANGE_YB:
+                diceChange(Dice.YELLOW, Dice.BLUE, source, target, args);
+                break;
             case ICE:
                 ice(source, target, args);
                 break;

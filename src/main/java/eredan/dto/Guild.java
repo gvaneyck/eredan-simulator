@@ -9,5 +9,6 @@ public enum Guild {
     MERCENARIES,
     DESERT_NOMADS,
     PIRATES,
-    ZIL_WARRIORS
+    ZIL_WARRIORS,
+    NOZ_DINGARD_ENVOYS
 }
