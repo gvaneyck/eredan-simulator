@@ -4830,7 +4830,7 @@
             {
                 "cost": "RY",
                 "effects": [
-                    { "effect": "BACKSTAB", "amount": 200, "boost_type": "ALLIES_GUILD", "guild_check": "PIRATE", "boost_amount": 50 }
+                    { "effect": "BACKSTAB", "amount": 200, "boost_type": "ALLIES_GUILD", "guild_check": "PIRATES", "boost_amount": 50 }
                 ]
             },
             {
@@ -4859,7 +4859,7 @@
             {
                 "cost": "RR",
                 "effects": [
-                    { "effect": "BUFF_STR", "amount": 40, "boost_type": "SOURCE_GUILD", "guild_check": "PIRATE", "boost_amount": 20, "all": true }
+                    { "effect": "BUFF_STR", "amount": 40, "boost_type": "SOURCE_GUILD", "guild_check": "PIRATES", "boost_amount": 20, "all": true }
                 ]
             },
             {
@@ -5587,6 +5587,885 @@
                 "cost": "RR",
                 "effects": [
                     { "effect": "LIGHTNING", "amount": 460, "boost_type": "DICE_S", "boost_amount": 230 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Abyssien the Devourer",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 1 },
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "TARGET_CLASS", "class_check": "WARRIOR", "boost_amount": 70 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 400 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 300 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "The Liberated Telendar",
+        "guild": "ZIL_WARRIORS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 175,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 100, "boost_type": "TARGET_RACE", "race_check": "HUMAN", "boost_amount": 50 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 1, "all": true },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 410, "boost_type": "TARGET_CLASS", "class_check": "MAGE", "boost_amount": 205 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Archmage Aztrezil",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 270 },
+                    { "effect": "TERROR", "amount": 20 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 350 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 200 },
+                    { "effect": "CRITICAL", "amount": 1, "all": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Brutus",
+        "guild": "ZIL_WARRIORS",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 280 },
+                    { "effect": "BERSERK", "amount": 70 }
+                ]
+            },
+            {
+                "cost": "BY",
+                "effects": [
+                    { "effect": "RAGE", "amount": 110 },
+                    { "effect": "HIT", "amount": 220 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HEAL", "amount": 150 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "The Spooker",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "TERROR", "amount": 20, "all_opp": true },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 2, "boost_type": "TARGET_CLASS", "class_check": "MAGE", "boost_amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 280, "boost_type": "TARGET_CLASS", "class_check": "WARRIOR", "boost_amount": 40 },
+                    { "effect": "HIT", "amount": 280, "boost_type": "TARGET_CLASS", "class_check": "WARRIOR", "boost_amount": 40 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Salem",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
+        "str": 160,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "TERROR", "amount": 30, "boost_type": "TARGET_RACE", "race_check": "HUMAN", "boost_amount": 15 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 2 },
+                    { "effect": "BACKSTAB", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 100 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "BloodSword",
+        "guild": "ZIL_WARRIORS",
+        "race": "ELFINE",
+        "clazz": "MARAUDER",
+        "str": 140,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 40, "boost_type": "SOURCE_CLASS", "class_check": "MARAUDER", "boost_amount": 20, "all": true }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "RAGE", "amount": 30 },
+                    { "effect": "RIPOSTE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "ATTACK", "amount": 3 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Oukandari Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "BB",
+                "effects": [
+                    { "effect": "HIT", "amount": 660 },
+                    { "effect": "RAGE", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "RAGE", "amount": 80 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 500 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Wild",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
+        "str": 140,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "BERSERK", "amount": 60 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "RIPOSTE", "amount": 0, "boost_type": "SOURCE_GUILD", "guild_check": "ZIL_WARRIORS", "boost_amount": 1, "all": true }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Salamalek Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BERSERK", "amount": 55 },
+                    { "effect": "RAGE", "amount": 55 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "YYY",
+                "effects": [
+                    { "effect": "HIT", "amount": 1550 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dark Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 55 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 270 },
+                    { "effect": "HIT", "amount": 135 }
+                ]
+            },
+            {
+                "cost": "YY",
+                "effects": [
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "SHOCK", "amount": 225 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Arckam",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
+        "str": 175,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 2 },
+                    { "effect": "DODGE", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 200 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 300, "boost_type": "DICE_S", "boost_amount": 80 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "N'taba Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 150 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SMITE", "amount": 3 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Zereshin",
+        "guild": "ZIL_WARRIORS",
+        "race": "BEAST",
+        "clazz": "MARAUDER",
+        "str": 145,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 100, "boost_type": "TARGET_RACE", "race_check": "ELFINE", "boost_amount": 50 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "DODGE", "amount": 2 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Bigrage",
+        "guild": "ZIL_WARRIORS",
+        "race": "BEAST",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 450 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "BY",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 200 },
+                    { "effect": "RAGE", "amount": 300 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 650 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kriss Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "TERROR", "amount": 20 },
+                    { "effect": "BUFF_DMG", "amount": 40 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "SMITE", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kuraying Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 110,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "TERROR", "amount": 30 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "BUFF_DMG", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 200 },
+                    { "effect": "FIREBALL", "amount": 200 },
+                    { "effect": "FIREBALL", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Skor'Shi Sv",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "COLOSSUS",
+        "str": 200,
+        "abilities": [
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 300 },
+                    { "effect": "TERROR", "amount": 20 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 240 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Alyce Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "PRIEST",
+        "str": 110,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "PURIFY", "amount": 2 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 400 },
+                    { "effect": "HEAL", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Vick, Ticket Seller Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "WARRIOR",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "BERSERK", "amount": 30 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "RIPOSTE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "YY",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "STR", "boost_amount": 1 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ashtra Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 2 },
+                    { "effect": "BACKSTAB", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 40 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Volkarius Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "RAGE", "amount": 75 },
+                    { "effect": "SHOCK", "amount": 0, "boost_type": "IS_ATTACKER", "boost_amount": 50 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 650 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "HIT", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Fenrath",
+        "guild": "ZIL_WARRIORS",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "BY",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "BERSERK", "amount": 0, "boost_type": "SOURCE_RACE", "race_check": "BEAST", "boost_amount": 20, "all": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "RAGE", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 500 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Mandrak Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "TERROR", "amount": 30 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 320 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 50 },
+                    { "effect": "POWDER", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "The Psychurgist",
+        "guild": "ZIL_WARRIORS",
+        "race": "GUEMELITE",
+        "clazz": "PRIEST",
+        "str": 115,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 450 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 400 },
+                    { "effect": "HIT", "amount": 0, "boost_type": "DICE_B", "boost_amount": 125 }
+                ]
+            },
+            {
+                "cost": "BB",
+                "effects": [
+                    { "effect": "SMITE", "amount": 3 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ashuu'lu",
+        "guild": "ZIL_WARRIORS",
+        "race": "BEAST",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "RAGE", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 200 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 500 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Terrifik Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "HUMAN",
+        "clazz": "PRIEST",
+        "str": 145,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "TERROR", "amount": 30, "boost_type": "ALLIES_GUILD", "guild_check": "ZIL_WARRIORS", "boost_amount": 10 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 500, "boost_type": "DICE_S", "boost_amount": 250 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 100 },
+                    { "effect": "SMITE", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Wakywak",
+        "guild": "ZIL_WARRIORS",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
+        "str": 135,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BERSERK", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "HIT", "amount": 475 },
+                    { "effect": "HIT", "amount": 475 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "RAGE", "amount": 50 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Faceless",
+        "guild": "ZIL_WARRIORS",
+        "race": "HOM_CHAI",
+        "clazz": "WARRIOR",
+        "str": 110,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 500 },
+                    { "effect": "HIT", "amount": 250 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 250 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 440, "boost_type": "IS_ATTACKER", "boost_amount": 220 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dancing-Blade Ex",
+        "guild": "ZIL_WARRIORS",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1, "boost_type": "ALLIES_CLASS", "class_check": "MARAUDER", "boost_amount": 1 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 3 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
                 ]
             }
         ]

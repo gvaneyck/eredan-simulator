@@ -8,5 +8,6 @@ public enum Guild {
     AVALONIANS,
     MERCENARIES,
     DESERT_NOMADS,
-    PIRATES
+    PIRATES,
+    ZIL_WARRIORS
 }

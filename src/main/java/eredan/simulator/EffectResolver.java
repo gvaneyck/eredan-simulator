@@ -26,27 +26,27 @@ public class EffectResolver {
 
             for (Effect e : ability.effects) {
                 int amount = getEffectAmount(e, source, target);
-                execute(e.effectType, amount, source, target);
+                execute(e.effect, amount, source, target);
 
                 if (e.all) {
                     if (source.allies[0] != null) {
                         amount = getEffectAmount(e, source.allies[0], target);
-                        execute(e.effectType, amount, source.allies[0], target);
+                        execute(e.effect, amount, source.allies[0], target);
                     }
                     if (source.allies[1] != null) {
                         amount = getEffectAmount(e, source.allies[1], target);
-                        execute(e.effectType, amount, source.allies[1], target);
+                        execute(e.effect, amount, source.allies[1], target);
                     }
                 }
 
                 if (e.allOpponents) {
                     if (target.allies[0] != null) {
                         amount = getEffectAmount(e, source, target.allies[0]);
-                        execute(e.effectType, amount, source, target.allies[0]);
+                        execute(e.effect, amount, source, target.allies[0]);
                     }
                     if (target.allies[1] != null) {
                         amount = getEffectAmount(e, source, target.allies[1]);
-                        execute(e.effectType, amount, source, target.allies[1]);
+                        execute(e.effect, amount, source, target.allies[1]);
                     }
                 }
             }

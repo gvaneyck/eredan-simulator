@@ -3,7 +3,7 @@ package eredan.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Effect {
-    public EffectType effectType;
+    public EffectType effect;
     public int amount;
 
     public boolean icy;
@@ -21,8 +21,8 @@ public class Effect {
 
     public Effect() { }
 
-    public Effect(EffectType effectType, int amount) {
-        this.effectType = effectType;
+    public Effect(EffectType effect, int amount) {
+        this.effect = effect;
         this.amount = amount;
     }
 }
