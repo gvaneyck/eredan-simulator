@@ -47,6 +47,7 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
     public int icyShield = 0;
     public int stench = 0;
     public int eclipse = 0;
+    public int powder = 0;
 
     public CharacterStatus() { }
 
@@ -89,6 +90,7 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
         copy.icyShield = icyShield;
 //        copy.stench = stench;
 //        copy.eclipse = eclipse;
+        copy.powder = powder;
 
         return copy;
     }

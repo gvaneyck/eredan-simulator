@@ -7,5 +7,6 @@ public enum Guild {
     RUNIC_LEGION,
     AVALONIANS,
     MERCENARIES,
-    DESERT_NOMADS
+    DESERT_NOMADS,
+    PIRATES
 }

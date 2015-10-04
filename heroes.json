@@ -4620,5 +4620,975 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Mylad",
+        "guild": "PIRATES",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 110,
+        "abilities": [
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "BUFF_DMG", "amount": 40, "boost_type": "SOURCE_CLASS", "class_check": "MAGE", "boost_amount": 20, "all": true }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 500 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "The Ugly Corc",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 90,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 200, "boost_type": "TARGET_CLASS", "class_check": "WARRIOR", "boost_amount": 100, "all": true }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 300 },
+                    { "effect": "SHIELD", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 200 },
+                    { "effect": "SHIELD", "amount": 50 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Lightning-beak",
+        "guild": "PIRATES",
+        "race": "BEAST",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 400 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 400, "boost_type": "ALLIES_GUILD", "guild_check": "PIRATES", "boost_amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 100 },
+                    { "effect": "LIGHTNING", "amount": 100 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Watahata Ex",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 600 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 80 },
+                    { "effect": "DEBUFF_DMG", "amount": 40 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIFEDRAIN", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Armada",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 50,
+        "abilities": [
+            {
+                "cost": "RBB",
+                "effects": [
+                    { "effect": "POWDER", "amount": 1, "all_opp": true },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 250 },
+                    { "effect": "POWDER", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 100, "boost_type": "IS_ATTACKER", "boost_amount": 50 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Jon the Filibuster",
+        "guild": "PIRATES",
+        "race": "UNDEAD",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 100, "boost_type": "IS_ATTACKER", "boost_amount": 50 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "POWDER", "amount": 3 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 0, "boost_type": "TARGET_CLASS", "class_check": "MAGE", "boost_amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "BUFF_STR", "amount": 125 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Gemineye",
+        "guild": "PIRATES",
+        "race": "GUEMELITE",
+        "clazz": "MARAUDER",
+        "str": 160,
+        "abilities": [
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1, "boost_type": "SOURCE_CLASS", "class_check": "MARAUDER", "boost_amount": 1, "all": true }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 200, "boost_type": "IS_DEFENDER", "boost_amount": 100 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "BACKSTAB", "amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Hook",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 200, "boost_type": "ALLIES_GUILD", "guild_check": "PIRATE", "boost_amount": 50 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "BUFF_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "RRR",
+                "effects": [
+                    { "effect": "POWDER", "amount": 1, "all_opp": true },
+                    { "effect": "DICE_CHANGE_RS", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Captain Al Killicrew",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 40, "boost_type": "SOURCE_GUILD", "guild_check": "PIRATE", "boost_amount": 20, "all": true }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "POWDER", "amount": 4 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 200 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ica-Rusty",
+        "guild": "PIRATES",
+        "race": "GOLEM",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 400, "boost_type": "IS_DEFENDER", "boost_amount": 200 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 500, "boost_type": "TARGET_CLASS", "class_check": "MARAUDER", "boost_amount": 250 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 50, "all": true },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "S.A.R.A.H.",
+        "guild": "PIRATES",
+        "race": "GOLEM",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 400 },
+                    { "effect": "SHOCK", "amount": 300 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "POWDER", "amount": 1, "boost_type": "ALLIES_CLASS", "class_check": "WARRIOR", "boost_amount": 1 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 250 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Klementine",
+        "guild": "PIRATES",
+        "race": "GOLEM",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 600 },
+                    { "effect": "SHOCK", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 0, "boost_type": "SOURCE_RACE", "race_check": "GOLEM", "boost_amount": 50, "all": true },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HIT", "amount": 270 },
+                    { "effect": "POWDER", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Flammara Ex",
+        "guild": "PIRATES",
+        "race": "GUEMELITE",
+        "clazz": "MAGE",
+        "str": 0,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 450 },
+                    { "effect": "BUFF_STR", "amount": 225 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "POWDER", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HEAL", "amount": 400 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Clover Ex",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 300 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 165 },
+                    { "effect": "BUFF_STR", "amount": 55 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 550 },
+                    { "effect": "POWDER", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Meister Galene",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 400, "boost_type": "ALLIES_RACE", "race_check": "GOLEM", "boost_amount": 150 }
+                ]
+            },
+            {
+                "cost": "RRB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 700 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 60 },
+                    { "effect": "BUFF_DMG", "amount": 0, "boost_type": "SOURCE_RACE", "race_check": "GOLEM", "boost_amount": 40, "all": true }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ardranis",
+        "guild": "PIRATES",
+        "race": "ELFINE",
+        "clazz": "MAGE",
+        "str": 110,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 440, "boost_type": "TARGET_RACE", "race_check": "BEAST", "boost_amount": 220 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 100 },
+                    { "effect": "LIGHTNING", "amount": 100 },
+                    { "effect": "LIGHTNING", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 150 },
+                    { "effect": "LIGHTNING", "amount": 150 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Azalys the Widow Ex",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 200 },
+                    { "effect": "POWDER", "amount": 3 }
+                ]
+            },
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "HIT", "amount": 80 },
+                    { "effect": "HIT", "amount": 80 },
+                    { "effect": "HIT", "amount": 80 },
+                    { "effect": "HIT", "amount": 80 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 1 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Volturia Ex",
+        "guild": "PIRATES",
+        "race": "GOLEM",
+        "clazz": "MAGE",
+        "str": 110,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 400 },
+                    { "effect": "SHIELD", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 300 },
+                    { "effect": "BUFF_STR", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 150 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Leviath R7 Sv",
+        "guild": "PIRATES",
+        "race": "GOLEM",
+        "clazz": "COLOSSUS",
+        "str": 200,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 250 },
+                    { "effect": "SHIELD", "amount": 125 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "POWDER", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 500 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Boucan Ex",
+        "guild": "PIRATES",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 210 },
+                    { "effect": "BUFF_STR", "amount": 30 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 300 },
+                    { "effect": "POWDER", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Mathurin",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 250 },
+                    { "effect": "CRITICAL", "amount": 1 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "POWDER", "amount": 1 },
+                    { "effect": "CRITICAL", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Raveneau",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 400 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "CRITICAL", "amount": 2 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 6 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 300 },
+                    { "effect": "POWDER", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Sybelle Ex",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 200 },
+                    { "effect": "LIGHTNING", "amount": 200 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 350 },
+                    { "effect": "DEBUFF_STR", "amount": 50 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 200 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Boardatron Ex",
+        "guild": "PIRATES",
+        "race": "GOLEM",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "POWDER", "amount": 2, "boost_type": "IS_ATTACKER", "boost_amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "HIT", "amount": 200 },
+                    { "effect": "DODGE", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "SET_STR", "amount": 0, "boost_type": "OPP_STR", "boost_amount": 1 },
+                    { "effect": "BUFF_STR", "amount": 100 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Lady Dynamite Ex",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 125,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 400 },
+                    { "effect": "POWDER", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "SHOCK", "amount": 200 },
+                    { "effect": "POWDER", "amount": 2 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 50 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 6 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Von Blaztnin Ex",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 90,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 400 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 90 },
+                    { "effect": "FIREBALL", "amount": 90 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 300 },
+                    { "effect": "FIREBALL", "amount": 300 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Bragan",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 100,
+        "abilities": [
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 700 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "DODGE", "amount": 1 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 350 },
+                    { "effect": "POWDER", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Captain Olaho",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "WARRIOR",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "B",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 120 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 110 },
+                    { "effect": "HIT", "amount": 110 },
+                    { "effect": "HIT", "amount": 110 },
+                    { "effect": "DICE_CHANGE_BS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "HIT", "amount": 1000 },
+                    { "effect": "POWDER", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "MC Laddie Ex",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MARAUDER",
+        "str": 150,
+        "abilities": [
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "HIT", "amount": 100 },
+                    { "effect": "POWDER", "amount": 3 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "BACKSTAB", "amount": 300 },
+                    { "effect": "SHOCK", "amount": 150 }
+                ]
+            },
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 40 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Maldere",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "SPELLBREAKER", "amount": 230 },
+                    { "effect": "DICE_CHANGE_YS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "FIREBALL", "amount": 570 },
+                    { "effect": "BUFF_STR", "amount": 95 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "POWDER", "amount": 2 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Cuirassier Ex",
+        "guild": "PIRATES",
+        "race": "GOLEM",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 360, "boost_type": "IS_ATTACKER", "boost_amount": 180 }
+                ]
+            },
+            {
+                "cost": "RRY",
+                "effects": [
+                    { "effect": "SHIELD", "amount": 400 },
+                    { "effect": "POWDER", "amount": 3 }
+                ]
+            },
+            {
+                "cost": "R",
+                "effects": [
+                    { "effect": "HIT", "amount": 100 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Poukos",
+        "guild": "PIRATES",
+        "race": "BEAST",
+        "clazz": "WARRIOR",
+        "str": 130,
+        "abilities": [
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "HIT", "amount": 560, "boost_type": "IS_DEFENDER", "boost_amount": 280 }
+                ]
+            },
+            {
+                "cost": "Y",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 230 },
+                    { "effect": "DICE_CHANGE_RS", "amount": 1 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "BUFF_STR", "amount": 100 },
+                    { "effect": "POWDER", "amount": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Virgil Ex",
+        "guild": "PIRATES",
+        "race": "HUMAN",
+        "clazz": "MAGE",
+        "str": 120,
+        "abilities": [
+            {
+                "cost": "RY",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 100 },
+                    { "effect": "LIGHTNING", "amount": 100 },
+                    { "effect": "LIGHTNING", "amount": 100 },
+                    { "effect": "LIGHTNING", "amount": 100 }
+                ]
+            },
+            {
+                "cost": "RB",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 430 }
+                ]
+            },
+            {
+                "cost": "RR",
+                "effects": [
+                    { "effect": "LIGHTNING", "amount": 460, "boost_type": "DICE_S", "boost_amount": 230 }
+                ]
+            }
+        ]
     }
 ]

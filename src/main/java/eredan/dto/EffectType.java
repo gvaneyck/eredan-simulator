@@ -41,5 +41,6 @@ public enum EffectType {
     DIVIDE_STR,
     BLIZZARD,
     STENCH,
-    ECLIPSE
+    ECLIPSE,
+    POWDER
 }

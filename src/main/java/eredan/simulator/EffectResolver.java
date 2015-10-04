@@ -74,6 +74,10 @@ public class EffectResolver {
                     amount += source.str * e.boostAmount;
                     break;
 
+                case OPP_STR:
+                    amount += target.str * e.boostAmount;
+                    break;
+
                 case SOURCE_RACE:
                     if (source.race == e.raceCheck) {
                         amount += e.boostAmount;
@@ -299,6 +303,9 @@ public class EffectResolver {
             case ECLIPSE:
                 eclipse(source, target, args);
                 break;
+            case POWDER:
+                powder(source, target, args);
+                break;
             default:
                 throw new RuntimeException("Invalid action");
         }
@@ -324,6 +331,11 @@ public class EffectResolver {
     }
 
     public static void adjustDamage(CharacterStatus source, CharacterStatus target, EffectArgs args) {
+        if (target.powder > 0 && args.isSword) {
+            target.powder--;
+            args.amount *= 3;
+        }
+
         args.amount += source.damageBuff - source.damageDebuff;
         args.amount += target.defenseDebuff - target.defenseBuff;
 
@@ -665,5 +677,9 @@ public class EffectResolver {
 
     public static void eclipse(CharacterStatus source, CharacterStatus target, EffectArgs args) {
         target.eclipse += args.amount;
+    }
+
+    public static void powder(CharacterStatus source, CharacterStatus target, EffectArgs args) {
+        target.powder += args.amount;
     }
 }

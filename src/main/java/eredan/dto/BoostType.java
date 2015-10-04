@@ -4,6 +4,7 @@ public enum BoostType {
     IS_ATTACKER,
     IS_DEFENDER,
     STR,
+    OPP_STR,
     SOURCE_RACE,
     SOURCE_GUILD,
     SOURCE_CLASS,
