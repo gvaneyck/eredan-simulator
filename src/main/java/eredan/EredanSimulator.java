@@ -57,15 +57,18 @@ public class EredanSimulator {
         }
         System.out.println();
 
-//        testChallenger();
-        runGeneticAlgorithm();
+        testChallenger();
+//        runGeneticAlgorithm();
     }
 
     public static void testChallenger() {
         List<List<Integer>> teams = new ArrayList<>();
         List<Integer> team;
-        team = new ArrayList<>(); team.add(11); team.add(27); team.add(76); team.add(66); team.add(89); teams.add(team);
-        team = new ArrayList<>(); team.add(15); team.add(33); team.add(46); team.add(65); team.add(76); teams.add(team);
+        team = new ArrayList<>(); team.add(46); team.add(76); team.add(107); team.add(176); team.add(187); teams.add(team);
+        team = new ArrayList<>(); team.add(76); team.add(112); team.add(176); team.add(192); team.add(208); teams.add(team);
+        team = new ArrayList<>(); team.add(76); team.add(95); team.add(141); team.add(213); team.add(145); teams.add(team);
+        team = new ArrayList<>(); team.add(65); team.add(76); team.add(107); team.add(156); team.add(176); teams.add(team);
+        team = new ArrayList<>(); team.add(33); team.add(71); team.add(76); team.add(176); team.add(192); teams.add(team);
 
         List<Integer> challenger;
         // Hate, Carkasse, Kitsana, Amidaraxar, Lania
@@ -97,48 +100,39 @@ public class EredanSimulator {
         // Hate, Inquisitor, Malderez, Flammara, Kitsana
 //        challenger = new ArrayList<>(); challenger.add(66); challenger.add(75); challenger.add(187); challenger.add(170); challenger.add(54);
 
-        int sims = 300000;
-        double winRate;
-        for (int k = 0; k < teams.size(); k++) {
-            for (int i = 0; i < sims; i++) {
-                runSimTeam(challenger, teams.get(k));
-            }
-            summarizeStats();
+        double winRate, winRate2;
+        for (int sims = 10000; sims <= 1000000; sims *= 10) {
+            for (int k = 0; k < teams.size(); k++) {
+                for (int i = 0; i < sims; i++) {
+                    runSimTeam(teams.get(k), challenger);
+                }
+//                summarizeStats();
 
-            winRate = getWinRateGr50();
-            if (winRate > 0.5) {
-                System.out.println(String.format("chal VS %d | chal %.1f", k, winRate * 100));
-            } else {
-                System.out.println(String.format("chal VS %d | %d %.1f", k, k, (1 - winRate) * 100));
-            }
-            winRate = getWinRateAvg();
-            if (winRate > 0.5) {
-                System.out.println(String.format("chal VS %d | chal %.1f", k, winRate * 100));
-            } else {
-                System.out.println(String.format("chal VS %d | %d %.1f", k, k, (1 - winRate) * 100));
-            }
+                winRate = getWinRateGr50();
+                winRate2 = getWinRateAvg();
+                if (winRate > 0.5) {
+                    System.out.println(String.format("%d VS chal %d | %d %.1f %.1f", k, sims, k, winRate * 100, winRate2 * 100));
+                } else {
+                    System.out.println(String.format("%d VS chal %d | chal %.1f %.1f", k, sims, (1 - winRate) * 100, (1 - winRate2) * 100));
+                }
 
-            teamStats.clear();
+                teamStats.clear();
 
-            for (int i = 0; i < sims; i++) {
-                runSimTeam(teams.get(k), challenger);
-            }
-            summarizeStats();
+                for (int i = 0; i < sims; i++) {
+                    runSimTeam(challenger, teams.get(k));
+                }
+//                summarizeStats();
 
-            winRate = getWinRateGr50();
-            if (winRate > 0.5) {
-                System.out.println(String.format("%d VS chal | %d %.1f", k, k, winRate * 100));
-            } else {
-                System.out.println(String.format("%d VS chal | chal %.1f", k, (1 - winRate) * 100));
-            }
-            winRate = getWinRateAvg();
-            if (winRate > 0.5) {
-                System.out.println(String.format("%d VS chal | %d %.1f", k, k, winRate * 100));
-            } else {
-                System.out.println(String.format("%d VS chal | chal %.1f", k, (1 - winRate) * 100));
-            }
+                winRate = getWinRateGr50();
+                winRate2 = getWinRateAvg();
+                if (winRate > 0.5) {
+                    System.out.println(String.format("chal VS %d %d | chal %.1f %.1f", k, sims, winRate * 100, winRate2 * 100));
+                } else {
+                    System.out.println(String.format("chal VS %d %d | %d %.1f %.1f", k, sims, k, (1 - winRate) * 100, (1 - winRate2) * 100));
+                }
 
-            teamStats.clear();
+                teamStats.clear();
+            }
         }
     }
 
@@ -217,12 +211,12 @@ public class EredanSimulator {
                         teams.get(t2).get(4));
 
                 int sims = recordedResults.getLargestSim(matchKey) * 10;
-                System.out.print(" " + sims);
                 double winRate, winRate2;
                 if (sims > 1000000) {
                     winRate = recordedResults.getFiftyPct(matchKey, 1000000);
                     winRate2 = recordedResults.getWinRate(matchKey, 1000000);
                 } else {
+                    System.out.print(" " + sims);
                     for (int i = 0; i < sims; i++) {
                         runSimTeam(teams.get(t1), teams.get(t2));
                     }

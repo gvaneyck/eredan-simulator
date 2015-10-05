@@ -26,12 +26,12 @@ public class InfoSet1v1 {
     public int bestChild() {
         double bestScore = -1;
         int idx = 0;
-        for (int i = 0; i < childStats.length; i++) {
-            if (childStats[i].score > bestScore) {
-                bestScore = childStats[i].score;
-                idx = i;
-            }
-        }
+//        for (int i = 0; i < childStats.length; i++) {
+//            if (childStats[i].score > bestScore) {
+//                bestScore = childStats[i].score;
+//                idx = i;
+//            }
+//        }
         return idx;
     }
 

@@ -624,15 +624,23 @@ public class EffectResolver {
     }
 
     public static void diceChange(int sourceDice, int destDice, CharacterStatus source, CharacterStatus target, EffectArgs args) {
-        // Make a copy of the dice since we're changing them
-        if (source.diceCounts == Dice.counts[source.diceId]) {
-            source.diceCounts = new int[4];
-            System.arraycopy(Dice.counts[source.diceId], 0, source.diceCounts, 0, 4);
-        }
-
         int change = Math.min(args.amount, source.diceCounts[sourceDice]);
-        source.diceCounts[sourceDice] -= change;
-        source.diceCounts[destDice] += change;
+
+        if (change > 0) {
+            int diceLookup = 0;
+            for (int i = 1; i <= Dice.YELLOW; i++) {
+                int diceCount = source.diceCounts[i];
+                if (i == sourceDice) {
+                    diceCount -= change;
+                } else if (i == destDice) {
+                    diceCount += change;
+                }
+                for (int k = 0; k < diceCount; k++) {
+                    diceLookup = (diceLookup << 2) + i;
+                }
+            }
+            source.diceCounts = Dice.counts[Dice.toIndex.get(diceLookup)];
+        }
     }
 
     public static void ice(CharacterStatus source, CharacterStatus target, EffectArgs args) {

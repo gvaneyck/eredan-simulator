@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 import java.util.List;
 
 // Exclude elements only used during combat resolution, i.e. ones not important to the game state
-@EqualsAndHashCode(exclude={"name", "guild", "race", "clazz", "diceId", "diceCounts", "isAttacker", "abilities", "allies",
+@EqualsAndHashCode(exclude={"name", "guild", "race", "clazz", "diceCounts", "isAttacker", "abilities", "allies",
                             "damage", "defenseDebuff", "bulwark", "scarabs", "stench"})
 public class CharacterStatus implements Comparable<CharacterStatus> {
     public int id;
@@ -19,7 +19,6 @@ public class CharacterStatus implements Comparable<CharacterStatus> {
     public Race race;
     public Clazz clazz;
 
-    public int diceId;
     public int[] diceCounts;
     public boolean isAttacker;
     public List<Ability> abilities;
