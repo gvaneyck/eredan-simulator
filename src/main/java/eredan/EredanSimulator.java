@@ -6,6 +6,8 @@ import eredan.simulator.Dice;
 import eredan.simulator.Heroes;
 import org.apache.log4j.Logger;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -33,7 +35,7 @@ public class EredanSimulator {
     public static Random rand = new Random();
 
     public static Map<TeamState, NodeStats> teamStats = new HashMap<>(10000000);
-    public static Map<String, Boolean> recordedResults = new HashMap<>();
+    public static RecordedResults recordedResults = new RecordedResults();
 
     protected static class WeightedList {
         int idx;
@@ -65,9 +67,35 @@ public class EredanSimulator {
         team = new ArrayList<>(); team.add(11); team.add(27); team.add(76); team.add(66); team.add(89); teams.add(team);
         team = new ArrayList<>(); team.add(15); team.add(33); team.add(46); team.add(65); team.add(76); teams.add(team);
 
-        // Hate, Carkasse, Kitsana, Amidaraxar, and Lania
         List<Integer> challenger;
-        challenger = new ArrayList<>(); challenger.add(66); challenger.add(63); challenger.add(54); challenger.add(81); challenger.add(90);
+        // Hate, Carkasse, Kitsana, Amidaraxar, Lania
+//        challenger = new ArrayList<>(); challenger.add(66); challenger.add(63); challenger.add(54); challenger.add(81); challenger.add(90);
+        // ! Anryena, Pythia, Loryana, Blanche, Zahal
+//        challenger = new ArrayList<>(); challenger.add(223); challenger.add(247); challenger.add(263); challenger.add(230); challenger.add(250);
+        // ! Cark, Kitsana, Amidaraxar, Lady Ylith, Malderez
+//        challenger = new ArrayList<>(); challenger.add(63); challenger.add(54); challenger.add(81); challenger.add(122); challenger.add(187);
+        // ! Kitsana, Malderez, Amidaraxar, Lady Ylith, Kararine
+        challenger = new ArrayList<>(); challenger.add(54); challenger.add(187); challenger.add(81); challenger.add(122); challenger.add(157);
+        // Hate, Amidaraxar, Ardrakar, Aztrezil, Kasaï
+//        challenger = new ArrayList<>(); challenger.add(66); challenger.add(81); challenger.add(82); challenger.add(193); challenger.add(58);
+        // Hate, Amidaraxar, Ardrakar, Aztrezil, Moira
+//        challenger = new ArrayList<>(); challenger.add(66); challenger.add(81); challenger.add(82); challenger.add(193); challenger.add(234);
+        // Hate, Amidaraxar, Ardrakar, Aztrezil, The Fallen
+//        challenger = new ArrayList<>(); challenger.add(66); challenger.add(81); challenger.add(82); challenger.add(193); challenger.add(89);
+        // Alyce, Psychurgist, Terrifik, Soraya, Sevylath
+//        challenger = new ArrayList<>(); challenger.add(209); challenger.add(215); challenger.add(217); challenger.add(155); challenger.add(112);
+        // Anryena, Marzhin, Blanche, Zahal, Pythia
+//        challenger = new ArrayList<>(); challenger.add(223); challenger.add(225); challenger.add(230); challenger.add(250); challenger.add(247);
+        // Amidaraxar, Kitsana, Cark, Malderez, Lady Ylith
+//        challenger = new ArrayList<>(); challenger.add(81); challenger.add(54); challenger.add(63); challenger.add(187); challenger.add(122);
+        // The Fallen, Kitsana, Soul Chewer, Sethan Arai, Envy
+//        challenger = new ArrayList<>(); challenger.add(89); challenger.add(54); challenger.add(65); challenger.add(88); challenger.add(87);
+        // Kitsana, Mandrak, Carkasse, Artezil, Dimizar
+//        challenger = new ArrayList<>(); challenger.add(54); challenger.add(214); challenger.add(63); challenger.add(193); challenger.add(60);
+        // Kitsana, Lady Ylith, Malderez, Carkasse, Inquisitor
+//        challenger = new ArrayList<>(); challenger.add(54); challenger.add(122); challenger.add(187); challenger.add(63); challenger.add(75);
+        // Hate, Inquisitor, Malderez, Flammara, Kitsana
+//        challenger = new ArrayList<>(); challenger.add(66); challenger.add(75); challenger.add(187); challenger.add(170); challenger.add(54);
 
         int sims = 300000;
         double winRate;
@@ -117,7 +145,7 @@ public class EredanSimulator {
     public static void runGeneticAlgorithm() {
         List<List<Integer>> teams = new ArrayList<>();
         List<Integer> team;
-        for (int i = 0; i < 23; i++) {
+        for (int i = 0; i < 50; i++) {
             team = new ArrayList<>();
             team.add(i*5);
             team.add(i*5+1);
@@ -129,6 +157,15 @@ public class EredanSimulator {
 
         for (int i = 0; i < GENERATIONS; i++) {
             int[] teamWins = runRoundRobin(teams);
+
+            // Save results
+            try {
+                BufferedWriter out = new BufferedWriter(new FileWriter("temp_results.csv"));
+                out.write(recordedResults.toString());
+                out.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             List<WeightedList> wlist = new ArrayList<>();
             for (int k = 0; k < teams.size(); k++) {
@@ -167,7 +204,7 @@ public class EredanSimulator {
                 }
 
                 System.out.print(t1 + " VS " + t2);
-                String matchKey = String.format("%d|%d|%d|%d|%d|%d|%d|%d|%d|%d",
+                String matchKey = String.format("%d|%d|%d|%d|%d VS %d|%d|%d|%d|%d",
                         teams.get(t1).get(0),
                         teams.get(t1).get(1),
                         teams.get(t1).get(2),
@@ -179,41 +216,39 @@ public class EredanSimulator {
                         teams.get(t2).get(3),
                         teams.get(t2).get(4));
 
-                // Commented out to re-run simulations and potentially get a different winner
-//                if (recordedResults.containsKey(matchKey)) {
-//                    if (recordedResults.get(matchKey)) {
-//                        System.out.println(" | " + t1);
-//                        teamWins[t1]++;
-//                    } else {
-//                        System.out.println(" | " + t2);
-//                        teamWins[t2]++;
-//                    }
-//                } else {
-                    for (int i = 0; i < SIMULATIONS; i++) {
+                int sims = recordedResults.getLargestSim(matchKey) * 10;
+                System.out.print(" " + sims);
+                double winRate, winRate2;
+                if (sims > 1000000) {
+                    winRate = recordedResults.getFiftyPct(matchKey, 1000000);
+                    winRate2 = recordedResults.getWinRate(matchKey, 1000000);
+                } else {
+                    for (int i = 0; i < sims; i++) {
                         runSimTeam(teams.get(t1), teams.get(t2));
                     }
 
-                    double winRate = getWinRateGr50();
-                    if (winRate > 0.5) {
-                        System.out.println(String.format(" | %d %.1f", t1, winRate * 100));
-                        teamWins[t1]++;
-                        recordedResults.put(matchKey, true);
-                    } else {
-                        System.out.println(String.format(" | %d %.1f", t2, (1 - winRate) * 100));
-                        teamWins[t2]++;
-                        recordedResults.put(matchKey, false);
-                    }
+                    winRate = getWinRateGr50();
+                    winRate2 = getWinRateAvg();
+                    recordedResults.record(matchKey, sims, winRate, winRate2);
 
                     teamStats.clear();
-//                }
+                }
+
+                if (winRate > 0.5) {
+                    System.out.println(String.format(" | %d %.1f %.1f", t1, winRate * 100, winRate2 * 100));
+                    teamWins[t1]++;
+                } else {
+                    System.out.println(String.format(" | %d %.1f %.1f", t2, (1 - winRate) * 100, (1 - winRate2) * 100));
+                    teamWins[t2]++;
+                }
             }
         }
 
         // For testing one round robin with varying simulation counts
-        for (int i = 0; i < teamWins.length; i++) {
-            System.out.println(teamWins[i]);
-        }
-        System.exit(0);
+//        for (int i = 0; i < teamWins.length; i++) {
+//            System.out.println(teamWins[i]);
+//        }
+//        System.exit(0);
 
         return teamWins;
     }
